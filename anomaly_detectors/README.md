@@ -14,10 +14,5 @@ Suite of anomaly detectors to be implemented:
 - md_anomaly: global anomaly detector, Mahalanobis Distance anomaly detector uses global image mean and covariance as background estimates
 - ssrx_anomaly: local anomaly detector, eliminate leading subspace as background, then use local mean and covariance to determine pixel to background distance
 
-Demo instructions: (UPDATE ME FOR PYTHON VERSION)
-
-(1) load an_hsi_image_sub_for_demo.mat
-
-(2) run `anomaly_det_demo(hsi_img_sub, mask_sub, wavelengths)`
 
 Contact: Alina Zare, azare@ufl.edu
