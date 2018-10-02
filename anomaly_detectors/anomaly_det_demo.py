@@ -1,5 +1,6 @@
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
+from rx_anomaly import rx_anomaly
 """
 Demo that runs all anomaly detectors in the hsi_toolkit using example sub MUUFL Gulfport data
 
@@ -21,6 +22,6 @@ mask_sub = an_hsi_image_sub_for_demo['mask_sub']
 wavelengths = an_hsi_image_sub_for_demo['wavelengths']
 
 guard_win = 3; bg_win = 3
-rx_out = rx_anomaly(hsi_img_sub, mask_sub, guard_win, bg_win)
+rx_out = rx_anomaly(hsi_img_sub, guard_win, bg_win, mask_sub)
 
 plt.imshow(rx_out, extent=[0, 1, 0, 1])
