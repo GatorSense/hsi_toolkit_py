@@ -1,5 +1,4 @@
 import numpy as np
-import scipy as scp
 def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 	"""
 	Widowed Reed-Xiaoli anomaly detector
@@ -16,6 +15,19 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 	5/5/2018 - Edited by Alina Zare
 	10/1/2018 - Python Implementation by Yutai Zhou
 	"""
+	def pinv_matlab(A, tol, show = False):
+		u, s, v = np.linalg.svd(A)
+		r1 = np.argwhere(s > tol).shape[0]
+		v = np.delete(v, list(range(r1,len(v))), axis = 1)
+		u = np.delete(u, list(range(r1,len(u))), axis = 1)
+		s = np.delete(s, list(range(r1,len(s))))
+		s = 1 / s
+		s = np.reshape(s,(len(s),1))
+		# if show: print(tol)
+
+
+		return (v * s.T) @ u.T
+
 	n_row, n_col, n_band = hsi_img.shape
 	n_pixels = n_row * n_col
 
@@ -47,14 +59,16 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 			bg = hsi_data[:, [int(m) for m in np.argwhere(b_mask_list == 1)]]
 
 			# Mahlanobis distance
-			sig_inv = np.linalg.pinv(np.cov(bg.T, rowvar=False))
+			covariance = np.cov(bg.T, rowvar=False)
+			s = np.linalg.svd(covariance, compute_uv=False)
+			# if i ==0 and j==0: np.linalg.pinv(covariance, rcond=np.max(covariance.shape)*np.spacing(np.float32(np.linalg.norm(s, ord=np.inf))))
+			sig_inv = np.linalg.pinv(np.float32(covariance), rcond=np.max(covariance.shape)*np.spacing(np.float32(np.linalg.norm(s, ord=np.inf))))
 
 			mu = np.mean(bg, 1)
 			z = hsi_img[row, col, :] - mu
 			z = np.reshape(z, (len(z), 1), order='F')
 
 			rx_img[row, col] = z.T @ sig_inv @ z
-			if i==0 and j==0: print(sig_inv)
-
+			# if i==0 and j==0: print(sig_inv[:,0])
 
 	return rx_img
