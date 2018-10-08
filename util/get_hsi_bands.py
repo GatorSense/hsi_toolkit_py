@@ -19,5 +19,4 @@ def get_hsi_bands(hsi_img, wavelengths, wavelengths_to_get):
 		waves.append(min_index)
 	waves=np.array(waves)
 	hsi_out = hsi_img[:,:,[int(m) for m in waves]];
-	print(hsi_out[:,0,0])
 	return hsi_out

@@ -15,17 +15,14 @@ def get_RGB(hsi_img, wavelengths):
 	 10/5/2018 - Yutai Zhou
 	"""
 	n_row, n_col, n_band = hsi_img.shape
-	red_wavelengths = list(range(620,660))
-	green_wavelengths = list(range(550,571))
-	blue_wavelengths = list(range(450,496))
+	red_wavelengths = list(range(619,659))
+	green_wavelengths = list(range(549,570))
+	blue_wavelengths = list(range(449,495))
 
 	RGB_img = np.zeros((n_row, n_col, 3))
 	RGB_img[:,:,0] = np.mean(get_hsi_bands(hsi_img, wavelengths, red_wavelengths), axis=2);
 	RGB_img[:,:,1] = np.mean(get_hsi_bands(hsi_img, wavelengths, green_wavelengths), axis=2);
 	RGB_img[:,:,2] = np.mean(get_hsi_bands(hsi_img, wavelengths, blue_wavelengths), axis=2);
 
-	RGB_img = (RGB_img - np.min(RGB_img.flatten())) / (np.max(RGB_img.flatten()) - np.min(RGB_img.flatten())) ** (1/1.5)
-	# print(RGB_img[:,0,0])
+	RGB_img = ((RGB_img - np.min(RGB_img.flatten())) / (np.max(RGB_img.flatten()) - np.min(RGB_img.flatten()))) ** (1/1.5)
 	return RGB_img
-
-# RGB_img = ((RGB_img - min(RGB_img(:)))/(max(RGB_img(:))-min(RGB_img(:)))).^(1/1.5);
