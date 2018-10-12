@@ -26,10 +26,15 @@ tgt_spectra = an_hsi_img_for_tgt_det_demo['tgt_spectra']
 wavelengths = an_hsi_img_for_tgt_det_demo['wavelengths']
 gt_img_sub = an_hsi_img_for_tgt_det_demo['gtImg_sub']
 
+ace_out = ace_detector(hsi_sub, tgt_spectra)
 
 n_row = 4; n_col = 3
 plt.subplot(n_row, n_col,1);
 plt.imshow(get_RGB(hsi_sub, wavelengths)); plt.title('RGB Image')
 plt.subplot(n_row, n_col,2);
 plt.imshow(gt_img_sub); plt.title('Ground Truth Image')
+
+plt.subplot(n_row, n_col,3);
+plt.imshow(ace_out); plt.title('Adapative Coherence/Cosine Estimator Squared')
+
 # plt.show()
