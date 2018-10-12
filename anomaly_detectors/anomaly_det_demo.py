@@ -1,7 +1,7 @@
-from scipy.io import loadmat
-import matplotlib.pyplot as plt
 import sys
 sys.path.append('../util/')
+from scipy.io import loadmat
+import matplotlib.pyplot as plt
 from rx_anomaly import rx_anomaly
 from get_RGB import get_RGB
 """
@@ -19,7 +19,7 @@ outputs:
 5/5/2018 - Alina Zare
 10/1/2018 - Python Implementation by Yutai Zhou
 """
-an_hsi_image_sub_for_demo = loadmat('../datasets/an_hsi_image_sub_for_demo.mat')
+an_hsi_image_sub_for_demo = loadmat('an_hsi_image_sub_for_demo.mat')
 hsi_img_sub = an_hsi_image_sub_for_demo['hsi_img_sub']
 mask_sub = an_hsi_image_sub_for_demo['mask_sub']
 wavelengths = an_hsi_image_sub_for_demo['wavelengths']
@@ -35,4 +35,4 @@ plt.imshow(mask_sub); plt.title('Valid Mask')
 
 plt.subplot(n_row, n_col,3);
 plt.imshow(rx_out); plt.title('RX Anomaly')
-# plt.show()
+plt.show()
