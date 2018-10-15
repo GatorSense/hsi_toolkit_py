@@ -1,6 +1,7 @@
 import sys
 sys.path.append('../util/')
 from scipy.io import loadmat
+import numpy as np
 import matplotlib.pyplot as plt
 from rx_anomaly import rx_anomaly
 from get_RGB import get_RGB

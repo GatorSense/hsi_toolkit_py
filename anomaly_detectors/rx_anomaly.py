@@ -15,7 +15,7 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 	5/5/2018 - Edited by Alina Zare
 	10/1/2018 - Python Implementation by Yutai Zhou
 	"""
-	def pinv_matlab(A, tol, show = False):
+	# def pinv_matlab(A, tol, show = False):
 		u, s, v = np.linalg.svd(A)
 		r1 = np.argwhere(s > tol).shape[0]
 		v = np.delete(v, list(range(r1,len(v))), axis = 1)
@@ -25,50 +25,46 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 		s = np.reshape(s,(len(s),1))
 		# if show: print(tol)
 
-
 		return (v * s.T) @ u.T
 
 	n_row, n_col, n_band = hsi_img.shape
 	n_pixels = n_row * n_col
-
-	mask = np.ones((n_row, n_col)) if mask is None else mask
+	hsi_data = np.reshape(hsi_img, (n_pixels, n_band), order='F').T
 
 	# Create the mask
 	mask_width = 1 + 2 * guard_win + 2 * bg_win
-	half_width = guard_win + bg_win
-	mask_rg = mask_width# 13
-
 	b_mask = np.ones((mask_width, mask_width))
-	b_mask[bg_win:b_mask.shape[0] - bg_win, bg_win:b_mask.shape[0] - bg_win] = False
+	b_mask[bg_win:b_mask.shape[0] - bg_win, bg_win:b_mask.shape[0] - bg_win] = 0
 
-	hsi_data = np.reshape(hsi_img, (n_pixels, n_band), order='F').T
 	# run the detector (only on fully valid points)
+	mask = np.ones((n_row, n_col)) if mask is None else mask
 	rx_img = np.zeros((n_row, n_col))
+	half_width = guard_win + bg_win
 
 	for i in range(0, n_col - mask_width + 1):
 		for j in range(0, n_row - mask_width + 1):
 			row = j + half_width
 			col = i + half_width
 
-			if mask[row, col] is None: continue
+			if mask[row, col] == 0: continue
 
 			b_mask_img = np.zeros((n_row, n_col))
-			b_mask_img[j:mask_rg + j, i:mask_rg + i] = b_mask #when i=j=1, j:mask_rg + j = 1:14
+			b_mask_img[j:mask_width + j, i:mask_width + i] = b_mask
 			b_mask_list = np.reshape(b_mask_img, (b_mask_img.size), order='F')
+
 			# pull out background points
 			bg = hsi_data[:, [int(m) for m in np.argwhere(b_mask_list == 1)]]
 
-			# Mahlanobis distance
-			covariance = np.cov(bg.T, rowvar=False)
-			s = np.linalg.svd(covariance, compute_uv=False)
-			# if i ==0 and j==0: np.linalg.pinv(covariance, rcond=np.max(covariance.shape)*np.spacing(np.float32(np.linalg.norm(s, ord=np.inf))))
-			sig_inv = np.linalg.pinv(np.float32(covariance), rcond=np.max(covariance.shape)*np.spacing(np.float32(np.linalg.norm(s, ord=np.inf))))
+			# Mahalanobis distance
+			covariance = np.cov(bg.T, rowvar=False) # covaraince complies with matlab, breaks down at pinv
+			s = np.float32(np.linalg.svd(covariance, compute_uv=False))
+			rcond = np.max(covariance.shape)*np.spacing(np.float32(np.linalg.norm(s, ord=np.inf)))
+			sig_inv = np.linalg.pinv(covariance, rcond=rcond)
 
 			mu = np.mean(bg, 1)
 			z = hsi_img[row, col, :] - mu
 			z = np.reshape(z, (len(z), 1), order='F')
 
 			rx_img[row, col] = z.T @ sig_inv @ z
-			# if i==0 and j==0: print(sig_inv[:,0])
 
 	return rx_img
