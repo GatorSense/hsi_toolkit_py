@@ -1,4 +1,5 @@
 import numpy as np
+
 def img_det(det_func, hsi_img, tgt_sig, mask = None, **kwargs):
 	"""
 	Wrapper to use array based detector as a image based detector with the given mask
