@@ -5,33 +5,33 @@ import numpy as np
 
 def ace_detector(hsi_img, tgt_sig, mask = None, mu = None, sig_inv = None):
 	"""
-	 Squared Adaptive Cosine/Coherence Estimator
+	Squared Adaptive Cosine/Coherence Estimator
 
-	 Inputs:
-	  hsi_image - n_row x n_col x n_band hyperspectral image
-	  tgt_sig - target signature (n_band x 1 - column vector)
-	  mask - binary image limiting detector operation to pixels where mask is true
-	         if not present or empty, no mask restrictions are used
-	  mu - background mean (n_band x 1 column vector)
-	  siginv - background inverse covariance (n_band x n_band matrix)
+	Inputs:
+		hsi_image - n_row x n_col x n_band hyperspectral image
+		tgt_sig - target signature (n_band x 1 - column vector)
+		mask - binary image limiting detector operation to pixels where mask is true
+		       if not present or empty, no mask restrictions are used
+		mu - background mean (n_band x 1 column vector)
+		sig_inv - background inverse covariance (n_band x n_band matrix)
 
-	 Outputs:
-	  ace_out - detector image
-	  mu - mean of input data
-	  siginv - inverse covariance of input data
+	Outputs:
+		ace_out - detector image
+		mu - mean of input data
+		sig_inv - inverse covariance of input data
 
 	 8/8/2012 - Taylor C. Glenn
 	 6/2/2018 - Edited by Alina Zare
+	 10/2018 - Python Implementation by Yutai Zhou
 	 """
-	 ace_out, mu, sig_inv = img_det(ace_det_helper, hsi_img, tgt_sig, mask, mu, sig_inv)
-	 return ace_out, mu, sig_inv
+	ace_out, kwargsout = img_det(ace_det_helper, hsi_img, tgt_sig, mask, mu = mu, sig_inv = sig_inv)
+	return ace_out, kwargsout['mu'], kwargsout['sig_inv']
 
-def ace_det_helper(hsi_data, tgt_sig, mu = None, sig_inv = None):
-	if mu is None:
-		mu = np.mean(hsi_data, axis = 1)
-	if sig_inv is None:
-		sig_inv = np.linalg.pinv(np.linalg.cov(hsi_data.T, rowvar = False))
+def ace_det_helper(hsi_data, tgt_sig, kwargs):
+	mu = np.mean(hsi_data, axis = 1) if kwargs['mu'] is None else kwargs['mu']
+	sig_inv = np.linalg.pinv(np.cov(hsi_data.T, rowvar = False)) if kwargs['sig_inv'] is None else kwargs['sig_inv']
 
+	mu = np.reshape(mu, (len(mu), 1), order='F')
 	s = tgt_sig - mu
 	z = hsi_data - mu
 
@@ -44,4 +44,4 @@ def ace_det_helper(hsi_data, tgt_sig, mu = None, sig_inv = None):
 
 	ace_data = A * A / (B * C)
 
-	return ace_data, mu, sig_inv
+	return ace_data, {'mu':mu, 'sig_inv': sig_inv}
