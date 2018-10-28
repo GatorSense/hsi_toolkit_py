@@ -3,7 +3,7 @@ sys.path.append('../util/')
 from rx_det import rx_det
 import numpy as np
 
-def ace_rx_detector(hsi_img, tgt_sig, mask = None, guard_win = None, bg_win = None, beta = 0):
+def ace_rx_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4, beta = 0):
 	"""
 	Adaptive Cosine/Coherence Estimator with RX style local background estimation
 
@@ -23,3 +23,31 @@ def ace_rx_detector(hsi_img, tgt_sig, mask = None, guard_win = None, bg_win = No
 	6/2/2018 - Edited by Alina Zare
 	10/2018 - Python Implementation by Yutai Zhou
 	"""
+	n_row, n_col, n_band = hsi_img.shape
+	mask = np.ones([n_row, n_col]) if mask is None else mask
+	reg = beta * np.eye(n_band)
+
+	out, kwargsout = rx_det(ace_rx_helper, hsi_img, tgt_sig, mask = mask, guard_win = guard_win, bg_win = bg_win, reg = reg)
+	return out, kwargsout
+
+def ace_rx_helper(x, ind, bg, b_mask_list, args, kwargs):
+	if bg is None:
+		sig_inv = args['global_sig_inv']
+		mu = args['mu']
+	else:
+		sig_inv = np.linalg.pinv(np.cov(bg.T, rowvar = False) + kwargs['reg'])
+		mu = np.mean(bg, 1)
+
+	z = x - mu
+	s = args['tgt_sig'] - np.tile(mu, (1, args['n_sig'])).T
+
+	sig_out = np.zeros(args['n_sig'])
+
+	for k in range(args['n_sig']):
+		st_sig_inv = s[:,k].T @ sig_inv
+		st_sig_inv_s = s[:,k].T @ sig_inv @ s[:,k]
+		sig_out[k] = ((st_sig_inv @ z) ** 2) / (st_sig_inv_s * (z.T @ sig_inv @ z))
+
+	sig_index = np.argmax(sig_out, 0)
+
+	return sig_out[sig_index], {'sig_index': sig_index}
