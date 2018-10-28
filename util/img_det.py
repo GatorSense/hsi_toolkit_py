@@ -19,7 +19,7 @@ def img_det(det_func, hsi_img, tgt_sig, mask = None, **kwargs):
 	# Flatten image-like inputs
 	# Mask (n x n) pixel arguments
 	for key, val in kwargs.items():
-		if type(val) == np.ndarray: # check me
+		if type(val) == np.ndarray: # CHECK ME
 			sz = val.shape
 			if sz.size == 2 and sz == (n_row, n_col):
 				val = np.reshape(val,(1, n_pixels), order='F')
