@@ -4,6 +4,7 @@ from scipy.io import loadmat
 import matplotlib.pyplot as plt
 from ace_detector import ace_detector
 from ace_rx_detector import ace_rx_detector
+from smf_detector import smf_detector
 from get_RGB import get_RGB
 """
 Demo that runs all signature detectors in the hsi_toolkit
@@ -34,6 +35,7 @@ guard_win = 1; bg_win = 3; beta = 0.001
 # call detectors
 ace_out, _, _ = ace_detector(hsi_sub, tgt_spectra)
 ace_rx_out, _ = ace_rx_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
+smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
 
 # visualization
 plt.figure(figsize=(10,10))
@@ -49,5 +51,6 @@ plt.subplot(n_row, n_col,3);
 plt.imshow(ace_out); plt.title('ACE Squared')
 plt.subplot(n_row, n_col,4);
 plt.imshow(ace_rx_out); plt.title('ACE RX Squared')
-
-# plt.show()
+plt.subplot(n_row, n_col,5);
+plt.imshow(smf_out); plt.title('Spectral Matched Filter', fontsize = 12)
+plt.show()
