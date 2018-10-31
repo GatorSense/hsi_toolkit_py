@@ -1,20 +1,20 @@
 import sys
-sys.path.append('../util/')
 from scipy.io import loadmat
-import numpy as np
 import matplotlib.pyplot as plt
-from rx_anomaly import rx_anomaly
+sys.path.append('../')
+sys.path.append('../util/')
+from anomaly_detectors import *
 from get_RGB import get_RGB
 """
 Demo that runs all anomaly detectors in the hsi_toolkit using example sub MUUFL Gulfport data
 
-inputs:
+Inputs:
 	hsi_image - n_row x n_col x n_band hyperspectral image
 	mask - binary image limiting detector operation to pixels where mask is true
 		   if not present or empty, no mask restrictions are used
 	wavelengths - 1 x n_band vector listing wavelength values for hsi_img in nm
 
-outputs:
+Outputs:
 	det_out - cell array of detector output images
 
 5/5/2018 - Alina Zare

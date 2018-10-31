@@ -1,10 +1,9 @@
 import sys
-sys.path.append('../util/')
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
-from ace_detector import ace_detector
-from ace_rx_detector import ace_rx_detector
-from smf_detector import smf_detector
+sys.path.append('../')
+sys.path.append('../util/')
+from signature_detectors import *
 from get_RGB import get_RGB
 """
 Demo that runs all signature detectors in the hsi_toolkit
@@ -32,13 +31,19 @@ gt_img_sub = an_hsi_img_for_tgt_det_demo['gtImg_sub']
 # init detector args
 guard_win = 1; bg_win = 3; beta = 0.001
 
+det_out = {}
 # call detectors
 ace_out, _, _ = ace_detector(hsi_sub, tgt_spectra)
+det_out['ACE Squared'] = ace_out
 ace_rx_out, _ = ace_rx_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
+det_out['ACE RX Squared'] = ace_rx_out
 smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
+det_out['Spectral Matched Filter'] = smf_out
+smf_rx_out    = smf_rx_detector(hsi_sub, tgt_spectra)
+det_out['Spectral Matched Filter RX'] = smf_rx_out
 
 # visualization
-plt.figure(figsize=(10,10))
+plt.figure(figsize=(10, 15))
 plt.subplots_adjust(hspace=.5)
 
 n_row = 4; n_col = 3
@@ -47,10 +52,10 @@ plt.imshow(get_RGB(hsi_sub, wavelengths)); plt.title('RGB')
 plt.subplot(n_row, n_col,2);
 plt.imshow(gt_img_sub); plt.title('Ground Truth')
 
-plt.subplot(n_row, n_col,3);
-plt.imshow(ace_out); plt.title('ACE Squared')
-plt.subplot(n_row, n_col,4);
-plt.imshow(ace_rx_out); plt.title('ACE RX Squared')
-plt.subplot(n_row, n_col,5);
-plt.imshow(smf_out); plt.title('Spectral Matched Filter', fontsize = 12)
+i = 3
+for key, value in det_out.items():
+	plt.subplot(n_row, n_col,i);
+	plt.imshow(value); plt.title(key)
+	i += 1
+
 plt.show()
