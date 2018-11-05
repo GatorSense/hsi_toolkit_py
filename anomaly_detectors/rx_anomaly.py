@@ -15,18 +15,6 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 	5/5/2018 - Edited by Alina Zare
 	10/1/2018 - Python Implementation by Yutai Zhou
 	"""
-	# def pinv_matlab(A, tol, show = False):
-		u, s, v = np.linalg.svd(A)
-		r1 = np.argwhere(s > tol).shape[0]
-		v = np.delete(v, list(range(r1,len(v))), axis = 1)
-		u = np.delete(u, list(range(r1,len(u))), axis = 1)
-		s = np.delete(s, list(range(r1,len(s))))
-		s = 1 / s
-		s = np.reshape(s,(len(s),1))
-		# if show: print(tol)
-
-		return (v * s.T) @ u.T
-
 	n_row, n_col, n_band = hsi_img.shape
 	n_pixels = n_row * n_col
 	hsi_data = np.reshape(hsi_img, (n_pixels, n_band), order='F').T
@@ -41,8 +29,8 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 	rx_img = np.zeros((n_row, n_col))
 	half_width = guard_win + bg_win
 
-	for i in range(0, n_col - mask_width + 1):
-		for j in range(0, n_row - mask_width + 1):
+	for i in range(n_col - mask_width + 1):
+		for j in range(n_row - mask_width + 1):
 			row = j + half_width
 			col = i + half_width
 
@@ -56,9 +44,10 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 			bg = hsi_data[:, [int(m) for m in np.argwhere(b_mask_list == 1)]]
 
 			# Mahalanobis distance
-			covariance = np.cov(bg.T, rowvar=False) # covaraince complies with matlab, breaks down at pinv
+			covariance = np.cov(bg.T, rowvar=False)
 			s = np.float32(np.linalg.svd(covariance, compute_uv=False))
 			rcond = np.max(covariance.shape)*np.spacing(np.float32(np.linalg.norm(s, ord=np.inf)))
+			# pinv differs from MATLAB
 			sig_inv = np.linalg.pinv(covariance, rcond=rcond)
 
 			mu = np.mean(bg, 1)
