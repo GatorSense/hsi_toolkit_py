@@ -33,7 +33,7 @@ def img_det(det_func, hsi_img, tgt_sig, mask = None, **kwargs):
 				kwargs[key] = val
 				print('image input to img_det!2')
 
-	det_data = np.empty(n_pixels)
+	det_data = np.empty((n_pixels,1))
 	det_data[:] = np.nan
 	det_data[[int(i) for i in np.argwhere(mask == 1)]], kwargsout = det_func(hsi_data[:, [int(i) for i in np.argwhere(mask == 1)]], tgt_sig, kwargs)
 

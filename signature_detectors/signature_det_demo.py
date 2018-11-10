@@ -33,7 +33,7 @@ det_out['RGB'] = get_RGB(hsi_sub, wavelengths)
 det_out['Ground Truth'] = gt_img_sub
 
 # init detector args
-guard_win = 1; bg_win = 3; beta = 0.001
+guard_win = 2; bg_win = 4; beta = 0.001
 
 # call detectors
 ace_out, _, _ = ace_detector(hsi_sub, tgt_spectra)
@@ -42,7 +42,7 @@ ace_rx_out, _ = ace_rx_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_
 det_out['ACE RX Squared'] = ace_rx_out
 smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
 det_out['Spectral Matched Filter'] = smf_out
-smf_rx_out    = smf_rx_detector(hsi_sub, tgt_spectra)
+smf_rx_out    = smf_rx_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
 det_out['Spectral Matched Filter RX'] = smf_rx_out
 
 # visualization
