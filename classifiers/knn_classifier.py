@@ -3,6 +3,7 @@ sys.path.append('../util/')
 from img_det import img_det
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
+
 def knn_classifier(hsi_img, train_data, K, mask = None):
 	"""
 	 A simple K nearest neigbors classifier
@@ -12,7 +13,7 @@ def knn_classifier(hsi_img, train_data, K, mask = None):
 	  train_data - numpy void structure containing training data
 	      		   train_data[0,i].Spectra: matrix containing training data from class i
 	  mask - binary image indicating where to apply classifier
-	  k - number of neighbors to use during classification
+	  K - number of neighbors to use during classification
 
 	10/31/2012 - Taylor C. Glenn
 	05/12/2018 - Edited by Alina Zare
@@ -34,7 +35,7 @@ def knn_cfr(hsi_data, train_data, kwargs):
 	last = -1
 	for i in range(n_class):
 		nt = train_data[i]['Spectra'].shape[1]
-		labels[(last + 1):(last + nt)] = i
+		labels[(last + 1):(last + nt + 1)] = i
 		last += nt
 
 	n_pix = hsi_data.shape[1]
