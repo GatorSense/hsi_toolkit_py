@@ -1,19 +1,17 @@
-import sys
-sys.path.append('../util/')
-from img_det import img_det
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
 
 def fuzzy_knn_classifier(hsi_img, train_data, K, m = 2):
 	"""
-	Fuzzy K nearest nieghbors classifier
+	Fuzzy K nearest neighbors classifier
 
 	Ref: Keller, J. M., Gray, M. R., & Givens, J. A. (1985). A fuzzy k-nearest neighbor algorithm. IEEE transactions on systems, man, and cybernetics, (4), 580-585.
 
 	Inputs:
 	  hsi_img: hyperspectral data cube (n_rows x n_cols x n_bands)
-	  train_data:  train_data - numpy void structure containing training data
- 	      		   train_data[0,i].Spectra: matrix containing training data from class i
+	  train_data - numpy void structure containing training data
+	      		   train_data['Spectra'][0, i]: matrix containing training data from class i
+				   train_data['name'][0, i]: matrix containing name of class i
 	  K:  number of neighbors to use during classification
 	  m:  fuzzifier (usually = 2)
 

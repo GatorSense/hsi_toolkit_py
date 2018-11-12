@@ -34,6 +34,7 @@ class_out = {}
 class_out['RGB'] = get_RGB(hsi_img, wavelength)
 class_out['KNN'] = knn_classifier(hsi_img, train_data, K = 3)
 class_out['FKNN'] = fuzzy_knn_classifier(hsi_img, train_data, K = 3, m = 2.1)
+class_out['PKNN'] = poss_knn_classifier(hsi_img, train_data, K = 3, eta = 0.01, m = 2.1)
 
 # KNN Results
 fig, ax = plt.subplots(1,2,figsize=(15, 8))
@@ -57,4 +58,15 @@ for i in range(0, len(train_data[0])):
 	plt.imshow(class_out['FKNN'][:,:,i]);
 	plt.title(train_data['name'][0][i][0])
 
+# Possibilistic KNN Results
+plt.figure(figsize=(10, 15))
+plt.subplots_adjust(hspace=.5)
+n_row = 2; n_col = 3
+plt.suptitle('Possibilistic KNN Results')
+plt.subplot(n_row, n_col, 1)
+plt.imshow(class_out['RGB']); plt.title('RGB')
+for i in range(0, len(train_data[0])):
+	plt.subplot(n_row, n_col, i + 2)
+	plt.imshow(class_out['PKNN'][:,:,i]);
+	plt.title(train_data['name'][0][i][0])
 plt.show()

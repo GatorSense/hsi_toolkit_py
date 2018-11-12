@@ -6,12 +6,13 @@ from sklearn.neighbors import NearestNeighbors
 
 def knn_classifier(hsi_img, train_data, K, mask = None):
 	"""
-	 A simple K nearest neigbors classifier
+	 A simple K nearest neighbors classifier
 
 	Inputs:
 	  hsi_img - hyperspectral data cube (n_rows x n_cols x n_bands)
 	  train_data - numpy void structure containing training data
-	      		   train_data[0,i].Spectra: matrix containing training data from class i
+	      		   train_data['Spectra'][0, i]: matrix containing training data from class i
+				   train_data['name'][0, i]: matrix containing name of class i
 	  mask - binary image indicating where to apply classifier
 	  K - number of neighbors to use during classification
 
