@@ -1,7 +1,7 @@
 # Gatorsense hsitoolkit anomaly detectors Python version
 hsi_toolkit_py/anomaly_detectors
 
-Suite of anomaly detectors currently in progress:
+Current suite of anomaly detectors:
 - rx_anomaly: local anomaly detector, Widowed Reed-Xiaoli anomaly detector uses local mean and covariance to determine pixel to background distance
 
 Suite of anomaly detectors to be implemented:

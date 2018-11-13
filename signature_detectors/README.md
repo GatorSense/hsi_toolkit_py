@@ -1,11 +1,11 @@
 # Gatorsense hsitoolkit signature detectors Python version
 hsi_toolkit_py/signature_detectors
 
-Suite of anomaly detectors currently in progress:
+Current suite of signature detectors:
 - ace_detector: Squared Adaptive Cosine/Coherence Estimator (Squared ACE), cosine of vector angle between target and pixel spectra after whitening based on background statistics, squared
-- ace_rx_detector: Adaptive Cosine/Coherence Estimator where background statistics are estimated from local window
+- ace_local_detector: Adaptive Cosine/Coherence Estimator where background statistics are estimated from local window
 - smf_detector: Spectral Matched Filter, inner product between target and pixel spectra after whitening based on background statistics
-- smf_rx_detector: Spectral Matched Filter using local background statistics
+- smf_local_detector: Spectral Matched Filter using local background statistics
 
 
 Suite of anomaly detectors to be implemented:

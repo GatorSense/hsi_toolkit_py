@@ -1,11 +1,9 @@
 # Gatorsense hsitoolkit classifiers Python version
 hsi_toolkit_py/classifiers
 
-Suite of anomaly detectors currently in progress:
+Current suite of classifiers:
 
 -knn_classifier: simple K-Nearest Neighbors classifier
-
-Suite of anomaly detectors to be implemented:
 
 -fuzzy_knn_classifier: the Fuzzy K-Nearest Neighbors classifier
 
