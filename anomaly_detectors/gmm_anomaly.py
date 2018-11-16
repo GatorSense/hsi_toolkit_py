@@ -2,7 +2,6 @@ import sys
 sys.path.append('../util/')
 from img_det import img_det
 import numpy as np
-import math
 from sklearn.mixture import GaussianMixture
 
 def gmm_anomaly(hsi_img, mask, n_comp):
