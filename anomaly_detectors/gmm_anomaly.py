@@ -4,7 +4,6 @@ from img_det import img_det
 import numpy as np
 import math
 from sklearn.mixture import GaussianMixture
-from sklearn.neighbors import KernelDensity
 
 def gmm_anomaly(hsi_img, mask, n_comp):
 	"""
