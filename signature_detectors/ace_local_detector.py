@@ -3,7 +3,7 @@ sys.path.append('../util/')
 from rx_det import rx_det
 import numpy as np
 
-def ace_rx_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4, beta = 0):
+def ace_local_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4, beta = 0):
 	"""
 	Adaptive Cosine/Coherence Estimator with RX style local background estimation
 
@@ -27,10 +27,10 @@ def ace_rx_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4, be
 	mask = np.ones([n_row, n_col]) if mask is None else mask
 	reg = beta * np.eye(n_band)
 
-	out, kwargsout = rx_det(ace_rx_helper, hsi_img, tgt_sig, mask = mask, guard_win = guard_win, bg_win = bg_win, reg = reg)
+	out, kwargsout = rx_det(ace_local_helper, hsi_img, tgt_sig, mask = mask, guard_win = guard_win, bg_win = bg_win, reg = reg)
 	return out, kwargsout
 
-def ace_rx_helper(x, ind, bg, b_mask_list, args, kwargs):
+def ace_local_helper(x, ind, bg, b_mask_list, args, kwargs):
 	if bg is None:
 		sig_inv = args['global_sig_inv']
 		mu = args['mu']

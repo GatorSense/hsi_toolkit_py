@@ -38,11 +38,11 @@ guard_win = 2; bg_win = 4; beta = 0.001
 # call detectors
 ace_out, _, _ = ace_detector(hsi_sub, tgt_spectra)
 det_out['ACE Squared'] = ace_out
-ace_rx_out, _ = ace_rx_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
+ace_rx_out, _ = ace_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
 det_out['ACE RX Squared'] = ace_rx_out
 smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
 det_out['Spectral Matched Filter'] = smf_out
-smf_rx_out    = smf_rx_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
+smf_rx_out    = smf_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
 det_out['Spectral Matched Filter RX'] = smf_rx_out
 
 # visualization

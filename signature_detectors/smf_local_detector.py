@@ -3,7 +3,7 @@ sys.path.append('../util/')
 from rx_det import rx_det
 import numpy as np
 
-def smf_rx_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4):
+def smf_local_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4):
 	"""
 	Spectral Matched Filter with RX style local background estimation
 
@@ -21,10 +21,10 @@ def smf_rx_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4):
 	10/25/2012 - Taylor C. Glenn
 	10/2018 - Python Implementation by Yutai Zhou
 	"""
-	out, kwargsout = rx_det(smf_rx_helper, hsi_img, tgt_sig, mask = mask, guard_win = guard_win, bg_win = bg_win)
+	out, kwargsout = rx_det(smf_local_helper, hsi_img, tgt_sig, mask = mask, guard_win = guard_win, bg_win = bg_win)
 	return out
 
-def smf_rx_helper(x, ind, bg, b_mask_list, args, kwargs):
+def smf_local_helper(x, ind, bg, b_mask_list, args, kwargs):
 	if bg is None:
 		sig_inv = args['global_sig_inv']
 		mu = args['mu']
