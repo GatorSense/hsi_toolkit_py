@@ -13,11 +13,13 @@ def img_det(det_func, hsi_img, tgt_sig, mask = None, **kwargs):
 
 	if mask is None:
 		mask = np.ones(n_row * n_col)
-
+	else:
+		mask_rows, mask_cols = mask.shape
+		mask = mask.reshape(mask_rows * mask_cols, order ='F')
 	hsi_data = np.reshape(hsi_img, (n_pixels, n_band), order='F').T
 
-	# Flatten image-like inputs
-	# Mask (n x n) pixel arguments
+	# Linearize image-like inputs
+	# Mask linearized (n x n) pixel arguments
 	for key, val in kwargs.items():
 		if type(val) == np.ndarray: # CHECK ME
 			sz = val.shape
