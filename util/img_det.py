@@ -10,7 +10,6 @@ def img_det(det_func, hsi_img, tgt_sig, mask = None, **kwargs):
 	"""
 	n_row, n_col, n_band = hsi_img.shape
 	n_pixels = n_row * n_col
-
 	if mask is None:
 		mask = np.ones(n_row * n_col)
 	else:
@@ -44,10 +43,9 @@ def img_det(det_func, hsi_img, tgt_sig, mask = None, **kwargs):
 		for key, val in kwargsout.items():
 			if type(val) is np.ndarray:
 				if val.squeeze().ndim == 1 and val.size == int(np.sum(mask)):
-					tmp = p.empty((1, n_pixels))
+					tmp = np.empty(n_pixels)
 					tmp[:] = np.nan
-					temp[mask] = val
-					kwargsout[key] = np.reshape(temp, (n_row, n_col), order='F')
-
+					tmp[[int(i) for i in np.argwhere(mask == 1)]] = val
+					kwargsout[key] = np.reshape(tmp, (n_row, n_col), order='F')
 
 	return np.reshape(det_data, (n_row, n_col), order='F'), kwargsout

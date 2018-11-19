@@ -7,22 +7,21 @@ from math import log
 
 def beta_anomaly(hsi_img, mask):
 	"""
-	%[beta_out] = beta_anomaly(hsi_img)
-	%
-	% Beta Distribution Anomaly Detector
-	%  fits beta distribution to each band assuming entire image is background
-	%  computes negative log likelihood of each pixel in the model
-	%
-	% inputs:
-	%  hsi_image - n_row x n_col x n_band hyperspectral image
-	%  mask - binary image limiting detector operation to pixels where mask is true
-	%         if not present or empty, no mask restrictions are used
-	%
-	% outputs:
-	%   beta_out - detector output image
-	%
-	% 8/24/2012 - Taylor C. Glenn
-	% 5/5/2018 - Edited by Alina Zare
+	Beta Distribution Anomaly Detector
+	 fits beta distribution to each band assuming entire image is background
+	 computes negative log likelihood of each pixel in the model
+
+	Inputs:
+	 hsi_image - n_row x n_col x n_band hyperspectral image
+	 mask - binary image limiting detector operation to pixels where mask is true
+	        if not present or empty, no mask restrictions are used
+
+	Outputs:
+	  beta_out - detector output image
+
+	8/24/2012 - Taylor C. Glenn
+	5/5/2018 - Edited by Alina Zare
+	11/2018 - Python Implementation by Yutai Zhou
 	"""
 	beta_out, kwargsout = img_det(beta_helper, hsi_img, None, mask)
 	return beta_out
