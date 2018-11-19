@@ -36,12 +36,12 @@ guard_win = 3; bg_win = 3; n_dim_ss = 3
 # det_out['RX Anomaly'] = rx_out
 # ssrx_out = ssrx_anomaly(hsi_img_sub, n_dim_ss, guard_win, bg_win)
 # det_out['SSRX Anomaly'] = ssrx_out
-# gmm_out = gmm_anomaly(hsi_img_sub, mask_sub, n_comp = 8)
-# det_out['GMM Anomaly'] = gmm_out
+gmm_out = gmm_anomaly(hsi_img_sub, mask_sub, n_comp = 8)
+det_out['GMM Anomaly'] = gmm_out
 # md_out = md_anomaly(hsi_img_sub, mask_sub)
 # det_out['MD Anomaly'] = md_out
-beta_out = beta_anomaly(hsi_img_sub, mask_sub)
-det_out['Beta Anomaly'] = beta_out
+# beta_out = beta_anomaly(hsi_img_sub, mask_sub)
+# det_out['Beta Anomaly'] = beta_out
 
 # visualization
 # plt.figure(figsize=(10, 15))
@@ -53,5 +53,5 @@ det_out['Beta Anomaly'] = beta_out
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
-plt.imshow(beta_out)
+plt.imshow(gmm_out)
 plt.show()

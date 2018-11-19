@@ -45,6 +45,6 @@ def beta_helper(hsi_data, tgt_sig, kwargs):
 	# compute likelihood of each pixel
 	likelihood = np.zeros((n_band, n_pixel))
 	for i in range(n_band):
-		likelihood[i,:] = np.log(beta.pdf(hsi_data[i,:], alphas[i], betas[i]))
+		likelihood[i,:] = beta.logpdf(hsi_data[i,:], alphas[i], betas[i])
 	beta_data = - np.sum(likelihood, 0)
 	return beta_data[:, np.newaxis], {'None': None}
