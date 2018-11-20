@@ -6,3 +6,5 @@ from md_anomaly import *
 from beta_anomaly import *
 from cbad_anomaly import *
 from fcbad_anomaly import *
+from gmrx_anomaly import *
+from csd_anomaly import *
