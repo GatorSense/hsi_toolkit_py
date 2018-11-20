@@ -6,6 +6,7 @@ Current suite of anomaly detectors:
 - gmm_anomaly: global anomaly detector, fits GMM assuming entire image is background computes negative log likelihood of each pixel in the fit model
 - md_anomaly: global anomaly detector, Mahalanobis Distance anomaly detector uses global image mean and covariance as background estimates
 - cbad_anomaly: global/cluster-based anomaly detector, Cluster Based Anomaly Detection (CBAD)
+- csd_anomaly: global anomaly detector, Complementary Subspace Detector
 
 
 Suite of Anomaly Detectors in progress:
@@ -13,6 +14,5 @@ Suite of Anomaly Detectors in progress:
 - beta_anomaly: global anomaly detector, fits beta distribution to each band assuming entire image is background computes negative log likelihood of each pixel in the model
 - fcbad_anomaly: global/cluster-based anomaly detector, Fuzzy Cluster Based Anomaly Detection (FCBAD)
 - gmrx_anomaly: global/cluster-based anomaly detector, fits GMM assuming entire image is background assigns pixels to highest posterior probability mixture component computes pixel Mahlanobis distance to component mean
-- csd_anomaly: global anomaly detector, Complementary Subspace Detector
 
 Contact: Alina Zare, azare@ufl.edu
