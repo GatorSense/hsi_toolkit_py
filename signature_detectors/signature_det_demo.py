@@ -38,12 +38,12 @@ guard_win = 2; bg_win = 4; beta = 0.001
 # call detectors
 ace_out, _, _ = ace_detector(hsi_sub, tgt_spectra)
 det_out['ACE Squared'] = ace_out
-ace_rx_out, _ = ace_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
-det_out['ACE RX Squared'] = ace_rx_out
+ace_local_out, _ = ace_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
+det_out['ACE Local Squared'] = ace_local_out
 smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
-det_out['Spectral Matched Filter'] = smf_out
-smf_rx_out    = smf_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
-det_out['Spectral Matched Filter RX'] = smf_rx_out
+det_out['SMF'] = smf_out
+smf_local_out    = smf_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
+det_out['SMF Local'] = smf_local_out
 
 # visualization
 plt.figure(figsize=(10, 15))
@@ -55,5 +55,4 @@ for key, value in det_out.items():
 	plt.subplot(n_row, n_col, i);
 	plt.imshow(value); plt.title(key)
 	i += 1
-
 plt.show()

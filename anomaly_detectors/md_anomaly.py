@@ -35,4 +35,4 @@ def md_helper(hsi_data, tgt_sig, kwargs):
 	dist_data = np.zeros(n_pixel)
 	for i in range(n_pixel):
 		dist_data[i] = z[:,i].T @ sig_inv @ z[:,i]
-	return dist_data[:,np.newaxis], {'None', None}
+	return dist_data, {'None', None}

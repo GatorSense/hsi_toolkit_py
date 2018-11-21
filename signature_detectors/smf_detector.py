@@ -59,4 +59,4 @@ def smf_det_array_helper(hsi_data, tgt_sig, kwargs):
 	f = (s.T @ sig_inv) / np.sqrt(s.T @ sig_inv @ s)
 
 	smf_data = f @ z
-	return smf_data.T, {'mu':mu, 'sig_inv': sig_inv}
+	return smf_data.T.squeeze(), {'mu':mu, 'sig_inv': sig_inv}

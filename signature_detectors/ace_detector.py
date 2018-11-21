@@ -44,4 +44,4 @@ def ace_det_helper(hsi_data, tgt_sig, kwargs):
 
 	ace_data = A * A / (B * C)
 
-	return ace_data.T, {'mu':mu, 'sig_inv': sig_inv}
+	return ace_data.T.squeeze(), {'mu':mu, 'sig_inv': sig_inv}

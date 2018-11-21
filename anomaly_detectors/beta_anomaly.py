@@ -46,4 +46,4 @@ def beta_helper(hsi_data, tgt_sig, kwargs):
 	for i in range(n_band):
 		likelihood[i,:] = beta.logpdf(hsi_data[i,:], alphas[i], betas[i])
 	beta_data = - np.sum(likelihood, 0)
-	return beta_data[:, np.newaxis], {'None': None}
+	return beta_data, {'None': None}

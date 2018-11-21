@@ -27,7 +27,8 @@ def fcbad_anomaly(hsi_img, n_cluster, mask = None):
 	11/2018 - Python Implementation by Yutai Zhou
 	"""
 	fcbad_out, kwargsout = img_det(fcbad_out_helper, hsi_img, None, mask, n_cluster = n_cluster)
-	return fcbad_out
+	cluster_img = kwargsout['idx']
+	return fcbad_out, cluster_img
 
 def fcbad_out_helper(hsi_data, tgt_sig, kwargs):
 	n_cluster = kwargs['n_cluster']
@@ -70,4 +71,4 @@ def fcbad_out_helper(hsi_data, tgt_sig, kwargs):
 			m_dists[i] = z.T @ sig_inv[:,:,i] @ z
 
 		fcbad_data[j] = U[:,j].T @ m_dists
-	return fcbad_data[:, np.newaxis], {'idx': idx}
+	return fcbad_data, {'idx': idx}

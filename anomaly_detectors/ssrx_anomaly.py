@@ -26,14 +26,16 @@ def ssrx_anomaly(hsi_img, n_dim_ss, guard_win, bg_win):
 	hsi_data = np.reshape(hsi_img, (n_pixels, n_band), order='F').T
 
 	# PCA with no dim deduction
-	pca_data, _, evec, evals, _ = pca(hsi_data, 1)
+	pca_data, _, evecs, evals, _ = pca(hsi_data, 1)
+
 	pca_img = np.reshape(pca_data.T, (n_row, n_col, n_band), order='F')
-	proj = np.eye(n_band) - evec[:, 0:n_dim_ss] @ evec[:, 0:n_dim_ss].T
+	proj = np.eye(n_band) - evecs[:, :n_dim_ss] @ evecs[:, :n_dim_ss].T
 	# Create the mask
 	mask_width = 1 + 2 * guard_win + 2 * bg_win
 	half_width = guard_win + bg_win
+	mask_rg = np.array(range(mask_width)) - 1
 
-	b_mask = np.ones((mask_width, mask_width))
+	b_mask = np.ones((mask_width, mask_width), dtype=bool)
 	b_mask[bg_win:b_mask.shape[0] - bg_win, bg_win:b_mask.shape[0] - bg_win] = 0
 
 	# run the detector (only on fully valid points)
@@ -46,22 +48,21 @@ def ssrx_anomaly(hsi_img, n_dim_ss, guard_win, bg_win):
 
 			b_mask_img = np.zeros((n_row, n_col))
 			b_mask_img[j:mask_width + j, i:mask_width + i] = b_mask
-			b_mask_list = np.reshape(b_mask_img, (b_mask_img.size), order='F')
-
+			b_mask_list = np.reshape(b_mask_img, -1, order='F')
 			# pull out background points
-			bg = pca_data[:, [int(m) for m in np.argwhere(b_mask_list == 1)]]
+			bg = pca_data[:, b_mask_list == 1]
 
 			# Mahalanobis distance
 			covariance = np.cov(bg.T, rowvar=False)
-			# if i == 0 and j==0:
-			# 	print(pca_data[:,78])
-			s = np.float32(np.linalg.svd(covariance, compute_uv=False))
-			rcond = np.max(covariance.shape)*np.spacing(np.float64(np.linalg.norm(s, ord=np.inf)))
-			# pinv differs from MATLAB
-			sig_inv = np.linalg.pinv(covariance, rcond=rcond)
 
+			s = np.float32(np.linalg.svd(covariance, compute_uv=False))
+			rcond = np.max(covariance.shape)*np.spacing(np.float32(np.linalg.norm(s, ord=np.inf)))
+			# pinv differs from MATLAB
+			sig_inv = np.linalg.pinv(covariance)
 			mu = np.mean(bg, 1)
 			z = proj @ pca_img[row, col, :].squeeze() - proj @ mu
-
 			ssrx_img[row, col] = z.T @ sig_inv @ z
+
+			if i == 4 and j==4:
+				print(pca_img[row, col, :].squeeze())
 	return ssrx_img

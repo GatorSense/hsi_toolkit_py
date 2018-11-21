@@ -21,11 +21,11 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 
 	# Create the mask
 	mask_width = 1 + 2 * guard_win + 2 * bg_win
-	b_mask = np.ones((mask_width, mask_width))
+	b_mask = np.ones((mask_width, mask_width), dtype=bool)
 	b_mask[bg_win:b_mask.shape[0] - bg_win, bg_win:b_mask.shape[0] - bg_win] = 0
 
 	# run the detector (only on fully valid points)
-	mask = np.ones((n_row, n_col)) if mask is None else mask
+	mask = np.ones((n_row, n_col)) if mask is None else mask.astype(bool)
 	rx_img = np.zeros((n_row, n_col))
 	half_width = guard_win + bg_win
 
@@ -38,10 +38,10 @@ def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 
 			b_mask_img = np.zeros((n_row, n_col))
 			b_mask_img[j:mask_width + j, i:mask_width + i] = b_mask
-			b_mask_list = np.reshape(b_mask_img, (b_mask_img.size), order='F')
+			b_mask_list = np.reshape(b_mask_img, -1, order='F')
 
 			# pull out background points
-			bg = hsi_data[:, [int(m) for m in np.argwhere(b_mask_list == 1)]]
+			bg = hsi_data[:, b_mask_list == 1]
 
 			# Mahalanobis distance
 			covariance = np.cov(bg.T, rowvar=False)

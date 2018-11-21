@@ -28,13 +28,12 @@ def pca(X, frac, mask = None):
 	if n_dim > 210:
 		input('That is a lot of dimensions. It may crash. Press ctrl + c to stop execution, or enter to continue')
 
-	mask = np.ones(n_sample) if mask is None else mask
-
-	mu = np.mean(X[:, [int(m) for m in np.argwhere(mask == 1)]], 1)
-	sigma = np.cov(X[:, [int(m) for m in np.argwhere(mask == 1)]].T,  rowvar=False)
+	mask = np.ones(n_sample, dtype=bool) if mask is None else mask
+	mu = np.mean(X[:, mask == 1], 1)
+	sigma = np.cov(X[:, mask == 1].T,  rowvar=False)
 
 	z = X - mu[:, np.newaxis]
-	U, S, V = scp.linalg.svd(sigma, lapack_driver = 'gesvd')
+	U, S, V = scp.linalg.svd(sigma, lapack_driver = 'gesdd')
 
 	evecs = U
 

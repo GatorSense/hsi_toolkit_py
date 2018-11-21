@@ -24,7 +24,8 @@ def cbad_anomaly(hsi_img, n_cluster, mask = None):
 	11/2018 - Python Implementation by Yutai Zhou
 	"""
 	cbad_out, kwargsout = img_det(cbad_out_helper, hsi_img, None, mask, n_cluster = n_cluster)
-	return cbad_out
+	cluster_img = kwargsout['idx']
+	return cbad_out, cluster_img
 
 def cbad_out_helper(hsi_data, tgt_sig, kwargs):
 	n_cluster = kwargs['n_cluster']
@@ -44,5 +45,4 @@ def cbad_out_helper(hsi_data, tgt_sig, kwargs):
 	for i in range(n_pixel):
 		z = hsi_data[:,i] - mu[:,kmeans.labels_[i]]
 		cbad_data[i] = z.T @ sig_inv[:,:,kmeans.labels_[i]] @ z
-
-	return cbad_data[:, np.newaxis], {'idx': kmeans.labels_}
+	return cbad_data, {'idx': kmeans.labels_}
