@@ -33,26 +33,37 @@ det_out['RGB'] = get_RGB(hsi_sub, wavelengths)
 det_out['Ground Truth'] = gt_img_sub
 
 # init detector args
-guard_win = 2; bg_win = 4; beta = 0.001
+guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
 
 # call detectors
 ace_out, _, _ = ace_detector(hsi_sub, tgt_spectra)
 det_out['ACE Squared'] = ace_out
 ace_local_out, _ = ace_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
 det_out['ACE Local Squared'] = ace_local_out
+ace_ss_out = ace_ss_detector(hsi_sub, tgt_spectra)
+det_out['ACE SS'] = ace_ss_out
+ace_rt_out, _, _ = ace_rt_detector(hsi_sub, tgt_spectra)
+det_out['ACE RT'] = ace_rt_out
+ace_rt_max_out, _, _ = ace_rt_max_detector(hsi_sub, tgt_spectra)
+det_out['ACE RT Max'] = ace_rt_max_out
 smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
 det_out['SMF'] = smf_out
-smf_local_out    = smf_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
+smf_local_out = smf_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
 det_out['SMF Local'] = smf_local_out
+fam_statistic_out = fam_statistic(hsi_sub, tgt_spectra)
+det_out['FAM Statistic'] = fam_statistic_out
+osp_out = osp_detector(hsi_sub, tgt_spectra, n_dim_ss = 10)
+det_out['OSP'] = osp_out
 
 # visualization
-plt.figure(figsize=(10, 15))
-plt.subplots_adjust(hspace=.5)
-n_row = 4; n_col = 3
-
-i = 1
-for key, value in det_out.items():
-	plt.subplot(n_row, n_col, i);
-	plt.imshow(value); plt.title(key)
-	i += 1
+# plt.figure(figsize=(10, 15))
+# plt.subplots_adjust(hspace=.5)
+# n_row = 4; n_col = 3
+#
+# i = 1
+# for key, value in det_out.items():
+# 	plt.subplot(n_row, n_col, i);
+# 	plt.imshow(value); plt.title(key)
+# 	i += 1
+plt.imshow(ace_rt_max_out)
 plt.show()
