@@ -14,6 +14,7 @@ Current suite of signature detectors:
 
 Suite of anomaly detectors in development:
 - acert_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
+- cem_detector: Constrained Energy Minimization Detector
 - qmf_detector: Quadratic Spectral Matched Filter
 - sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
 - smf_max_detector: Spectral Matched Filter given multiple target signatures. Confidence value for each pixel is max SMF score over all target signatures.
@@ -24,7 +25,6 @@ Suite of anomaly detectors to be implemented:
 - abd_detector: Abudance of target signature when unmixed using target signature and background endmembers assuming the linear mixing model
 - amsd_detector: Adaptive Matched Subspace Detector
 - ccmf_detector: Class Conditional Matched Filter, Segment data using a Gaussian Mixture Model and then apply SMF to each component
-- cem_detector: Constrained Energy Minimization Detector
 - ctmf_detector: Cluster Tuned Matched Filter
 - ftmf_statistic: Finite Target Matched Filter
 - ha_detector: Hybrid Abundance Detector, unmix using background endmembers as well as using background and target endmembers, model proportions with a Gaussian mixture, compute pixel-wise likelihood ratios
