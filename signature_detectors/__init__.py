@@ -10,3 +10,4 @@ from fam_statistic import *
 from osp_detector import *
 from qmf_detector import *
 from sam_detector import *
+from spsmf_detector import *

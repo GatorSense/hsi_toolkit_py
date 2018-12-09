@@ -17,6 +17,8 @@ Suite of anomaly detectors in development:
 - qmf_detector: Quadratic Spectral Matched Filter
 - sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
 - smf_max_detector: Spectral Matched Filter given multiple target signatures. Confidence value for each pixel is max SMF score over all target signatures.
+- spsmf_detector: Subpixel Spectral Matched Filter
+
 
 Suite of anomaly detectors to be implemented:
 - abd_detector: Abudance of target signature when unmixed using target signature and background endmembers assuming the linear mixing model
@@ -30,7 +32,6 @@ Suite of anomaly detectors to be implemented:
 - hsd_rx_detector: Hybrid Structured Detector using local background estimation
 - hud_detector: Hybrid Unstructured Detector (Broadwater and Chellappa's method)
 - palm_detector: Pairwise Adaptive Linear Matched Filter
-- spsmf_detector: Subpixel Spectral Matched Filter
 
 <!-- Anomaly detectors can also be run in *Segmented* mode using segmented.m utility.
 Segmented mode is where a detector is applied to segments of the imagery separately (i.e., background statistics computed from segment rather than full image).  
