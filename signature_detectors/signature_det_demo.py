@@ -54,9 +54,10 @@ guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
 # det_out['FAM Statistic'] = fam_statistic_out
 # osp_out = osp_detector(hsi_sub, tgt_spectra, n_dim_ss = 10)
 # det_out['OSP'] = osp_out
-qmf_out = qmf_detector(hsi_sub, tgt_spectra, 0.1 * np.eye(hsi_sub.shape[2]))
-det_out['QMF'] = qmf_out
-
+# qmf_out = qmf_detector(hsi_sub, tgt_spectra, 0.1 * np.eye(hsi_sub.shape[2]))
+# det_out['QMF'] = qmf_out
+sam_out = sam_detector(hsi_sub, tgt_spectra)
+det_out['SAM'] = sam_out
 # visualization
 # plt.figure(figsize=(10, 15))
 # plt.subplots_adjust(hspace=.5)
@@ -67,5 +68,5 @@ det_out['QMF'] = qmf_out
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
-plt.imshow(qmf_out)
+plt.imshow(sam_out)
 plt.show()
