@@ -7,3 +7,4 @@ from ace_rt_detector import *
 from ace_rt_max_detector import *
 from fam_statistic import *
 from osp_detector import *
+from qmf_detector import *
