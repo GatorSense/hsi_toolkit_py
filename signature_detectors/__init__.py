@@ -7,6 +7,7 @@ from amsd_detector import *
 from cem_detector import *
 from ctmf_detector import *
 from fam_statistic import *
+from ftmf_detector import *
 from osp_detector import *
 from qmf_detector import *
 from sam_detector import *
