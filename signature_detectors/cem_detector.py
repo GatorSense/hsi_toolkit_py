@@ -21,7 +21,7 @@ def cem_detector(hsi_img, tgt_sig, mask = None):
 
 	8/8/2012 - Taylor C. Glenn
 	6/2/2018 - Edited by Alina Zare
-	11/2018 - Python Implementation by Yutai Zhou
+	12/2018 - Python Implementation by Yutai Zhou
 	"""
 
 	cem_out, kwargsout = img_det(cem_helper, hsi_img, tgt_sig, mask)
