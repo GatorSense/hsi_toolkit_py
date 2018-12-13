@@ -5,6 +5,7 @@ from ace_rt_max_detector import *
 from ace_ss_detector import *
 from amsd_detector import *
 from cem_detector import *
+from ccmf_detector import *
 from ctmf_detector import *
 from fam_statistic import *
 from ftmf_detector import *
