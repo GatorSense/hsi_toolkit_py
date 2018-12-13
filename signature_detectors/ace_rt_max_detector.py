@@ -34,15 +34,14 @@ def ace_rt_max_helper(hsi_data, tgt_sig, kwargs):
 	mu = mu[:, np.newaxis]
 
 	n_sigs = tgt_sig.shape[1]
-	n_pix = hsi_data.shape[1]
+	n_pixel = hsi_data.shape[1]
 
 	S = tgt_sig - mu
 	z = hsi_data - mu
-
-	det = np.zeros((n_sigs, n_pix))
+	det = np.zeros((n_sigs, n_pixel))
 
 	for i in range(n_sigs):
-		s = S[:,i]
+		s = S[:,i][:,np.newaxis]
 		st_sig_inv = s.T @ sig_inv
 		st_sig_inv_s = s.T @ sig_inv @ s
 

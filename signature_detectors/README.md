@@ -13,7 +13,7 @@ Current suite of signature detectors:
 
 
 Suite of anomaly detectors in development:
-!- acert_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
+?- acert_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
 !- amsd_detector: Adaptive Matched Subspace Detector
 ? - ccmf_detector: Class Conditional Matched Filter, Segment data using a Gaussian Mixture Model and then apply SMF to each component
 ?- cem_detector: Constrained Energy Minimization Detector
