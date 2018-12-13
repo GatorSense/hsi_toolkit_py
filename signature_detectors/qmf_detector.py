@@ -24,8 +24,8 @@ def qmf_detector(hsi_img, tgt_sig, tgt_cov):
 	for i in range(n_col - 1):
 		for j in range(n_row - 1):
 
-			diff1 = hsi_img[j,i+1,:] - hsi_img[j,i,:]
-			diff2 = hsi_img[j+1,i,:] - hsi_img[j,i,:]
+			diff1 = (hsi_img[j,i+1,:] - hsi_img[j,i,:])[:,np.newaxis]
+			diff2 = (hsi_img[j+1,i,:] - hsi_img[j,i,:])[np.newaxis,:]
 			running_cov = running_cov + diff1 @ diff1.T + diff2 @ diff2.T
 
 	noise_cov = running_cov / (2 * n_pixel - 1)

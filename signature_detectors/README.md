@@ -13,17 +13,17 @@ Current suite of signature detectors:
 
 
 Suite of anomaly detectors in development:
-- acert_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
-- amsd_detector: Adaptive Matched Subspace Detector
-! - ccmf_detector: Class Conditional Matched Filter, Segment data using a Gaussian Mixture Model and then apply SMF to each component
-- cem_detector: Constrained Energy Minimization Detector
-!- ctmf_detector: Cluster Tuned Matched Filter
-- ftmf_statistic: Finite Target Matched Filter
-- qmf_detector: Quadratic Spectral Matched Filter
-- sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
-- smf_max_detector: Spectral Matched Filter given multiple target signatures. Confidence value for each pixel is max SMF score over all target signatures.
-- spsmf_detector: Subpixel Spectral Matched Filter
-- palm_detector: Pairwise Adaptive Linear Matched Filter
+!- acert_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
+!- amsd_detector: Adaptive Matched Subspace Detector
+? - ccmf_detector: Class Conditional Matched Filter, Segment data using a Gaussian Mixture Model and then apply SMF to each component
+?- cem_detector: Constrained Energy Minimization Detector
+?- ctmf_detector: Cluster Tuned Matched Filter
+!- ftmf_statistic: Finite Target Matched Filter
+?- qmf_detector: Quadratic Spectral Matched Filter
+?- sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
+?- smf_max_detector: Spectral Matched Filter given multiple target signatures. Confidence value for each pixel is max SMF score over all target signatures.
+!- spsmf_detector: Subpixel Spectral Matched Filter
+?- palm_detector: Pairwise Adaptive Linear Matched Filter
 
 
 Suite of anomaly detectors to be implemented:

@@ -48,8 +48,8 @@ guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
 # det_out['ACE RT Max'] = ace_rt_max_out
 # amsd_out= amsd_detector(hsi_sub, tgt_spectra, n_dim_tgt = 1, n_dim_bg = 3)
 # det_out['AMSD'] = amsd_out
-ccmf_out, _ = ccmf_detector(hsi_sub, tgt_spectra, n_comp = 2)
-det_out['CCMF'] = ccmf_out
+# ccmf_out, _ = ccmf_detector(hsi_sub, tgt_spectra, n_comp = 2)
+# det_out['CCMF'] = ccmf_out
 # cem_out, w = cem_detector(hsi_sub, tgt_spectra)
 # det_out['CEM'] = cem_out
 # ctmf_out, _ = ctmf_detector(hsi_sub, tgt_spectra, n_cluster = 2)
@@ -70,10 +70,11 @@ det_out['CCMF'] = ccmf_out
 # det_out['QMF'] = qmf_out
 # sam_out = sam_detector(hsi_sub, tgt_spectra)
 # det_out['SAM'] = sam_out
-# spsmf_out = spsmf_detector(hsi_sub, tgt_spectra)
-# det_out['SPSMF'] = spsmf_out
+spsmf_out = spsmf_detector(hsi_sub, tgt_spectra)
+det_out['SPSMF'] = spsmf_out
 # palm_out = palm_detector(hsi_sub, tgt_spectra, n_comp = 5)
 # det_out['PALM'] = palm_out
+
 # visualization
 # plt.figure(figsize=(10, 15))
 # plt.subplots_adjust(hspace=.5)
@@ -84,5 +85,5 @@ det_out['CCMF'] = ccmf_out
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
-plt.imshow(ccmf_out)
-plt.show()
+plt.imshow(spsmf_out)
+# plt.show()
