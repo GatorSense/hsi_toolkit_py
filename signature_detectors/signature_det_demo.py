@@ -54,8 +54,8 @@ guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
 # det_out['CEM'] = cem_out
 # ctmf_out, _ = ctmf_detector(hsi_sub, tgt_spectra, n_cluster = 2)
 # det_out['CTMF'] = ctmf_out
-# ftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1)
-# det_out['FTMF'] = ftmf_out
+ftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1)
+det_out['FTMF'] = ftmf_out
 # smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
 # det_out['SMF'] = smf_out
 # smf_local_out = smf_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
@@ -70,8 +70,8 @@ guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
 # det_out['QMF'] = qmf_out
 # sam_out = sam_detector(hsi_sub, tgt_spectra)
 # det_out['SAM'] = sam_out
-spsmf_out = spsmf_detector(hsi_sub, tgt_spectra)
-det_out['SPSMF'] = spsmf_out
+# spsmf_out = spsmf_detector(hsi_sub, tgt_spectra)
+# det_out['SPSMF'] = spsmf_out
 # palm_out = palm_detector(hsi_sub, tgt_spectra, n_comp = 5)
 # det_out['PALM'] = palm_out
 
@@ -85,5 +85,5 @@ det_out['SPSMF'] = spsmf_out
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
-plt.imshow(spsmf_out)
-# plt.show()
+plt.imshow(ftmf_out)
+plt.show()

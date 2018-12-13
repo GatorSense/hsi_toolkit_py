@@ -36,26 +36,25 @@ def spsmf_helper(hsi_data, tgt_sig, kwargs):
 	sig_inv = np.linalg.pinv(np.cov(hsi_data.T, rowvar = False)) if kwargs['sig_inv'] is None else kwargs['sig_inv']
 
 	n_band, n_pixel = hsi_data.shape
-	s = tgt_sig
-	st_sig_inv = s.T @ sig_inv
-	st_sig_inv_s = s.T @ sig_inv @ s
+	s = tgt_sig # 72 x 1
+	st_sig_inv = s.T @ sig_inv # 1 x 72
+	st_sig_inv_s = s.T @ sig_inv @ s # 1 x 1
 	K = n_band
 
 	spsmf_data = np.zeros(n_pixel)
 
 	for i in range(n_pixel):
-		x = hsi_data[:,i][:, np.newaxis]
-		st_sig_inv_x = st_sig_inv @ x
-
+		x = hsi_data[:,i][:, np.newaxis] # 72x1
+		st_sig_inv_x = st_sig_inv @ x # 1 x 1
 		a0 = (x.T @ sig_inv @ x) * st_sig_inv_s - st_sig_inv_x ** 2
 		a1 = st_sig_inv_x * (s.T @ sig_inv @ mu) - st_sig_inv_s * (mu.T @ sig_inv @ x)
 		a2 = -K * st_sig_inv_s
 
-		beta = (-a1 + np.sqrt(a1 ** 2 - 4 * a2 @ a0)) / (2 * a2)
+		beta = (-a1 + np.sqrt(a1 ** 2 - 4 * a2 * a0)) / (2 * a2)
 		alpha = st_sig_inv @ (x - beta * mu) / st_sig_inv_s
-
 		z1 = x - mu
 		z2 = x - alpha * s - beta * mu
+
 		spsmf_data[i] = z1.T @ sig_inv @ z1 - (z2.T @ sig_inv @ z2) / (beta ** 2) - 2 * K * np.log(np.abs(beta))
 
-		return spsmf_data, {'None': None}
+	return spsmf_data, {'None': None}

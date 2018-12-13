@@ -22,7 +22,7 @@ Suite of anomaly detectors in development:
 ?- qmf_detector: Quadratic Spectral Matched Filter
 ?- sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
 ?- smf_max_detector: Spectral Matched Filter given multiple target signatures. Confidence value for each pixel is max SMF score over all target signatures.
-!- spsmf_detector: Subpixel Spectral Matched Filter
+?!- spsmf_detector: Subpixel Spectral Matched Filter
 ?- palm_detector: Pairwise Adaptive Linear Matched Filter
 
 
