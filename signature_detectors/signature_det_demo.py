@@ -5,6 +5,8 @@ sys.path.append('../')
 sys.path.append('../util/')
 from signature_detectors import *
 from get_RGB import get_RGB
+from img_seg import img_seg
+from sklearn.cluster import KMeans
 """
 Demo script that runs all signature detectors in hsi_toolkit_py
 
@@ -56,8 +58,8 @@ guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
 # det_out['CTMF'] = ctmf_out
 # ftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1)
 # det_out['FTMF'] = ftmf_out
-mtmf_out,_ = mtmf_statistic(hsi_sub, tgt_spectra)
-det_out['MTMF'] = mtmf_out
+# mtmf_out,_ = mtmf_statistic(hsi_sub, tgt_spectra)
+# det_out['MTMF'] = mtmf_out
 # smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
 # det_out['SMF'] = smf_out
 # smf_local_out = smf_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
@@ -77,6 +79,27 @@ det_out['MTMF'] = mtmf_out
 # palm_out = palm_detector(hsi_sub, tgt_spectra, n_comp = 5)
 # det_out['PALM'] = palm_out
 
+
+# Segmented Detector Examples
+
+# get Segments (using K-means here, but better ways to do this in general, see context-dependent methods for detection)
+# n_cluster = 3
+# n_row, n_col, n_band = hsi_sub.shape
+# idx = KMeans(n_clusters = n_cluster, n_init = 1).fit(hsi_sub.reshape((n_row * n_col, n_band), order='F')).labels_
+# idx_img = idx.reshape((n_row,n_col), order='F')
+#
+# segments = np.zeros((n_cluster,n_row,n_col))
+# for i in range(n_cluster):
+# 	segments[i,:,:] = idx_img == i
+
+# Segmented Spectral Angle Mapper
+# seg_sam_out = img_seg(sam_detector,hsi_sub, tgt_spectra, segments)
+# det_out['Seg SAM'] = seg_sam_out
+
+# Segmented Spectral Angle Mapper
+# seg_ace_out,_,_ = img_seg(ace_detector,hsi_sub, tgt_spectra, segments)
+# det_out['Seg ACE'] = seg_ace_out
+
 # visualization
 # plt.figure(figsize=(10, 15))
 # plt.subplots_adjust(hspace=.5)
@@ -87,5 +110,5 @@ det_out['MTMF'] = mtmf_out
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
-plt.imshow(mtmf_out)
+plt.imshow(seg_ace_out)
 plt.show()
