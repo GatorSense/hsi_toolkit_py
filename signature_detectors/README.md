@@ -12,13 +12,14 @@ Current suite of signature detectors:
 - smf_local_detector: Spectral Matched Filter using local background statistics
 
 
-Suite of anomaly detectors in development:
+Suite of anomaly detectors under development:
 ?- acert_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
 ?!- amsd_detector: Adaptive Matched Subspace Detector
 ? - ccmf_detector: Class Conditional Matched Filter, Segment data using a Gaussian Mixture Model and then apply SMF to each component
 ?- cem_detector: Constrained Energy Minimization Detector
 ?- ctmf_detector: Cluster Tuned Matched Filter
 !- ftmf_statistic: Finite Target Matched Filter
+!!??- mtmf_statistic: Mixture Tuned Matched Filter Infeasibility Statistic
 ?- qmf_detector: Quadratic Spectral Matched Filter
 ?- sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
 ?- smf_max_detector: Spectral Matched Filter given multiple target signatures. Confidence value for each pixel is max SMF score over all target signatures.
@@ -35,8 +36,6 @@ Suite of anomaly detectors to be implemented:
 - hsd_local_detector: Hybrid Structured Detector using local background estimation
 - hua_detector: Hybrid Unstructured Abundance Detector
 - hud_detector: Hybrid Unstructured Detector (Broadwater and Chellappa's method)
-- mfmf_statistic: Mixture Tuned Matched Filter Infeasibility Statistic
-
 
 <!-- Anomaly detectors can also be run in *Segmented* mode using segmented.m utility.
 Segmented mode is where a detector is applied to segments of the imagery separately (i.e., background statistics computed from segment rather than full image).  
