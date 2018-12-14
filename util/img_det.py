@@ -22,13 +22,13 @@ def img_det(det_func, hsi_img, tgt_sig, mask = None, **kwargs):
 	for key, val in kwargs.items():
 		if type(val) == np.ndarray: # CHECK ME
 			sz = val.shape
-			if sz.size == 2 and sz == (n_row, n_col):
+			if len(sz) == 2 and sz == (n_row, n_col):
 				val = np.reshape(val,(1, n_pixels), order='F')
 				val = val[mask == 1]
 				kwargs[key] = val
 				print('image input to img_det!1')
 
-			elif sz.size == 3 and sz[:2] == (n_row, n_col):
+			elif len(sz) == 3 and sz[:2] == (n_row, n_col):
 				val = np.reshape(val,(n_pix, sz[-1]), order='F').T
 				val = val[:, mask == 1]
 				kwargs[key] = val

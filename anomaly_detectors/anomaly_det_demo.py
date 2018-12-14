@@ -34,16 +34,16 @@ guard_win = 3; bg_win = 3; n_dim_ss = 3
 # call detectors
 # beta_out = beta_anomaly(hsi_img_sub, mask_sub)
 # det_out['Beta Anomaly'] = beta_out
-cbad_out, _ = cbad_anomaly(hsi_img_sub, 8, mask_sub)
-det_out['CBAD Anomaly'] = cbad_out
+# cbad_out, _ = cbad_anomaly(hsi_img_sub, 8, mask_sub)
+# det_out['CBAD Anomaly'] = cbad_out
 # csd_out = csd_anomaly(hsi_img_sub, 3, None, True)
 # det_out['CSD Anomaly'] = csd_out
 # fcbad_out, _ = fcbad_anomaly(hsi_img_sub, 8, mask_sub)
 # det_out['FCBAD Anomaly'] = fcbad_out
 # gmm_out = gmm_anomaly(hsi_img_sub, n_comp = 8, mask = mask_sub)
 # det_out['GMM Anomaly'] = gmm_out
-# gmrx_out = gmrx_anomaly(hsi_img_sub, n_comp = 8, mask = mask_sub)
-# det_out['GMRX Anomaly'] = gmrx_out
+gmrx_out = gmrx_anomaly(hsi_img_sub, n_comp = 8, mask = mask_sub)
+det_out['GMRX Anomaly'] = gmrx_out
 # md_out = md_anomaly(hsi_img_sub, mask_sub)
 # det_out['MD Anomaly'] = md_out
 # rx_out = rx_anomaly(hsi_img_sub, guard_win, bg_win, mask_sub)
@@ -61,6 +61,5 @@ det_out['CBAD Anomaly'] = cbad_out
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
-plt.imshow(cbad_out)
-# print(ssrx_out[14,:])
+plt.imshow(gmrx_out)
 plt.show()
