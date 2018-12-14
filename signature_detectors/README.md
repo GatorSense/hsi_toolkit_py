@@ -18,7 +18,7 @@ Suite of anomaly detectors under development:
 ? - ccmf_detector: Class Conditional Matched Filter, Segment data using a Gaussian Mixture Model and then apply SMF to each component
 ?- cem_detector: Constrained Energy Minimization Detector
 ?- ctmf_detector: Cluster Tuned Matched Filter
-!- ftmf_statistic: Finite Target Matched Filter
+?- ftmf_statistic: Finite Target Matched Filter
 !!??- mtmf_statistic: Mixture Tuned Matched Filter Infeasibility Statistic
 ?- qmf_detector: Quadratic Spectral Matched Filter
 ?- sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
