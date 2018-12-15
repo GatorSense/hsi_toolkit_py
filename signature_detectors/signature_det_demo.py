@@ -61,12 +61,14 @@ ems = hsi_sub[:3,1,:].T # need to provide background endmembers (can get them us
 # det_out['CTMF'] = ctmf_out
 # ftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1)
 # det_out['FTMF'] = ftmf_out
-ha_out = ha_detector(hsi_sub, tgt_spectra, ems, n_comp = 2)
-det_out['HA'] = ha_out
+# ha_out = ha_detector(hsi_sub, tgt_spectra, ems, n_comp = 2)
+# det_out['HA'] = ha_out
 # hsd_out, _ = hsd_detector(hsi_sub, tgt_spectra, ems)
 # det_out['HSD'] = hsd_out
 # hsd_local_out = hsd_local_detector(hsi_sub, tgt_spectra, ems, guard_win = guard_win, bg_win = bg_win, beta = beta)
 # det_out['HSD Local'] = hsd_local_out
+# hua_out = hua_detector(hsi_sub, tgt_spectra, ems, n_comp = 2)
+# det_out['HUA'] = hua_out
 # mtmf_out,_ = mtmf_statistic(hsi_sub, tgt_spectra)
 # det_out['MTMF'] = mtmf_out
 # smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
@@ -81,8 +83,8 @@ det_out['HA'] = ha_out
 # det_out['OSP'] = osp_out
 # qmf_out = qmf_detector(hsi_sub, tgt_spectra, 0.1 * np.eye(hsi_sub.shape[2]))
 # det_out['QMF'] = qmf_out
-# sam_out = sam_detector(hsi_sub, tgt_spectra)
-# det_out['SAM'] = sam_out
+sam_out = sam_detector(hsi_sub, tgt_spectra)
+det_out['SAM'] = sam_out
 # spsmf_out = spsmf_detector(hsi_sub, tgt_spectra)
 # det_out['SPSMF'] = spsmf_out
 # palm_out = palm_detector(hsi_sub, tgt_spectra, n_comp = 5)
@@ -112,13 +114,13 @@ det_out['HA'] = ha_out
 # visualization
 # plt.figure(figsize=(10, 15))
 # plt.subplots_adjust(hspace=.5)
-# n_row = 4; n_col = 6
-# #
+# n_row = 4; n_col = 7
+#
 # i = 1
 # for key, value in det_out.items():
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
 
-plt.imshow(ha_out)
+plt.imshow(sam_out)
 plt.show()

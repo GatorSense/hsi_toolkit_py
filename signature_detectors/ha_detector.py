@@ -43,9 +43,9 @@ def ha_helper(hsi_data, tgt_sig, kwargs):
 
 	# compute mixture likelihood ratio of each pixel
 	n_endmeber = ems.shape[1]
-	ll_bg = np.log(gmm_bg.score_samples(P)).T / (n_endmeber * n_comp)
-
+	ll_bg = np.log(np.max(gmm_bg.predict_proba(P),1)) / (n_endmeber * n_comp)
 	ll_tgt = targ_P[:,0] > 0.05
+
 	hs_data = np.zeros(n_pixel)
 
 	for i in range(n_pixel):
