@@ -27,6 +27,7 @@ def unmix(data, endmembers):
 	H = matrix(np.float64(2 * (endmembers.T @ endmembers)))
 	P = np.zeros((n_pixel,n_endmember))
 
+	solvers.options['show_progress'] = False
 	for i in range(n_pixel):
 		F = matrix(np.float64((-2 * X[:,i][np.newaxis,:] @ endmembers).T), tc='d')
 		qp_out = solvers.qp(H, F, G, h, A, b)
