@@ -10,6 +10,8 @@ from ccmf_detector import *
 from ctmf_detector import *
 from fam_statistic import *
 from ftmf_detector import *
+from ha_detector import *
+from hua_detector import *
 from hsd_detector import *
 from hsd_local_detector import *
 from mtmf_statistic import *

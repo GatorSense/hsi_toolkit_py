@@ -20,9 +20,11 @@ Suite of anomaly detectors under development:
 ?- cem_detector: Constrained Energy Minimization Detector
 ?- ctmf_detector: Cluster Tuned Matched Filter
 ?- ftmf_statistic: Finite Target Matched Filter
+!- ha_detector: Hybrid Abundance Detector, unmix using background endmembers as well as using background and target endmembers, model proportions with a Gaussian mixture, compute pixel-wise likelihood ratios
 ?!- hsd_detector: Likelihood ratio after unmixing with background and unmixing with background and target signature (Broadwater and Chellappa's method)
 - hsd_local_detector: Hybrid Structured Detector using local background estimation
 !!??- mtmf_statistic: Mixture Tuned Matched Filter Infeasibility Statistic
+- hua_detector: Hybrid Unstructured Abundance Detector
 ?- qmf_detector: Quadratic Spectral Matched Filter
 ?- sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
 ?- smf_max_detector: Spectral Matched Filter given multiple target signatures. Confidence value for each pixel is max SMF score over all target signatures.
@@ -31,10 +33,8 @@ Suite of anomaly detectors under development:
 
 
 Suite of anomaly detectors to be implemented:
-- ha_detector: Hybrid Abundance Detector, unmix using background endmembers as well as using background and target endmembers, model proportions with a Gaussian mixture, compute pixel-wise likelihood ratios
 x- hs_detector: Hybrid Subpixel Detector
 x- hsa_detector: Hybrid Structured/Abundance Detector
-- hua_detector: Hybrid Unstructured Abundance Detector
 x- hud_detector: Hybrid Unstructured Detector (Broadwater and Chellappa's method)
 
 <!-- Anomaly detectors can also be run in *Segmented* mode using segmented.m utility.
