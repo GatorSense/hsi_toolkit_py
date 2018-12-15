@@ -21,6 +21,7 @@ Suite of anomaly detectors under development:
 ?- ctmf_detector: Cluster Tuned Matched Filter
 ?- ftmf_statistic: Finite Target Matched Filter
 ?!- hsd_detector: Likelihood ratio after unmixing with background and unmixing with background and target signature (Broadwater and Chellappa's method)
+- hsd_local_detector: Hybrid Structured Detector using local background estimation
 !!??- mtmf_statistic: Mixture Tuned Matched Filter Infeasibility Statistic
 ?- qmf_detector: Quadratic Spectral Matched Filter
 ?- sam_detector: Spectral Angle Mapper, calculates vector angle between target signature and each pixel spectrum
@@ -33,7 +34,6 @@ Suite of anomaly detectors to be implemented:
 - ha_detector: Hybrid Abundance Detector, unmix using background endmembers as well as using background and target endmembers, model proportions with a Gaussian mixture, compute pixel-wise likelihood ratios
 x- hs_detector: Hybrid Subpixel Detector
 x- hsa_detector: Hybrid Structured/Abundance Detector
-- hsd_local_detector: Hybrid Structured Detector using local background estimation
 - hua_detector: Hybrid Unstructured Abundance Detector
 x- hud_detector: Hybrid Unstructured Detector (Broadwater and Chellappa's method)
 

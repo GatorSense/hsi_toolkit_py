@@ -15,7 +15,6 @@ def ftmf_detector(hsi_img, tgt_sig, gamma = 1):
 	8/12/2012 - Taylor C. Glenn
 	12/2018 - Python Implementation by Yutai Zhou
 
-
 	makes the simplifying assumption that target variance
 	 is a scaled version of bg variance
 	Eismann pp 681

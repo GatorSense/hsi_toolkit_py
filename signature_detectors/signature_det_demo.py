@@ -35,7 +35,7 @@ det_out['RGB'] = get_RGB(hsi_sub, wavelengths)
 det_out['Ground Truth'] = gt_img_sub
 
 # init detector args
-guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
+guard_win = 1; bg_win = 3; beta = 0.001; n_dim_ss = 10
 ems = hsi_sub[:3,1,:].T # need to provide background endmembers (can get them using SPICE unmixing)
 
 # call detectors
@@ -61,8 +61,10 @@ ems = hsi_sub[:3,1,:].T # need to provide background endmembers (can get them us
 # det_out['CTMF'] = ctmf_out
 # ftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1)
 # det_out['FTMF'] = ftmf_out
-hsd_out, _ = hsd_detector(hsi_sub, tgt_spectra, ems)
-det_out['HSD'] = hsd_out
+# hsd_out, _ = hsd_detector(hsi_sub, tgt_spectra, ems)
+# det_out['HSD'] = hsd_out
+hsd_local_out = hsd_local_detector(hsi_sub, tgt_spectra, ems, guard_win = guard_win, bg_win = bg_win, beta = beta)
+det_out['HSD Local'] = hsd_local_out
 # mtmf_out,_ = mtmf_statistic(hsi_sub, tgt_spectra)
 # det_out['MTMF'] = mtmf_out
 # smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
@@ -116,5 +118,5 @@ det_out['HSD'] = hsd_out
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
 
-plt.imshow(hsd_out)
+plt.imshow(hsd_local_out)
 plt.show()
