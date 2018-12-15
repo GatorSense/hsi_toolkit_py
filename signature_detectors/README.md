@@ -37,9 +37,8 @@ x- hs_detector: Hybrid Subpixel Detector
 x- hsa_detector: Hybrid Structured/Abundance Detector
 x- hud_detector: Hybrid Unstructured Detector (Broadwater and Chellappa's method)
 
-<!-- Anomaly detectors can also be run in *Segmented* mode using segmented.m utility.
+Anomaly detectors can also be ran in *Segmented* mode with util/img_seg.py as shown in the demo script.
 Segmented mode is where a detector is applied to segments of the imagery separately (i.e., background statistics computed from segment rather than full image).  
-See segmented examples in demo code. -->
 
 Review and references for many of these signature detectors can be found in the literature review in Taylor Glenn's Ph.D. thesis:
 
