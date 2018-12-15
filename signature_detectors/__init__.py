@@ -1,3 +1,4 @@
+from abd_detector import *
 from ace_detector import *
 from ace_local_detector import *
 from ace_rt_detector import *

@@ -36,8 +36,11 @@ det_out['Ground Truth'] = gt_img_sub
 
 # init detector args
 guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
+ems = hsi_sub[:3,1,:].T # need to provide background endmembers (can get them using SPICE unmixing)
 
 # call detectors
+abd_out = abd_detector(hsi_sub, tgt_spectra, ems)
+det_out['ABD'] = abd_out
 # ace_out, _, _ = ace_detector(hsi_sub, tgt_spectra)
 # det_out['ACE Squared'] = ace_out
 # ace_local_out, _ = ace_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
@@ -56,8 +59,8 @@ guard_win = 2; bg_win = 4; beta = 0.001; n_dim_ss = 10
 # det_out['CEM'] = cem_out
 # ctmf_out, _ = ctmf_detector(hsi_sub, tgt_spectra, n_cluster = 2)
 # det_out['CTMF'] = ctmf_out
-ftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1)
-det_out['FTMF'] = ftmf_out
+# ftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1)
+# det_out['FTMF'] = ftmf_out
 # mtmf_out,_ = mtmf_statistic(hsi_sub, tgt_spectra)
 # det_out['MTMF'] = mtmf_out
 # smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
@@ -110,5 +113,5 @@ det_out['FTMF'] = ftmf_out
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
-plt.imshow(ftmf_out)
+plt.imshow(abd_out)
 plt.show()
