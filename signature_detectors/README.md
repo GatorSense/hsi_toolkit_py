@@ -12,7 +12,7 @@ Current suite of signature detectors:
 - smf_local_detector: Spectral Matched Filter using local background statistics
 
 
-Suite of anomaly detectors under development:
+Suite of signature detectors under development:
 - ? abd_detector: Abudance of target signature when unmixed using target signature and background endmembers assuming the linear mixing model
 - ? acert_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
 - ?! amsd_detector: Adaptive Matched Subspace Detector
@@ -32,12 +32,12 @@ Suite of anomaly detectors under development:
 - ? palm_detector: Pairwise Adaptive Linear Matched Filter
 
 
-Suite of anomaly detectors to be implemented:
+Suite of signature detectors to be implemented (these use Quadratic programming active set method):
 - x hs_detector: Hybrid Subpixel Detector
 - x hsa_detector: Hybrid Structured/Abundance Detector
 - x hud_detector: Hybrid Unstructured Detector (Broadwater and Chellappa's method)
 
-Anomaly detectors can also be ran in *Segmented* mode with util/img_seg.py as shown in the demo script.
+Signature detectors can also be ran in *Segmented* mode with util/img_seg.py as shown in the demo script.
 Segmented mode is where a detector is applied to segments of the imagery separately (i.e., background statistics computed from segment rather than full image).  
 
 Review and references for many of these signature detectors can be found in the literature review in Taylor Glenn's Ph.D. thesis:
