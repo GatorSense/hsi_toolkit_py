@@ -28,5 +28,4 @@ def sam_helper(hsi_data, tgt_sig, kwargs):
 	prod = tgt_sig.T @ hsi_data
 	mag = np.sqrt(tgt_sig.T @ tgt_sig * np.sum(hsi_data ** 2, 0))
 	sam_data = prod / mag
-	# print(sam_data.shape)
-	return sam_data.squeeze(), {'None': None}
+	return sam_data.squeeze(), {}

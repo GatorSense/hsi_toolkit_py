@@ -41,8 +41,6 @@ def palm_helper(hsi_data, tgt_sig, kwargs):
 
 		s = tgt_sig - means[i,:][:,np.newaxis]
 		filt[i,:] = s.T @ sig_inv[i,:,:] / np.sqrt(s.T @ sig_inv[i,:,:] @ s)
-	# print(filt.shape)
-	# print(tgt_sig.shape, means.shape, covariances.shape, sig_inv.shape)
 
 	palm_data = np.zeros(n_pixel)
 
@@ -53,4 +51,4 @@ def palm_helper(hsi_data, tgt_sig, kwargs):
 
 		palm_data[i] = np.min(dists)
 
-	return palm_data, {'None': None}
+	return palm_data, {}

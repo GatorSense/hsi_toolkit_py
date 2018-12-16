@@ -36,5 +36,5 @@ def gmrx_helper(hsi_data, tgt_sig, kwargs):
 	idx = gmm.predict(hsi_data.T)
 
 	gmrx_data = np.zeros(n_pixel)
-	for i in range(n_pixel):
-		gmrx_data[i] = 
+	# for i in range(n_pixel):
+	# 	gmrx_data[i] =

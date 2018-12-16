@@ -32,4 +32,4 @@ def abd_helper(hsi_data, tgt_sig, kwargs):
 
 	abd_data = targ_P[:,0]
 
-	return abd_data, {'None': None}
+	return abd_data, {}

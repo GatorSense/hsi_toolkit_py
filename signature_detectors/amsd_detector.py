@@ -77,4 +77,4 @@ def amsd_helper(hsi_data, tgt_sig, kwargs):
 		x = hsi_data[:,i][:,np.newaxis]
 		amsd_data[i] = (x.T @ PZ @ x) / (x.T @ P_perp_S @ x)
 
-	return amsd_data, {'None':None}
+	return amsd_data, {}

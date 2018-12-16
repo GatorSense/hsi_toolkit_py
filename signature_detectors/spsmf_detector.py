@@ -57,4 +57,4 @@ def spsmf_helper(hsi_data, tgt_sig, kwargs):
 
 		spsmf_data[i] = z1.T @ sig_inv @ z1 - (z2.T @ sig_inv @ z2) / (beta ** 2) - 2 * K * np.log(np.abs(beta))
 
-	return spsmf_data, {'None': None}
+	return spsmf_data, {}

@@ -49,4 +49,4 @@ def hsd_local_helper(x, ind, bg, b_mask_list, args, kwargs):
 	w = x - np.hstack((args['tgt_sig'], kwargs['ems'])) @ kwargs['targ_P'][ind,:]
 	r = (z[np.newaxis,:] @ sig_inv @ z[:,np.newaxis]) / (w[np.newaxis,:] @ sig_inv @ w[:,np.newaxis])
 
-	return r, {'None': None}
+	return r, {}

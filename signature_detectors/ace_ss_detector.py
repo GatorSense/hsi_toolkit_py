@@ -37,4 +37,4 @@ def ace_ss_helper(hsi_data, tgt_sig, kwargs):
 
 	out = A / B
 
-	return out, {'None': None}
+	return out, {}

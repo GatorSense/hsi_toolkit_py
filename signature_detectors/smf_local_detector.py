@@ -37,4 +37,4 @@ def smf_local_helper(x, ind, bg, b_mask_list, args, kwargs):
 	f = (s.T @ sig_inv) / np.sqrt(s.T @ sig_inv @ s)
 
 	smf_data = f @ z
-	return smf_data, {'None': None}
+	return smf_data, {}

@@ -25,7 +25,6 @@ def mtmf_statistic(hsi_img,tgt_sig, mask = None):
 	mnf_img, n_dim, mnf_vecs, mnf_eigvals, mnf_mu = mnf(hsi_img,1);
 	# tgt_sig = tgt_sig[:n_dim,0][:,np.newaxis]
 	s = mnf_vecs @ (tgt_sig - mnf_mu)
-	# print(mnf_img.shape, mnf_vecs.shape, mnf_mu.shape, s.shape)
 
 	mtmf_out, kwargsout = img_det(mtmf_helper, mnf_img, s, mnf_eigvals = mnf_eigvals)
 

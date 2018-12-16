@@ -55,4 +55,4 @@ def ha_helper(hsi_data, tgt_sig, kwargs):
 		hs_data[i] = z[np.newaxis,:] @ z[:,np.newaxis] / (w[np.newaxis,:] @ w[:,np.newaxis])
 
 	ha_data = hs_data + ll_tgt - ll_bg
-	return ha_data, {'None': None}
+	return ha_data, {}

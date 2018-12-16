@@ -53,4 +53,4 @@ def knn_cfr(hsi_data, train_data, kwargs):
 			counts[int(labels[idx[i,j]])] = counts[int(labels[idx[i,j]])] + 1
 		max_i = np.argmax(counts)
 		knn_out[i,0] = max_i
-	return knn_out.squeeze(), {'None': None}
+	return knn_out.squeeze(), {}

@@ -38,7 +38,7 @@ def img_det(det_func, hsi_img, tgt_sig, mask = None, **kwargs):
 	det_data[:] = np.nan
 	det_data[mask == 1], kwargsout = det_func(hsi_data[:, mask == 1], tgt_sig, kwargs)
 
-	if 'None' not in kwargsout:
+	if len(kwargsout) > 0:
 		# Reshape image-like flattened outputs back into images
 		for key, val in kwargsout.items():
 			if type(val) is np.ndarray:

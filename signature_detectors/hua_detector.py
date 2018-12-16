@@ -64,4 +64,4 @@ def hua_helper(hsi_data, tgt_sig, kwargs):
 	bg_rg = np.max(ll_bg) - np.min(ll_bg)
 	hua_data = hua_data + ll_tgt * (hud_rg/3) -  ll_bg * (hud_rg/(3*bg_rg))
 
-	return hua_data, {'None': None}
+	return hua_data, {}

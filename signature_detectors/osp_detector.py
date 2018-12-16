@@ -50,4 +50,4 @@ def osp_helper(hsi_data, tgt_sig, kwargs):
 
 	for i in range(n_pixel):
 		osp_data[i] = f @ x[:,i]
-	return osp_data, {'None', None}
+	return osp_data, {}

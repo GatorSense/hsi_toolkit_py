@@ -30,4 +30,4 @@ def gmm_helper(hsi_data, tgt_sig, kwargs):
 	n_comp = kwargs['n_comp']
 	gmm = GaussianMixture(n_components = n_comp, max_iter = 1, init_params = 'random').fit(hsi_data.T)
 	gmm_data = -gmm.score_samples(hsi_data.T)
-	return gmm_data, {'None': None}
+	return gmm_data, {}
