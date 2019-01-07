@@ -83,8 +83,8 @@ ems = hsi_sub[:3,1,:].T # need to provide background endmembers (can get them us
 # det_out['OSP'] = osp_out
 # qmf_out = qmf_detector(hsi_sub, tgt_spectra, 0.1 * np.eye(hsi_sub.shape[2]))
 # det_out['QMF'] = qmf_out
-sam_out = sam_detector(hsi_sub, tgt_spectra)
-det_out['SAM'] = sam_out
+# sam_out = sam_detector(hsi_sub, tgt_spectra)
+# det_out['SAM'] = sam_out
 # spsmf_out = spsmf_detector(hsi_sub, tgt_spectra)
 # det_out['SPSMF'] = spsmf_out
 # palm_out = palm_detector(hsi_sub, tgt_spectra, n_comp = 5)
@@ -93,34 +93,33 @@ det_out['SAM'] = sam_out
 
 # Segmented Detector Examples
 
-# get Segments (using K-means here, but better ways to do this in general, see context-dependent methods for detection)
-# n_cluster = 3
-# n_row, n_col, n_band = hsi_sub.shape
-# idx = KMeans(n_clusters = n_cluster, n_init = 1).fit(hsi_sub.reshape((n_row * n_col, n_band), order='F')).labels_
-# idx_img = idx.reshape((n_row,n_col), order='F')
+# # get Segments (using K-means here, but better ways to do this in general, see context-dependent methods for detection)
+n_cluster = 3
+n_row, n_col, n_band = hsi_sub.shape
+idx = KMeans(n_clusters = n_cluster, n_init = 1).fit(hsi_sub.reshape((n_row * n_col, n_band), order='F')).labels_
+idx_img = idx.reshape((n_row,n_col), order='F')
+
+segments = np.zeros((n_cluster,n_row,n_col))
+for i in range(n_cluster):
+	segments[i,:,:] = idx_img == i
+
+# Segmented Spectral Angle Mapper
+seg_sam_out = img_seg(sam_detector,hsi_sub, tgt_spectra, segments)
+det_out['Seg SAM'] = seg_sam_out
+
+# Segmented Spectral Angle Mapper
+seg_ace_out,_,_ = img_seg(ace_detector,hsi_sub, tgt_spectra, segments)
+det_out['Seg ACE'] = seg_ace_out
+plt.imshow(seg_ace_out)
+plt.show()
 #
-# segments = np.zeros((n_cluster,n_row,n_col))
-# for i in range(n_cluster):
-# 	segments[i,:,:] = idx_img == i
-
-# Segmented Spectral Angle Mapper
-# seg_sam_out = img_seg(sam_detector,hsi_sub, tgt_spectra, segments)
-# det_out['Seg SAM'] = seg_sam_out
-
-# Segmented Spectral Angle Mapper
-# seg_ace_out,_,_ = img_seg(ace_detector,hsi_sub, tgt_spectra, segments)
-# det_out['Seg ACE'] = seg_ace_out
-
-# visualization
+# # visualization
 # plt.figure(figsize=(10, 15))
 # plt.subplots_adjust(hspace=.5)
-# n_row = 4; n_col = 7
-#
+# n_row = 5; n_col = 7
+# #
 # i = 1
 # for key, value in det_out.items():
 # 	plt.subplot(n_row, n_col, i);
 # 	plt.imshow(value); plt.title(key)
 # 	i += 1
-
-plt.imshow(sam_out)
-plt.show()
