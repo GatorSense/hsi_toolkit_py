@@ -23,8 +23,8 @@ an_hsi_image_sub_for_demo = loadmat('an_hsi_image_sub_for_demo.mat')
 img = an_hsi_image_sub_for_demo['hsi_img_sub']
 wavelengths = an_hsi_image_sub_for_demo['wavelengths']
 
-# run hrd
-hrd_out = dimReduction(img)
+# run hdr
+hdr_out = dimReduction(img)
 # run mnf
 mnf_out = mnf(img, 0.999)[0]
 mnf_out = (mnf_out - np.min(mnf_out)) / np.max(mnf_out)
@@ -33,7 +33,7 @@ mnf_out = (mnf_out - np.min(mnf_out)) / np.max(mnf_out)
 plt.subplot(1,3,1)
 plt.imshow(get_RGB(img, wavelengths))
 plt.subplot(1,3,2)
-plt.imshow(hrd_out[:,:,:3])
+plt.imshow(hdr_out[:,:,:3])
 plt.subplot(1,3,3)
 plt.imshow(mnf_out[:,:,:3])
 # plt.show()
