@@ -6,8 +6,6 @@ sys.path.append('../util/')
 from classifiers import *
 from get_RGB import get_RGB
 """
-%function class_out = classification_demo(hsi_img, train_data, mask, wavelength)
-
 Demo script that runs all classifiers in hsi_toolkit_py
 
 Inputs:
