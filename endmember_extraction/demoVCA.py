@@ -6,8 +6,11 @@ Inputs:
 	wavelengths - n_band x 1 vector listing wavelength values for hsi_img in nm
 	mask_sub - n_row x n_col binary image limiting detector operation to pixels where mask is true
 		       if not present or empty, no mask restrictions are used
+	M - number of endmembers to compute
 Outputs:
-	det_out - dictionary of detector output images
+	E - n_band x M matrix of endmembers
+	IdxOfE - M vector indexing the endmembers in masked_data
+	Xpca - M x masked_data size matrix of data projected to M dimensions
 
 1/17/2019 - Ronald Fick
 """
@@ -35,8 +38,6 @@ masked_data = mat_data[mask_reshaped == 1]
 M = 3
 
 E, IdxOfE, Xpca = VCA(np.transpose(masked_data), M=M)
-
-print(Xpca.shape)
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')
