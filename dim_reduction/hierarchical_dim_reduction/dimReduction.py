@@ -69,18 +69,20 @@ def computeKLDivergencesBetweenBands(InputData, NumCenters):
     # TESTED (keeping in mind that MATLAB and python reshape are different)
     DataList = InputData / InputData.max(1).max(0)
     # print('Datalist data: ', DataList[1,1])
+
     # TESTED
     # compute the histograms
-    Centers = np.arange(1/NumCenters, 1 + 1/NumCenters, 1/NumCenters)
+    Centers = np.arange(1/(2*NumCenters), 1 + 1/NumCenters, 1/NumCenters)
 
     hists = np.zeros((NumCenters-1, DataList.shape[0]))
 
-    print(DataList.shape, Centers.shape)
     for count in range(DataList.shape[0]):
-        hists[:, count], _ = np.histogram(DataList.T[:, count], Centers)
+        hists[:, count], t = np.histogram(DataList.T[:, count], Centers)
 
-    #hists, bins = plt.hist(DataList.T[:], Centers, histtype='step', align='mid')
-
+    #hists, bins = plt.hist(DataList.T, Centers, histtype='step', align='mid')
+    print(hists.shape)
+    print(t, Centers)
+    print(np.allclose(Centers, t))
     hists = hists + np.spacing(1)
 
     # compute KL Divergence
