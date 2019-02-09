@@ -13,6 +13,6 @@ Suite of Anomaly Detectors in progress:
 - ssrx_anomaly: local anomaly detector, eliminate leading subspace as background, then use local mean and covariance to determine pixel to background distance
 - beta_anomaly: global anomaly detector, fits beta distribution to each band assuming entire image is background computes negative log likelihood of each pixel in the model
 - fcbad_anomaly: global/cluster-based anomaly detector, Fuzzy Cluster Based Anomaly Detection (FCBAD)
-- gmrx_anomaly: global/cluster-based anomaly detector, fits GMM assuming entire image is background assigns pixels to highest posterior probability mixture component computes pixel Mahlanobis distance to component mean
+- !gmrx_anomaly: global/cluster-based anomaly detector, fits GMM assuming entire image is background assigns pixels to highest posterior probability mixture component computes pixel Mahlanobis distance to component mean
 
 Contact: Alina Zare, azare@ufl.edu

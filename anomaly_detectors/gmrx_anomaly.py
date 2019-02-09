@@ -31,3 +31,10 @@ def gmrx_helper(hsi_data, tgt_sig, kwargs):
 	n_comp = kwargs['n_comp']
 	n_pixel = hsi_data.shape[1]
 	gmm = GaussianMixture(n_components = n_comp, max_iter = 1, init_params = 'random').fit(hsi_data.T)
+
+	# cluster/assign mixture component to each pixel, get Mahalanobis distance to components
+	idx = gmm.predict(hsi_data.T)
+
+	gmrx_data = np.zeros(n_pixel)
+	# for i in range(n_pixel):
+	# 	gmrx_data[i] =

@@ -98,4 +98,3 @@ def computeKLDivergencesBetweenBands(InputData, NumCenters):
     KLDivergencesList = squareform(pdist(temp))
 
     return KLDivergences, KLDivergencesList, hists
-

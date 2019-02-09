@@ -63,6 +63,4 @@ def ssrx_anomaly(hsi_img, n_dim_ss, guard_win, bg_win):
 			z = proj @ pca_img[row, col, :].squeeze() - proj @ mu
 			ssrx_img[row, col] = z.T @ sig_inv @ z
 
-			if i == 4 and j==4:
-				print(pca_img[row, col, :].squeeze())
 	return ssrx_img
