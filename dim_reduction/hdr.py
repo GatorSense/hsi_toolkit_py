@@ -46,9 +46,8 @@ def dimReduction(img, Parameters=None):
     _, KLDivergencesList, _ = computeKLDivergencesBetweenBands(InputData, NumCenters);
 
     Hierarchy = sch.linkage(KLDivergencesList, type)
-    band_clusters = sch.fcluster(Hierarchy, t=maxNumClusters, criterion='maxclust')
 
-    print(band_clusters.shape)
+    band_clusters = sch.fcluster(Hierarchy, t=maxNumClusters, criterion='maxclust')
     if (showH):
         # 'mtica' gives matlab behavior
         D = sch.dendrogram(Hierarchy, 0, 'mtica')
@@ -59,7 +58,7 @@ def dimReduction(img, Parameters=None):
     for i in range(1, maxNumClusters+1):
         mergedData[i-1, :] = np.mean(InputData[:, band_clusters == i], 1)
 
-    mergedData = np.reshape(mergedData, (numRows, numCols, maxNumClusters), order='F')
+    mergedData = np.reshape(mergedData.T, (numRows, numCols, maxNumClusters), order='F')
 
     return mergedData
 
@@ -74,27 +73,28 @@ def computeKLDivergencesBetweenBands(InputData, NumCenters):
     # compute the histograms
     Centers = np.arange(1/(2*NumCenters), 1 + 1/NumCenters, 1/NumCenters)
 
-    hists = np.zeros((NumCenters-1, DataList.shape[0]))
+    hists = np.zeros((NumCenters, DataList.shape[0]))
 
     for count in range(DataList.shape[0]):
         hists[:, count], t = np.histogram(DataList.T[:, count], Centers)
 
-    #hists, bins = plt.hist(DataList.T, Centers, histtype='step', align='mid')
-    print(hists.shape)
-    print(t, Centers)
-    print(np.allclose(Centers, t))
     hists = hists + np.spacing(1)
+
+    plt.subplot(131)
+    plt.plot(hists)
 
     # compute KL Divergence
     lim = InputData.shape[1]
     KLDivergences = np.zeros((lim, lim))
 
-    for i in range(lim):
-        for j in range(lim):
-            KLDivergences[i, j] = np.sum(np.multiply(hists[i], np.log(hists[i]/hists[j]))) \
-                                  + np.sum(np.multiply(hists[j], np.log(hists[j]/hists[j])))
+    for i in range(DataList.shape[1]):
+        for j in range(DataList.shape[1]):
+            KLDivergences[i, j] = (hists[i, :] * np.log(hists[i, :] / hists[j, :])).sum() \
+                                  + (hists[j, :] * np.log(hists[j, :] / hists[j, :])).sum()
 
+    plt.subplot(132)
+    plt.plot(KLDivergences)
     temp = KLDivergences - np.diag(np.diag(KLDivergences))
-    KLDivergencesList = squareform(pdist(temp))
+    KLDivergencesList = pdist(temp)
 
     return KLDivergences, KLDivergencesList, hists
