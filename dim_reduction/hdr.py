@@ -80,9 +80,6 @@ def computeKLDivergencesBetweenBands(InputData, NumCenters):
 
     hists = hists + np.spacing(1)
 
-    plt.subplot(131)
-    plt.plot(hists)
-
     # compute KL Divergence
     lim = InputData.shape[1]
     KLDivergences = np.zeros((lim, lim))
