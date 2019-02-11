@@ -59,7 +59,6 @@ def dimReduction(img, Parameters=None):
         mergedData[i-1, :] = np.mean(InputData[:, band_clusters == i], 1)
 
     mergedData = np.reshape(mergedData.T, (numRows, numCols, maxNumClusters))
-
     return mergedData
 
 
