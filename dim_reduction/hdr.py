@@ -38,17 +38,16 @@ def dimReduction(img, Parameters=None):
         Parameters = dimReductionParameters()
 
     type = Parameters.type  # Type of Hierarchy
-    showH = 1 # Parameters.showH  # Set to 1 to show clustering, 0 otherwise
+    showH = Parameters.showH  # Set to 1 to show clustering, 0 otherwise
     maxNumClusters = Parameters.numBands
     NumCenters = Parameters.NumCenters
 
-    InputData = np.reshape(img, (numRows * numCols, numDims), order='F')
+    InputData = np.reshape(img, (numRows * numCols, numDims))
     _, KLDivergencesList, _ = computeKLDivergencesBetweenBands(InputData, NumCenters);
 
     Hierarchy = sch.linkage(KLDivergencesList, type)
-    band_clusters = sch.fcluster(Hierarchy, t=maxNumClusters, criterion='maxclust')
 
-    print(band_clusters.shape)
+    band_clusters = sch.fcluster(Hierarchy, t=maxNumClusters, criterion='maxclust')
     if (showH):
         # 'mtica' gives matlab behavior
         D = sch.dendrogram(Hierarchy, 0, 'mtica')
@@ -59,40 +58,34 @@ def dimReduction(img, Parameters=None):
     for i in range(1, maxNumClusters+1):
         mergedData[i-1, :] = np.mean(InputData[:, band_clusters == i], 1)
 
-    mergedData = np.reshape(mergedData, (numRows, numCols, maxNumClusters), order='F')
-
+    mergedData = np.reshape(mergedData.T, (numRows, numCols, maxNumClusters))
     return mergedData
 
 
 def computeKLDivergencesBetweenBands(InputData, NumCenters):
 
-    # TESTED (keeping in mind that MATLAB and python reshape are different)
     DataList = InputData / InputData.max(1).max(0)
-    # print('Datalist data: ', DataList[1,1])
-    # TESTED
+
     # compute the histograms
-    Centers = np.arange(1/NumCenters, 1 + 1/NumCenters, 1/NumCenters)
+    Centers = np.arange(1/(2*NumCenters), 1 + 1/NumCenters, 1/NumCenters)
 
-    hists = np.zeros((NumCenters-1, DataList.shape[0]))
+    hists = np.zeros((NumCenters, DataList.shape[0]))
 
-    print(DataList.shape, Centers.shape)
     for count in range(DataList.shape[0]):
-        hists[:, count], _ = np.histogram(DataList.T[:, count], Centers)
+        hists[:, count], t = np.histogram(DataList.T[:, count], Centers)
 
-    #hists, bins = plt.hist(DataList.T[:], Centers, histtype='step', align='mid')
-
+    # Add an epsilon term to the histograms
     hists = hists + np.spacing(1)
 
     # compute KL Divergence
     lim = InputData.shape[1]
     KLDivergences = np.zeros((lim, lim))
-
-    for i in range(lim):
-        for j in range(lim):
-            KLDivergences[i, j] = np.sum(np.multiply(hists[i], np.log(hists[i]/hists[j]))) \
-                                  + np.sum(np.multiply(hists[j], np.log(hists[j]/hists[j])))
+    for i in range(DataList.shape[1]):
+        for j in range(DataList.shape[1]):
+            KLDivergences[i, j] = (hists[i, :] * np.log(hists[i, :] / hists[j, :])).sum() \
+                                  + (hists[j, :] * np.log(hists[j, :] / hists[j, :])).sum()
 
     temp = KLDivergences - np.diag(np.diag(KLDivergences))
-    KLDivergencesList = squareform(pdist(temp))
+    KLDivergencesList = pdist(temp)
 
     return KLDivergences, KLDivergencesList, hists

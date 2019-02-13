@@ -31,9 +31,12 @@ mnf_out = (mnf_out - np.min(mnf_out)) / np.max(mnf_out)
 
 # visualize
 plt.subplot(1,3,1)
+plt.title("RGB Image")
 plt.imshow(get_RGB(img, wavelengths))
 plt.subplot(1,3,2)
+plt.title("HDR Image")
 plt.imshow(hdr_out[:,:,:3])
 plt.subplot(1,3,3)
+plt.title("MNF Image")
 plt.imshow(mnf_out[:,:,:3])
-# plt.show()
+plt.show()
