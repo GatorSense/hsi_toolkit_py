@@ -19,6 +19,9 @@ def ftmf_detector(hsi_img, tgt_sig, gamma = 1):
 	 is a scaled version of bg variance
 	Eismann pp 681
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	n_row, n_col, n_band = hsi_img.shape
 	n_pixel = n_row * n_col
 

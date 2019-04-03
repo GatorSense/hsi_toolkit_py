@@ -24,6 +24,9 @@ def ccmf_detector(hsi_img, tgt_sig, mask = None, n_comp = 5, gmm = None):
 	6/2/2018 - Edited by Alina Zare
 	12/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	ccmf_out, kwargsout = img_det(ccmf_helper, hsi_img, tgt_sig, mask, n_comp = n_comp, gmm = gmm)
 
 	return ccmf_out, kwargsout['gmm']

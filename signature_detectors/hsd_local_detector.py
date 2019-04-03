@@ -24,6 +24,9 @@ def hsd_local_detector(hsi_img, tgt_sig, ems, mask = None, guard_win = 2, bg_win
 	6/3/2018 - Edited by Alina Zare
 	12/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	n_row, n_col, n_band = hsi_img.shape
 	hsi_data = hsi_img.reshape((n_row * n_col, n_band), order='F').T
 

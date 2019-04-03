@@ -50,9 +50,7 @@ def rx_det(det_func, hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4, *
 	# run the detector (only on fully valid points)
 	ind_img = np.reshape(np.array(range(n_pixel)), (n_row, n_col), order='F')
 	out = np.empty((n_row, n_col))
-	out[:] = np.nan
 	det_stat = np.empty((n_row, n_col))
-	det_stat[:] = np.nan
 
 
 	for i in range(n_col - mask_width + 1):

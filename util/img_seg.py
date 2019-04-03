@@ -22,7 +22,6 @@ def img_seg(det_func, hsi_img, tgt_sig, segments, **kwargs):
 	"""
 	n_seg, n_row, n_col = segments.shape
 	det_out = np.empty((n_row, n_col))
-	det_out[:] = np.nan
 	segments = segments.astype(bool)
 
 	for i in range(n_seg):

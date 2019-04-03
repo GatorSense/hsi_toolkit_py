@@ -21,6 +21,9 @@ def smf_local_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4)
 	10/25/2012 - Taylor C. Glenn
 	10/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	out, kwargsout = rx_det(smf_local_helper, hsi_img, tgt_sig, mask = mask, guard_win = guard_win, bg_win = bg_win)
 	return out
 

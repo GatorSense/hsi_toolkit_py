@@ -26,6 +26,9 @@ def spsmf_detector(hsi_img, tgt_sig, mask = None, mu = None, sig_inv = None):
 	6/2/2018 - Edited by Alina Zare
 	12/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	spsmf_out, kwargsout = img_det(spsmf_helper, hsi_img, tgt_sig, mask, mu = mu, sig_inv = sig_inv)
 
 	return spsmf_out

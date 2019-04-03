@@ -30,6 +30,9 @@ def hsd_detector(hsi_img, tgt_sig, ems, mask = None, sig_inv = None):
 	6/2/2018 - Edited by Alina Zare
 	12/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	hsd_out, kwargsout = img_det(hsd_helper, hsi_img, tgt_sig, mask, ems = ems, sig_inv = sig_inv)
 	return hsd_out, kwargsout['tgt_p']
 

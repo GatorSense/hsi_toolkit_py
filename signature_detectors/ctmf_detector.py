@@ -19,6 +19,9 @@ def ctmf_detector(hsi_img, tgt_sig, n_cluster = 2):
 	6/02/2018 - Edited by Alina Zare
 	12/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	n_row, n_col, n_band = hsi_img.shape
 	n_pixel = n_row * n_col
 

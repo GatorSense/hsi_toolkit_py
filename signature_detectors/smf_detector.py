@@ -54,8 +54,13 @@ def smf_det_array_helper(hsi_data, tgt_sig, kwargs):
 	mu = np.mean(hsi_data, axis = 1) if kwargs['mu'] is None else kwargs['mu']
 	sig_inv = np.linalg.pinv(np.cov(hsi_data.T, rowvar = False)) if kwargs['sig_inv'] is None else kwargs['sig_inv']
 
-	s = tgt_sig - np.reshape(mu, (-1,1))
-	z = hsi_data - np.reshape(mu, (-1,1))
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
+	mu = np.reshape(mu, (len(mu), 1), order='F')
+
+	s = tgt_sig - mu
+	z = hsi_data - mu
 	f = (s.T @ sig_inv) / np.sqrt(s.T @ sig_inv @ s)
 
 	smf_data = f @ z

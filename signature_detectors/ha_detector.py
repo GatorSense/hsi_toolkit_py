@@ -24,6 +24,9 @@ def ha_detector(hsi_img, tgt_sig, ems, mask = None, n_comp = 2):
 	6/2/2018 - Edited by Alina Zare
 	12/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	ha_out, kwargsout = img_det(ha_helper, hsi_img, tgt_sig, mask, ems = ems, n_comp = n_comp)
 	return ha_out
 

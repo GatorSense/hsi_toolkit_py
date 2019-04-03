@@ -22,6 +22,9 @@ def osp_detector(hsi_img, tgt_sig, mask = None, n_dim_ss = 2):
 	6/2/2018 - Edited by Alina Zare
 	11/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	osp_out, kwargsout = img_det(osp_helper, hsi_img, tgt_sig, mask, n_dim_ss = n_dim_ss)
 
 	return osp_out

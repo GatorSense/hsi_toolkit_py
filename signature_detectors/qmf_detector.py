@@ -14,6 +14,9 @@ def qmf_detector(hsi_img, tgt_sig, tgt_cov):
 	8/9/2012 - Taylor C. Glenn
 	10/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	n_row, n_col, n_band = hsi_img.shape
 	n_pixel = n_row * n_col
 

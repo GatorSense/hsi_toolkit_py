@@ -27,6 +27,10 @@ def ace_local_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4,
 	mask = np.ones([n_row, n_col]) if mask is None else mask
 	reg = beta * np.eye(n_band)
 
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
+
 	out, kwargsout = rx_det(ace_local_helper, hsi_img, tgt_sig, mask = mask, guard_win = guard_win, bg_win = bg_win, reg = reg)
 	return out, kwargsout
 

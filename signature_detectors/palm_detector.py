@@ -22,6 +22,9 @@ def palm_detector(hsi_img, tgt_sig, mask = None, n_comp = 5):
 	6/2/2018 - Edited by Alina Zare
 	12/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	palm_out, kwargsout = img_det(palm_helper, hsi_img, tgt_sig, mask, n_comp = n_comp)
 	return palm_out
 

@@ -22,6 +22,9 @@ def mtmf_statistic(hsi_img,tgt_sig, mask = None):
 	8/12/2012 - Taylor C. Glenn - tcg@cise.ufl.edu
 	12/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	mnf_img, n_dim, mnf_vecs, mnf_eigvals, mnf_mu = mnf(hsi_img,1);
 	# tgt_sig = tgt_sig[:n_dim,0][:,np.newaxis]
 	s = mnf_vecs @ (tgt_sig - mnf_mu)

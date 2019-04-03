@@ -25,6 +25,9 @@ def ace_rt_max_detector(hsi_img, tgt_sig, mask = None, mu = None, sig_inv = None
 	6/2/2018 - Edited by Alina Zare
 	11/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	ace_rt_max_out, kwargsout = img_det(ace_rt_max_helper, hsi_img, tgt_sig, mask, mu = mu, sig_inv = sig_inv)
 	return ace_rt_max_out, kwargsout['mu'], kwargsout['sig_inv']
 

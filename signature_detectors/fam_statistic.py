@@ -16,6 +16,9 @@ def fam_statistic(hsi_img, tgt_sig, mu = None, sig_inv = None):
 	6/2/2018 - Edited by Alina Zare
 	11/2018 - Python Implementation by Yutai Zhou
 	"""
+	if tgt_sig.ndim == 1:
+		tgt_sig = tgt_sig[:, np.newaxis]
+
 	# assume target variance same as background variance
 	n_row, n_col, n_band = hsi_img.shape
 	n_pixel = n_row * n_col
