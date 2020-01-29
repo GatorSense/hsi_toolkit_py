@@ -3,7 +3,7 @@ from scipy.io import loadmat
 import matplotlib.pyplot as plt
 sys.path.append('../')
 sys.path.append('../util/')
-from anomaly_detectors import *
+from hsi_toolkit.anomaly_detectors import *
 from get_RGB import get_RGB
 """
 Demo script that runs all anomaly detectors in hsi_toolkit_py using example sub MUUFL Gulfport data
