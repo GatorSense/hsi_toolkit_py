@@ -3,10 +3,9 @@ from scipy.io import loadmat
 import matplotlib.pyplot as plt
 sys.path.append('../')
 sys.path.append('../util/')
-from signature_detectors import *
+from hsi_toolkit.signature_detectors import *
 from get_RGB import get_RGB
-from img_seg import img_seg
-from sklearn.cluster import KMeans
+
 """
 Demo script that runs all signature detectors in hsi_toolkit_py
 
