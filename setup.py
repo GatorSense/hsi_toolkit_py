@@ -10,7 +10,6 @@ import setuptools
 #from setuptools.command.test import test as TestCommand
 from codecs import open
 from os import path
-import versioneer
 
 
 # class PyTest(TestCommand):
@@ -44,18 +43,17 @@ setuptools.setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version=versioneer.get_version(),
 
-    description='An image processing package for plant phenotyping.',
+    description='GatorSense Hyperspectral Image Analysis Toolkit - Python Implementation',
     long_description=long_description,
     long_description_content_type='text/markdown',
 
     # The project's main homepage.
-    url='http://plantcv.danforthcenter.org',
+    url='https://faculty.eng.ufl.edu/machine-learning/',
 
     # Author details
-    author='The PlantCV team',
-    author_email='plantcv@danforthcenter.org',
+    author='The GatorSense team',
+    author_email='azare@ufl.edu',
 
     # Choose your license
     license='MIT',
@@ -80,15 +78,13 @@ setuptools.setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7'
     ],
 
     # What does your project relate to?
-    keywords='plant phenotyping bioinformatics',
+    keywords='plant phenotyping bioinformatics hyperspectral machine-learning sensing',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
@@ -113,7 +109,6 @@ setuptools.setup(
     # },
     setup_requires=["pytest-runner"],
     tests_require=['pytest'],
-    cmdclass=versioneer.get_cmdclass(),
     scripts=["plantcv-train.py", "plantcv-utils.py", "plantcv-workflow.py"]
 
     # If there are data files included in your packages that need to be
