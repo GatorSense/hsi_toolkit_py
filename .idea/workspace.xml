@@ -2,78 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ce4d50-6b0b-46ef-a5fd-6a60b5c382a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hsi_toolkit/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hsi_toolkit/util/BatchPlotSpectra/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/an_hsi_image_sub_for_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/an_hsi_image_sub_for_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/beta_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/cbad_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/cbad_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/csd_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/csd_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/demo_anomaly_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/demo_anomaly_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/fcbad_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/fcbad_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/gmm_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmm_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/gmrx_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmrx_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/md_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/md_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/rx_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/rx_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anomaly_detectors/ssrx_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/ssrx_anomaly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/an_hsi_img_for_class_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/an_hsi_img_for_class_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/demo_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/demo_classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/fuzzy_knn_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/fuzzy_knn_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/knn_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/knn_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/poss_knn_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/poss_knn_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/an_hsi_image_sub_for_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/an_hsi_image_sub_for_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/demo_dim_reduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/demo_dim_reduction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/hdr.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/hdr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/mnf.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/mnf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/endmember_extraction/VCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/endmember_extraction/VCA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/endmember_extraction/an_hsi_image_sub_for_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/endmember_extraction/an_hsi_image_sub_for_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/endmember_extraction/demoVCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/endmember_extraction/demoVCA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/abd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/abd_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_local_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_rt_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_rt_max_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_max_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_ss_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_ss_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/amsd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/amsd_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/an_hsi_img_for_tgt_det_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/an_hsi_img_for_tgt_det_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ccmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ccmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/cem_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/cem_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ctmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ctmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/demo_signature_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/demo_signature_det.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/fam_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/fam_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ftmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ftmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ha_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ha_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/hsd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/hsd_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_local_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/hua_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hua_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/mtmf_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/mtmf_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/osp_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/osp_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/palm_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/palm_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/qmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/qmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/sam_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/sam_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_local_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_max_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_max_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/spsmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/spsmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/BatchPlotSpectra/an_hsi_image_sub_for_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/BatchPlotSpectra/an_hsi_image_sub_for_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/BatchPlotSpectra/batchplotspectra.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/BatchPlotSpectra/batchplotspectra.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/BatchPlotSpectra/batchplotspectra_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/BatchPlotSpectra/batchplotspectra_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/get_RGB.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/get_RGB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/get_hsi_bands.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/get_hsi_bands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/img_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/img_det.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/img_seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/img_seg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/pca.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/rx_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/rx_det.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/unmix.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/unmix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hsi_toolkit/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,14 +15,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/__init__.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="150">
+                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
@@ -111,13 +72,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hsi_toolkit/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/setup.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/requirements.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1750" />
-    <option name="y" value="-212" />
-    <option name="width" value="1440" />
+    <option name="x" value="2050" />
+    <option name="y" value="-207" />
+    <option name="width" value="1310" />
     <option name="height" value="848" />
   </component>
   <component name="ProjectView">
@@ -178,11 +142,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1750" y="-212" width="1440" height="848" extended-state="0" />
+    <frame x="2050" y="-207" width="1310" height="848" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19937937" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
@@ -238,13 +202,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="150">
+            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/setup.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
