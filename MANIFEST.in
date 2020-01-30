@@ -1,4 +1,3 @@
-include versioneer.py
 include hsi_toolkit_py/hsi_toolkit/_version.py
 include requirements.txt
 include LICENSE
