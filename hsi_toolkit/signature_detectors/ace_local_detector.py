@@ -1,6 +1,4 @@
-import sys
-sys.path.append('../util/')
-from rx_det import rx_det
+from hsi_toolkit.util.rx_det import rx_det
 import numpy as np
 
 def ace_local_detector(hsi_img, tgt_sig, mask = None, guard_win = 2, bg_win = 4, beta = 0):

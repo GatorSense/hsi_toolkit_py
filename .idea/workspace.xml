@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ce4d50-6b0b-46ef-a5fd-6a60b5c382a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/abd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/abd_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_local_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_detector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,81 +16,65 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="375">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
+                <element signature="e#0#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/demo_dim_reduction.py">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/abd_detector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+            <state>
+              <caret column="15" lean-forward="true" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/hdr.py">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_detector.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
-                <element signature="e#510#528#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/mnf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="18" lean-forward="true" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/demoVCA.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-77">
-              <folding>
-                <element signature="e#627#645#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/VCA.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3002">
-              <folding>
-                <element signature="e#1503#1521#0" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_detector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+            <state>
               <folding>
-                <element signature="e#0#58#0" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_local_detector.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -142,6 +129,10 @@
         <option value="$PROJECT_DIR$/hsi_toolkit/dim_reduction/demo_dim_reduction.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/dim_reduction/mnf.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/abd_detector.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_detector.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_detector.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_local_detector.py" />
       </list>
     </option>
   </component>
@@ -466,13 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/knn_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -507,15 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/hdr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#510#528#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/mnf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -526,15 +501,6 @@
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/demoVCA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-77">
-          <folding>
-            <element signature="e#627#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/VCA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3002">
@@ -544,12 +510,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/demoVCA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <folding>
+            <element signature="e#627#645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/hdr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#510#528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/abd_detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_local_detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
