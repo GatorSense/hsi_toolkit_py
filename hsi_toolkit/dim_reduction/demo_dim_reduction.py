@@ -1,10 +1,8 @@
 import sys
 from scipy.io import loadmat
 
-sys.path.append('../')
-sys.path.append('../util/')
 from hsi_toolkit.dim_reduction import *
-from get_RGB import get_RGB
+from hsi_toolkit.util.get_RGB import get_RGB
 # Demo script that runs all dimensionality reduction methods in hsi_toolkit_py
 #
 # Inputs:
