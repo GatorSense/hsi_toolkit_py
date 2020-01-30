@@ -1,4 +1,5 @@
 import numpy as np
+
 def rx_anomaly(hsi_img, guard_win, bg_win, mask = None):
 	"""
 	Widowed Reed-Xiaoli anomaly detector

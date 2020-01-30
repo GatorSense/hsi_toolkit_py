@@ -1,6 +1,6 @@
 import sys
 sys.path.append('../util/')
-from img_det import img_det
+from hsi_toolkit.util.img_det import img_det
 import numpy as np
 
 def md_anomaly(hsi_img, mask = None):
