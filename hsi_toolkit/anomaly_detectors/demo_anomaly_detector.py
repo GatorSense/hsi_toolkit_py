@@ -20,7 +20,7 @@
 # 10/1/2018 - Python Implementation by Yutai Zhou
 # """
 #
-# #### It's looking for a matlab file? If this demo work in python too? 
+# #### It's looking for a matlab file? If this demo work in python too?
 # an_hsi_image_sub_for_demo = loadmat('an_hsi_image_sub_for_demo.mat')
 # hsi_img_sub = an_hsi_image_sub_for_demo['hsi_img_sub']
 # wavelengths = an_hsi_image_sub_for_demo['wavelengths']

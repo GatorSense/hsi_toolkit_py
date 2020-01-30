@@ -1,5 +1,4 @@
 import sys
-sys.path.append('../util/')
 from hsi_toolkit.util.img_det import img_det
 import numpy as np
 from scipy.stats import beta

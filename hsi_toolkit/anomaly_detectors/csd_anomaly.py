@@ -1,5 +1,4 @@
 import sys
-sys.path.append('../util/')
 from pca import pca
 import numpy as np
 
