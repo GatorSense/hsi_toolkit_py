@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ce4d50-6b0b-46ef-a5fd-6a60b5c382a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,15 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -56,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -69,19 +60,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MANIFEST.in">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state>
+              <caret selection-start-column="2" selection-end-line="2" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup.cfg">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state>
+              <caret selection-start-column="2" selection-end-line="1" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/VCA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2942" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-start-column="2" selection-end-line="24" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -91,20 +103,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="615">
               <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="150">
-                <caret line="10" selection-start-line="10" selection-end-line="10" />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
             </state>
           </provider>
         </entry>
@@ -140,6 +138,9 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/__init__.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" />
       </list>
     </option>
   </component>
@@ -182,6 +183,24 @@
               <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
               <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
               <item name="classifiers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
+              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
+              <item name="dim_reduction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
+              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
+              <item name="endmember_extraction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
+              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
+              <item name="signature_detectors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -248,15 +267,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -264,15 +274,6 @@
           <second_editor>
             <markdownNavigatorState />
           </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -353,6 +354,35 @@
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-start-column="2" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-start-column="2" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/VCA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2942" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-start-column="2" selection-end-line="24" selection-end-column="29" />
         </state>
       </provider>
     </entry>
