@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ce4d50-6b0b-46ef-a5fd-6a60b5c382a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/demo_anomaly_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/demo_anomaly_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/classifiers/demo_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/demo_classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/classifiers/knn_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/knn_classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,67 +15,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmrx_anomaly.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/cbad_anomaly.py">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/md_anomaly.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/csd_anomaly.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-start-column="2" selection-end-line="2" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/fcbad_anomaly.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-287">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmm_anomaly.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -90,7 +43,77 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/ssrx_anomaly.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/demo_classification.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/fuzzy_knn_classifier.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-95">
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/knn_classifier.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/poss_knn_classifier.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-73">
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -124,19 +147,23 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/__init__.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py" />
-        <option value="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" />
-        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/util/get_RGB.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/util/__init__.py" />
-        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/cbad_anomaly.py" />
-        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmm_anomaly.py" />
-        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmrx_anomaly.py" />
-        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/md_anomaly.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/rx_anomaly.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/demo_anomaly_detector.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/fcbad_anomaly.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/cbad_anomaly.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/csd_anomaly.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmm_anomaly.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmrx_anomaly.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/md_anomaly.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/ssrx_anomaly.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/classifiers/demo_classification.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/classifiers/knn_classifier.py" />
       </list>
     </option>
   </component>
@@ -249,17 +276,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/demo_anomaly_detector.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/README.md">
@@ -396,17 +412,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/cbad_anomaly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/csd_anomaly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/demo_anomaly_detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/fcbad_anomaly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmm_anomaly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmrx_anomaly.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/md_anomaly.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -418,64 +479,63 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/ssrx_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-start-column="2" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="315">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmm_anomaly.py">
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="30">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/fuzzy_knn_classifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/demo_classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+        <state relative-caret-position="15">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/cbad_anomaly.py">
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/knn_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/demo_anomaly_detector.py">
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/classifiers/poss_knn_classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/csd_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/fcbad_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-287">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="-73">
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
