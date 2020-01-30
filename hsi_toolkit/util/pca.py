@@ -1,5 +1,6 @@
 import numpy as np
 import scipy as scp
+
 def pca(X, frac, mask = None):
 	"""
 	function [y,n_dim,vecs,vals,mu] = pca(x,frac,mask)

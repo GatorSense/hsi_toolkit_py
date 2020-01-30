@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ce4d50-6b0b-46ef-a5fd-6a60b5c382a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_max_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_max_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_ss_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_ss_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/amsd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/amsd_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ccmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ccmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/cem_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/cem_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/demo_signature_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/demo_signature_det.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/fam_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/fam_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ha_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ha_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_local_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hua_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hua_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/mtmf_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/mtmf_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/osp_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/osp_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/palm_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/palm_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/qmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/qmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/sam_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/sam_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_local_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_max_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_max_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/spsmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/spsmf_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/util/get_hsi_bands.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/get_hsi_bands.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/util/img_seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/img_seg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/util/pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/pca.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,92 +15,6 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/mtmf_statistic.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/osp_detector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-47">
-              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/palm_detector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-92">
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/qmf_detector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/sam_detector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_detector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-242">
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_local_detector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_max_detector.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -126,12 +23,89 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/spsmf_detector.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/get_hsi_bands.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/get_RGB.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/img_det.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/img_seg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/pca.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/rx_det.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-497" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/unmix.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,9 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hsi_toolkit/requirements.txt" />
-        <option value="$PROJECT_DIR$/hsi_toolkit/MANIFEST.in" />
-        <option value="$PROJECT_DIR$/setup.cfg" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/setup.py" />
@@ -210,6 +181,9 @@
         <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_local_detector.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_max_detector.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/spsmf_detector.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/util/get_hsi_bands.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/util/img_seg.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/util/pca.py" />
       </list>
     </option>
   </component>
@@ -246,12 +220,6 @@
               <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
               <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
               <item name="dim_reduction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
-              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
-              <item name="signature_detectors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
@@ -324,65 +292,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/cbad_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/csd_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/demo_anomaly_detector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/fcbad_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmm_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmrx_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/md_anomaly.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/rx_anomaly.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -741,9 +650,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/spsmf_detector.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/get_hsi_bands.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/get_RGB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/img_det.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/img_seg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/pca.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/rx_det.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-497" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/util/unmix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
