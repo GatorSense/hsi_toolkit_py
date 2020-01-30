@@ -1,4 +1,5 @@
 import numpy as np
+
 def qmf_detector(hsi_img, tgt_sig, tgt_cov):
 	"""
 	Quadratic Spectral Matched Filter

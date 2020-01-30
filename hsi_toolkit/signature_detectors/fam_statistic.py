@@ -1,4 +1,5 @@
 import numpy as np
+
 def fam_statistic(hsi_img, tgt_sig, mu = None, sig_inv = None):
 	"""
 	False Alarm Mitigation Statistic from Subpixel Replacement Model

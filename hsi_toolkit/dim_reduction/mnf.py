@@ -1,4 +1,5 @@
 import numpy as np
+
 def mnf(in_img, eigval_retain = 1):
 	"""
 	Maximum Noise Fraction code
