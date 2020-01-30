@@ -1,7 +1,6 @@
 from hsi_toolkit.anomaly_detectors.beta_anomaly import *
 from hsi_toolkit.anomaly_detectors.cbad_anomaly import *
 from hsi_toolkit.anomaly_detectors.csd_anomaly import *
-from hsi_toolkit.anomaly_detectors.demo_anomaly_detector import *
 from hsi_toolkit.anomaly_detectors.fcbad_anomaly import *
 from hsi_toolkit.anomaly_detectors.gmm_anomaly import *
 from hsi_toolkit.anomaly_detectors.gmrx_anomaly import *
