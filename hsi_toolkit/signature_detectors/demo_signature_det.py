@@ -1,10 +1,8 @@
-import sys
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
-sys.path.append('../')
-sys.path.append('../util/')
 from hsi_toolkit.signature_detectors import *
-from get_RGB import get_RGB
+from hsi_toolkit.util.get_RGB import get_RGB
+
 
 """
 Demo script that runs all signature detectors in hsi_toolkit_py

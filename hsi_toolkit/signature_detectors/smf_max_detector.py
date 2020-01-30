@@ -1,7 +1,5 @@
-import sys
-sys.path.append('../util/')
-from img_det import img_det
-from smf_detector import smf_det_array_helper
+from hsi_toolkit.util.img_det import img_det
+from hsi_toolkit.signature_detectors.smf_detector import smf_det_array_helper
 import numpy as np
 
 def smf_max_detector(hsi_img, tgt_sig, mask = None, mu = None, sig_inv = None):
