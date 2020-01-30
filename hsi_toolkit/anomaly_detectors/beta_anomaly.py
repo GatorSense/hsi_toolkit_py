@@ -1,9 +1,8 @@
 import sys
 sys.path.append('../util/')
-from img_det import img_det
+from hsi_toolkit.util.img_det import img_det
 import numpy as np
 from scipy.stats import beta
-from math import log
 
 def beta_anomaly(hsi_img, mask):
 	"""

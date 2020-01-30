@@ -1,5 +1,5 @@
 import numpy as np
-from get_hsi_bands import get_hsi_bands
+from hsi_toolkit.util.get_hsi_bands import get_hsi_bands
 
 def get_RGB(hsi_img, wavelengths):
 	"""
