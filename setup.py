@@ -61,6 +61,9 @@ setuptools.setup(
     # Supported platforms
     platforms=['Any'],
 
+    # Version number
+    version=1.0,
+
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         # How mature is this project? Common values are
