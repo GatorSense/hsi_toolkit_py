@@ -1,4 +1,4 @@
-Gatorsense HSI Toolkit - Spectral Indices
+# Gatorsense HSI Toolkit - Spectral Indices
 
 Location: hsi_toolkit_py/spectral_indices
 
@@ -7,9 +7,7 @@ This code base contains common spectral indices for vegetation analysis. Also, r
 More information about VIs can be found in this book chapter: 
 Roberts, D.A., Roth, K.L, Wetherley, E.B., Meerdink, S.K., & Perroy, R.L. (2019). Chapter 1: Hyperspectral Vegetation Indices, in: Hyperspectral Remote Sensing of Vegetation (second edition), CRC Press, New York.
 
-
-
-Current suite of VIs:
+## Current suite of VIs:
   * ndvi_vi: calculates the Normalized Difference Vegetation Index
   * evi_vi: calculates the Enhanced Vegetation Index
 	
