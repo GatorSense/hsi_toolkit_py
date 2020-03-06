@@ -33,7 +33,7 @@ def evi_VI(imgData, wave, mask = None):
         data_3 = imgData[:,idx_3]
     
     # Calculate NDVI
-    index = 2.5* ((data_3 - data_2)/(data_3 + 6*data_2 - 7.5*data1 + 1))
+    index = 2.5* ((data_3 - data_2)/(data_3 + 6*data_2 - 7.5*data_1 + 1))
     
     # If data was 3D, reshape the index value back into 3D shape
     if imgData.ndim > 2:
