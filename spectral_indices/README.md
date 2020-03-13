@@ -9,16 +9,16 @@ Roberts, D.A., Roth, K.L, Wetherley, E.B., Meerdink, S.K., & Perroy, R.L. (2019)
 
 ## Current suite of VIs:
   * ari_vi: calculates the Anthocyanin Reflectance Index
-  * cai_vi: calculates the Cellulose Absorption Index **
+  * cai_vi: calculates the Cellulose Absorption Index ***
   * cari_vi: calculates the Chlorophyll Absorption in Reflectance Index
   * cri1_vi: calculates the Carotenoid Reflectance Index 1
   * cri2_vi: calculates the Carotenoid Reflectance Index 2
-  * evi_vi: calculates the Enhanced Vegetation Index *
+  * evi_vi: calculates the Enhanced Vegetation Index **
   * mcari_vi: calculates the Modified Anthocyanin Reflectance Index
   * mtci_vi: calculates the MERIS Terrestrial Chlorophyll Index
-  * ndli_vi: calculates the Normalized Difference Lignin Index **
-  * ndvi_vi: calculates the Normalized Difference Vegetation Index *
-  * ndwi_ vi: calculates the Normalized Difference Water Index **
+  * ndli_vi: calculates the Normalized Difference Lignin Index ***
+  * ndvi_vi: calculates the Normalized Difference Vegetation Index **
+  * ndwi_ vi: calculates the Normalized Difference Water Index ***
   * pri_vi: calculates the Photochemical Reflectance Index
   * psnd_chlA_vi: calculates the Pigment Sensitive Normalized Difference for Chlorophyll A
   * psnd_chlB_vi: calculates the Pigment Sensitive Normalized Difference for Chlorophyll B
@@ -32,8 +32,8 @@ Roberts, D.A., Roth, K.L, Wetherley, E.B., Meerdink, S.K., & Perroy, R.L. (2019)
   * sr_vi: calculates the Simple Ratio
   * wbi_vi: calculates the Water Band Index
 
-* Spectral index original designed for multi-spectral data. We have selected narrow bands to calculate index based on hyperspectral literature. The citations are noted in each function description.
+** Spectral index original designed for multi-spectral data. We have selected narrow bands to calculate index based on hyperspectral literature. The citations are noted in each function description.
 
-** This spectral index requires the shortwave infrared. 
+*** This spectral index requires the shortwave infrared. 
 	
 Questions? Contact: Alina Zare, azare@ufl.edu
