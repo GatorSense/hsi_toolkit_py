@@ -39,8 +39,8 @@ guard_win = 1; bg_win = 3; beta = 0.001; n_dim_ss = 10;
 ems = hsi_sub[:3,1,:].T # need to provide background endmembers (can get them using SPICE unmixing)
 
 # call detectors
-# abd_out = abd_detector(hsi_sub, tgt_spectra, ems)
-# det_out['ABD'] = abd_out
+abd_out = abd_detector(hsi_sub, tgt_spectra, ems)
+det_out['ABD'] = abd_out
 # ace_out, _, _ = ace_detector(hsi_sub, tgt_spectra)
 # det_out['ACE Squared'] = ace_out
 # ace_local_out, _ = ace_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win, beta = beta)
