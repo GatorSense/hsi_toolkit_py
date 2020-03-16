@@ -193,22 +193,22 @@ def cri2_vi(imgData, wave, mask=0):
     03/2020 - Susan Meerdink
     """
     # Find band indexes
-    idx_550 = (np.abs(wave - 550)).argmin()
+    idx_510 = (np.abs(wave - 510)).argmin()
     idx_700 = (np.abs(wave - 700)).argmin()
     print('Calls for bands 700 and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_700]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
-        data_550 = np.reshape(imgData[:,:,idx_550],[-1,1])
+        data_510 = np.reshape(imgData[:,:,idx_510],[-1,1])
         data_700 = np.reshape(imgData[:,:,idx_700],[-1,1])
     
     # 2D data, flattened hyperspectral data, [n_row x n_band]
     else:
-        data_550 = imgData[:,idx_550]
+        data_510 = imgData[:,idx_510]
         data_700 = imgData[:,idx_700]
     
     # Calculate CRI 2
-    index = (1/data_550) - (1/data_700)
+    index = (1/data_510) - (1/data_700)
     
     # If data was 3D, reshape the index value back into 3D shape
     if imgData.ndim > 2:
