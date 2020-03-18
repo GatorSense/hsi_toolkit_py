@@ -31,15 +31,22 @@ det_out = {}
 det_out['RGB'] = get_RGB(hsi_sub, wavelengths)
 
 # Call Spectral Indices
+det_out['ACI'] = aci_vi(hsi_sub, wavelengths)
 det_out['ARI'] = ari_vi(hsi_sub, wavelengths)
+det_out['ARVI'] = arvi_vi(hsi_sub, wavelengths)
 #det_out['CAI'] = cai_vi(hsi_sub, wavelengths)
 det_out['CARI'] = cari_vi(hsi_sub, wavelengths)
+det_out['CIrededge'] = cirededge_vi(hsi_sub, wavelengths)
 det_out['CRI1'] = cri1_vi(hsi_sub, wavelengths)
 det_out['CRI2'] = cri2_vi(hsi_sub, wavelengths)
 det_out['EVI'] = evi_vi(hsi_sub, wavelengths)
+det_out['MARI'] = mari_vi(hsi_sub, wavelengths)
 det_out['MCARI'] = mcari_vi(hsi_sub, wavelengths)
 det_out['MTCI'] = mtci_vi(hsi_sub, wavelengths)
+#det_out['NDII'] = ndii_vi(hsi_sub, wavelengths)
 #det_out['NDLI'] = ndli_vi(hsi_sub, wavelengths)
+#det_out['NDNI'] = ndni_vi(hsi_sub, wavelengths)
+det_out['NDRE'] = ndre_vi(hsi_sub, wavelengths)
 det_out['NDVI'] = ndvi_vi(hsi_sub, wavelengths)
 #det_out['NDWI'] = ndwi_vi(hsi_sub, wavelengths)
 det_out['PRI'] = pri_vi(hsi_sub, wavelengths)
@@ -50,6 +57,7 @@ det_out['PSRI'] = psri_vi(hsi_sub, wavelengths)
 det_out['PSSR1'] = pssr1_vi(hsi_sub, wavelengths)
 det_out['PSSR2'] = pssr2_vi(hsi_sub, wavelengths)
 det_out['PSSR3'] = pssr3_vi(hsi_sub, wavelengths)
+det_out['REP'] = rep_vi(hsi_sub, wavelengths)
 det_out['RVSI'] = rvsi_vi(hsi_sub, wavelengths)
 det_out['SIPI'] = sipi_vi(hsi_sub, wavelengths)
 det_out['SR'] = sr_vi(hsi_sub, wavelengths)
@@ -57,8 +65,8 @@ det_out['WBI'] = wbi_vi(hsi_sub, wavelengths)
 
 # Visualization with ALL indices
 plt.figure(figsize=(10, 15))
-plt.subplots_adjust(hspace=0.1)
-n_row = 5; n_col = 5
+plt.subplots_adjust(hspace=0.5)
+n_row = 6; n_col = 5
 i = 1
 for key, value in det_out.items():
     plt.subplot(n_row, n_col, i)
@@ -89,3 +97,4 @@ for key, value in det_out.items():
         plt.xticks([])
         plt.title(key)
         plt.savefig((dirout + '/Results/'+key + '.png'), format='png')
+        plt.close()

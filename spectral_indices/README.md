@@ -8,17 +8,25 @@ More information about VIs can be found in this book chapter:
 Roberts, D.A., Roth, K.L, Wetherley, E.B., Meerdink, S.K., & Perroy, R.L. (2019). Chapter 1: Hyperspectral Vegetation Indices, in: Hyperspectral Remote Sensing of Vegetation (second edition), CRC Press, New York.
 
 ## Current suite of VIs:
+  * aci_vi: calculates the Anthocyanin Content Index **
   * ari_vi: calculates the Anthocyanin Reflectance Index
+  * arvi_vi: calculates the Atmospherically Resistant Vegetation Index **
   * cai_vi: calculates the Cellulose Absorption Index ***
   * cari_vi: calculates the Chlorophyll Absorption in Reflectance Index
+  * cirededge_vi: calculates the Chlorophyll Index Red Edge **
   * cri1_vi: calculates the Carotenoid Reflectance Index 1
   * cri2_vi: calculates the Carotenoid Reflectance Index 2
   * evi_vi: calculates the Enhanced Vegetation Index **
+  * mari_vi: calculates the Modified Anthocyanin Reflectance Index
   * mcari_vi: calculates the Modified Anthocyanin Reflectance Index
+  * msi_vi: calculates the Moisture Stress Index ** & ***
   * mtci_vi: calculates the MERIS Terrestrial Chlorophyll Index
+  * ndii_vi: calculates the Normalized Difference Infrared Index ** & ***
   * ndli_vi: calculates the Normalized Difference Lignin Index ***
+  * ndni_vi: calculates the Normalized Difference Nitrogen Index ***
+  * ndre_vi: calculates the Normalized Difference Red Edge Index 
   * ndvi_vi: calculates the Normalized Difference Vegetation Index **
-  * ndwi_ vi: calculates the Normalized Difference Water Index ***
+  * ndwi_vi: calculates the Normalized Difference Water Index ***
   * pri_vi: calculates the Photochemical Reflectance Index
   * psnd_chlA_vi: calculates the Pigment Sensitive Normalized Difference for Chlorophyll A
   * psnd_chlB_vi: calculates the Pigment Sensitive Normalized Difference for Chlorophyll B
@@ -27,13 +35,19 @@ Roberts, D.A., Roth, K.L, Wetherley, E.B., Meerdink, S.K., & Perroy, R.L. (2019)
   * pssr1_vi: calculates the Pigment-Specific Spectral Ratio 1
   * pssr2_vi: calculates the Pigment-Specific Spectral Ratio 2
   * pssr3_vi: calculates the Pigment-Specific Spectral Ratio 3
+  * rep_vi: calculates the Red-edge Position
+  * rgri_vi: calculates the Red/Green Ratio Index **
   * rvsi_vi: calculates the Red-edge Vegetation Stress Index
+  * savi_vi: calculates the Soil Adjusted Vegetation Index
   * sipi_vi: calculates the Structure Insensitive Pigment Index
   * sr_vi: calculates the Simple Ratio
+  * vari_vi:
+  * vigreen_vi:
+  * wdvi_vi:
   * wbi_vi: calculates the Water Band Index
 
-** Spectral index original designed for multi-spectral data. We have selected narrow bands to calculate index based on hyperspectral literature. The citations are noted in each function description.
+** Spectral index original designed for multi-spectral data. We have selected narrow bands to calculate index based on hyperspectral literature. The citations with used hyperspectral bands are noted in each function description.
 
-*** This spectral index requires the shortwave infrared. 
+*** This spectral index requires the shortwave infrared (1200 - 2500 nm). Not all hyperspectral systems measure the entire visible shortwave infrared spectrum. 
 	
 Questions? Contact: Alina Zare, azare@ufl.edu
