@@ -99,5 +99,5 @@ for key, value in det_out.items():
         plt.yticks([])
         plt.xticks([])
         plt.title(key)
-        plt.savefig((dirout + '/Results/'+key + '.png'), format='png')
+        plt.savefig((dirout + '/Results/'+key + '.png'), format='png',dpi=200)
         plt.close()

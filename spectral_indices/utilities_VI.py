@@ -18,15 +18,18 @@ def aci_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_530 = (np.abs(wave - 530)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_530 = (np.abs(wave - 530)).argmin()
+        else:
+            idx_530 = bands[0]
+        if bands[1] == -1:
+            idx_940 = (np.abs(wave - 940)).argmin()
+        else:
+            idx_940 = bands[1]
+        print('ACI calls for green and near infrared bands. Using bands ' + str(wave[idx_530]) +', '+ str(wave[idx_940]))
     else:
-        idx_530 = bands[0]
-    if bands[1] == -1:
-        idx_940 = (np.abs(wave - 940)).argmin()
-    else:
-        idx_940 = bands[1]
-    print('ACI calls for green and near infrared bands. Using bands ' + str(wave[idx_530]) +', '+ str(wave[idx_940]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -67,15 +70,18 @@ def ari_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_550 = (np.abs(wave - 550)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_550 = (np.abs(wave - 550)).argmin()
+        else:
+            idx_550 = bands[0]
+        if bands[1] == -1:
+            idx_700 = (np.abs(wave - 700)).argmin()
+        else:
+            idx_700 = bands[1]  
+        print('ARI calls for bands 550 and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_700]))
     else:
-        idx_550 = bands[0]
-    if bands[1] == -1:
-        idx_700 = (np.abs(wave - 700)).argmin()
-    else:
-        idx_700 = bands[1]  
-    print('ARI calls for bands 550 and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_700]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -120,19 +126,22 @@ def arvi_vi(imgData, wave, mask=0, bands=[-1,-1,-1], weight=2):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_467 = (np.abs(wave - 467)).argmin()
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_467 = (np.abs(wave - 467)).argmin()
+        else:
+            idx_467 = bands[0]
+        if bands[1] == -1:
+            idx_671 = (np.abs(wave - 671)).argmin()
+        else:
+            idx_671 = bands[1]
+        if bands[2] == -1:
+            idx_864 = (np.abs(wave - 864)).argmin()
+        else:
+            idx_864 = bands[2]
+        print('ARVI calls for blue, red, and near infrared bands. Using bands ' + str(wave[idx_467]) +', '+ str(wave[idx_671])+', '+ str(wave[idx_864]))
     else:
-        idx_467 = bands[0]
-    if bands[1] == -1:
-        idx_671 = (np.abs(wave - 671)).argmin()
-    else:
-        idx_671 = bands[1]
-    if bands[2] == -1:
-        idx_864 = (np.abs(wave - 864)).argmin()
-    else:
-        idx_864 = bands[2]
-    print('ARVI calls for blue, red, and near infrared bands. Using bands ' + str(wave[idx_467]) +', '+ str(wave[idx_671])+', '+ str(wave[idx_864]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -179,19 +188,22 @@ def cai_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
         raise Exception('Data does not have Shortwave Infrared Bands and CAI cannot be calculated.')
 
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_2019 = (np.abs(wave - 2019)).argmin()
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_2019 = (np.abs(wave - 2019)).argmin()
+        else:
+            idx_2019 = bands[0]
+        if bands[1] == -1:
+            idx_2206 = (np.abs(wave - 2206)).argmin()
+        else:
+            idx_2206 = bands[1]
+        if bands[2] == -1:
+            idx_2109 = (np.abs(wave - 2109)).argmin()
+        else:
+            idx_2109 = bands[2]
+        print('CAI calls for bands 2019, 2206, and 2109 nm. Using bands ' + str(wave[idx_2019]) +', '+ str(wave[idx_2206])+', '+ str(wave[idx_2109]))
     else:
-        idx_2019 = bands[0]
-    if bands[1] == -1:
-        idx_2206 = (np.abs(wave - 2206)).argmin()
-    else:
-        idx_2206 = bands[1]
-    if bands[2] == -1:
-        idx_2109 = (np.abs(wave - 2109)).argmin()
-    else:
-        idx_2109 = bands[2]
-    print('CAI calls for bands 2019, 2206, and 2109 nm. Using bands ' + str(wave[idx_2019]) +', '+ str(wave[idx_2206])+', '+ str(wave[idx_2109]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -234,19 +246,22 @@ def cari_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_550 = (np.abs(wave - 550)).argmin()
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_550 = (np.abs(wave - 550)).argmin()
+        else:
+            idx_550 = bands[0]
+        if bands[1] == -1:
+            idx_670 = (np.abs(wave - 670)).argmin()
+        else:
+            idx_670 = bands[1]
+        if bands[2] == -1:
+            idx_700 = (np.abs(wave - 700)).argmin()
+        else:
+            idx_700 = bands[2]
+        print('CARI calls for bands 550, 670, and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_670])+', '+ str(wave[idx_700]))
     else:
-        idx_550 = bands[0]
-    if bands[1] == -1:
-        idx_670 = (np.abs(wave - 670)).argmin()
-    else:
-        idx_670 = bands[1]
-    if bands[2] == -1:
-        idx_700 = (np.abs(wave - 700)).argmin()
-    else:
-        idx_700 = bands[2]
-    print('CARI calls for bands 550, 670, and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_670])+', '+ str(wave[idx_700]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -291,15 +306,18 @@ def cirededge_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_710 = (np.abs(wave - 710)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_710 = (np.abs(wave - 710)).argmin()
+        else:
+            idx_710 = bands[0]
+        if bands[1] == -1:
+            idx_780 = (np.abs(wave - 780)).argmin()
+        else:
+            idx_780 = bands[1]
+        print('CI red edge calls for red edge and near infrared bands. Using bands ' + str(wave[idx_710]) +', '+ str(wave[idx_780]))
     else:
-        idx_710 = bands[0]
-    if bands[1] == -1:
-        idx_780 = (np.abs(wave - 780)).argmin()
-    else:
-        idx_780 = bands[1]
-    print('CI red edge calls for red edge and near infrared bands. Using bands ' + str(wave[idx_710]) +', '+ str(wave[idx_780]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -339,16 +357,19 @@ def cri1_vi(imgData, wave, mask=0, bands=[-1,-1]):
 
     03/2020 - Susan Meerdink
     """
-   # Determine the bands used in function
-    if bands[0] == -1:
-        idx_510 = (np.abs(wave - 510)).argmin()
+    # Determine the bands used in function
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_510 = (np.abs(wave - 510)).argmin()
+        else:
+            idx_510 = bands[0]
+        if bands[1] == -1:
+            idx_550 = (np.abs(wave - 550)).argmin()
+        else:
+            idx_550 = bands[1]
+        print('CRI1 calls for bands 510 and 550 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_510]))
     else:
-        idx_510 = bands[0]
-    if bands[1] == -1:
-        idx_550 = (np.abs(wave - 550)).argmin()
-    else:
-        idx_550 = bands[1]
-    print('CRI1 calls for bands 510 and 550 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_510]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -389,15 +410,18 @@ def cri2_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_510 = (np.abs(wave - 510)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_510 = (np.abs(wave - 510)).argmin()
+        else:
+            idx_510 = bands[0]
+        if bands[1] == -1:
+            idx_700 = (np.abs(wave - 700)).argmin()
+        else:
+            idx_700 = bands[1]
+        print('CRI2 calls for bands 510 and 700 nm. Using bands ' + str(wave[idx_510]) +', '+ str(wave[idx_700]))
     else:
-        idx_510 = bands[0]
-    if bands[1] == -1:
-        idx_700 = (np.abs(wave - 700)).argmin()
-    else:
-        idx_700 = bands[1]
-    print('CRI2 calls for bands 510 and 700 nm. Using bands ' + str(wave[idx_510]) +', '+ str(wave[idx_700]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -440,19 +464,22 @@ def evi_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     02/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_blue = (np.abs(wave - 470)).argmin()
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_blue = (np.abs(wave - 470)).argmin()
+        else:
+            idx_blue = bands[0]
+        if bands[1] == -1:
+            idx_red = (np.abs(wave - 650)).argmin()
+        else:
+            idx_red = bands[1]
+        if bands[2] == -1:
+            idx_nir = (np.abs(wave - 860)).argmin()
+        else:
+            idx_nir = bands[2]
+        print('EVI calls for bands blue, red, and near infrared bands. Using bands ' + str(wave[idx_blue]) +', '+ str(wave[idx_red])+', '+str(wave[idx_nir]))
     else:
-        idx_blue = bands[0]
-    if bands[1] == -1:
-        idx_red = (np.abs(wave - 650)).argmin()
-    else:
-        idx_red = bands[1]
-    if bands[2] == -1:
-        idx_nir = (np.abs(wave - 860)).argmin()
-    else:
-        idx_nir = bands[2]
-    print('EVI calls for bands blue, red, and near infrared bands. Using bands ' + str(wave[idx_blue]) +', '+ str(wave[idx_red])+', '+str(wave[idx_nir]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -495,19 +522,22 @@ def mari_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     02/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_550 = (np.abs(wave - 550)).argmin()
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_550 = (np.abs(wave - 550)).argmin()
+        else:
+            idx_550 = bands[0]
+        if bands[1] == -1:
+            idx_700 = (np.abs(wave - 700)).argmin()
+        else:
+            idx_700 = bands[1]
+        if bands[2] == -1:
+            idx_860 = (np.abs(wave - 860)).argmin()
+        else:
+            idx_860 = bands[2]
+        print('MARI calls for bands blue, red, and near infrared bands. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_700])+', '+str(wave[idx_860]))
     else:
-        idx_550 = bands[0]
-    if bands[1] == -1:
-        idx_700 = (np.abs(wave - 700)).argmin()
-    else:
-        idx_700 = bands[1]
-    if bands[2] == -1:
-        idx_860 = (np.abs(wave - 860)).argmin()
-    else:
-        idx_860 = bands[2]
-    print('MARI calls for bands blue, red, and near infrared bands. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_700])+', '+str(wave[idx_860]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -550,19 +580,22 @@ def mcari_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_550 = (np.abs(wave - 550)).argmin()
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_550 = (np.abs(wave - 550)).argmin()
+        else:
+            idx_550 = bands[0]
+        if bands[1] == -1:
+            idx_670 = (np.abs(wave - 670)).argmin()
+        else:
+            idx_670 = bands[1]
+        if bands[2] == -1:
+            idx_700 = (np.abs(wave - 700)).argmin()
+        else:
+            idx_700 = bands[2]
+        print('MCARI calls for bands 550, 670, and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_670])+', '+ str(wave[idx_700]))
     else:
-        idx_550 = bands[0]
-    if bands[1] == -1:
-        idx_670 = (np.abs(wave - 670)).argmin()
-    else:
-        idx_670 = bands[1]
-    if bands[2] == -1:
-        idx_700 = (np.abs(wave - 700)).argmin()
-    else:
-        idx_700 = bands[2]
-    print('MCARI calls for bands 550, 670, and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_670])+', '+ str(wave[idx_700]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -611,16 +644,18 @@ def msi_vi(imgData, wave, mask=0, bands=[-1,-1]):
         raise Exception('Data does not have Shortwave Infrared Bands and MSI cannot be calculated.')
     
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_860 = (np.abs(wave - 860)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_860 = (np.abs(wave - 860)).argmin()
+        else:
+            idx_860 = bands[0]
+        if bands[1] == -1:
+            idx_1600 = (np.abs(wave - 1600)).argmin()
+        else:
+            idx_1600 = bands[1]
+        print('MSI calls for bands in near infrared and shortwave infrared. Using bands ' + str(wave[idx_860])+', '+ str(wave[idx_1600]))
     else:
-        idx_860 = bands[0]
-    if bands[1] == -1:
-        idx_1600 = (np.abs(wave - 1600)).argmin()
-    else:
-        idx_1600 = bands[1]
-    print('MSI calls for bands in near infrared and shortwave infrared. Using bands ' + str(wave[idx_860])+', '+ str(wave[idx_1600]))
-    
+        raise Exception('Not enough band indexes are provided by user.')    
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
         data_860 = np.reshape(imgData[:,:,idx_860],[-1,1])
@@ -660,20 +695,23 @@ def mtci_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     02/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_681 = (np.abs(wave - 681.25)).argmin()
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_681 = (np.abs(wave - 681.25)).argmin()
+        else:
+            idx_681 = bands[0]
+        if bands[1] == -1:
+            idx_708 = (np.abs(wave - 708.75)).argmin()
+        else:
+            idx_708 = bands[1]
+        if bands[2] == -1:
+            idx_753 = (np.abs(wave - 753.75)).argmin()
+        else:
+            idx_753 = bands[2]
+        
+        print('MTCI calls for bands 681.25, 708.75, and 753.75 nm. Using bands ' + str(wave[idx_681]) +', '+ str(wave[idx_708])+', '+ str(wave[idx_753]))
     else:
-        idx_681 = bands[0]
-    if bands[1] == -1:
-        idx_708 = (np.abs(wave - 708.75)).argmin()
-    else:
-        idx_708 = bands[1]
-    if bands[2] == -1:
-        idx_753 = (np.abs(wave - 753.75)).argmin()
-    else:
-        idx_753 = bands[2]
-    
-    print('MTCI calls for bands 681.25, 708.75, and 753.75 nm. Using bands ' + str(wave[idx_681]) +', '+ str(wave[idx_708])+', '+ str(wave[idx_753]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -722,15 +760,18 @@ def ndii_vi(imgData, wave, mask=0, bands=[-1,-1]):
         raise Exception('Data does not have Shortwave Infrared Bands and NDII cannot be calculated.')
     
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_819 = (np.abs(wave - 819)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_819 = (np.abs(wave - 819)).argmin()
+        else:
+            idx_819 = bands[0]
+        if bands[1] == -1:
+            idx_1649 = (np.abs(wave - 1649)).argmin()
+        else:
+            idx_1649 = bands[1]
+        print('NDII calls for near infrared and shortwave infrared bands. Using bands ' + str(wave[idx_819]) +', '+ str(wave[idx_1649]))
     else:
-        idx_819 = bands[0]
-    if bands[1] == -1:
-        idx_1649 = (np.abs(wave - 1649)).argmin()
-    else:
-        idx_1649 = bands[1]
-    print('NDII calls for near infrared and shortwave infrared bands. Using bands ' + str(wave[idx_819]) +', '+ str(wave[idx_1649]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -775,15 +816,18 @@ def ndli_vi(imgData, wave, mask=0, bands=[-1,-1]):
         raise Exception('Data does not have Shortwave Infrared Bands and NDLI cannot be calculated.')
     
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_1680 = (np.abs(wave - 1680)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_1680 = (np.abs(wave - 1680)).argmin()
+        else:
+            idx_1680 = bands[0]
+        if bands[1] == -1:
+            idx_1754 = (np.abs(wave - 1754)).argmin()
+        else:
+            idx_1754 = bands[1]
+        print('NDLI calls for bands 1680 and 1754 nm. Using bands ' + str(wave[idx_1680]) +', '+ str(wave[idx_1754]))
     else:
-        idx_1680 = bands[0]
-    if bands[1] == -1:
-        idx_1754 = (np.abs(wave - 1754)).argmin()
-    else:
-        idx_1754 = bands[1]
-    print('NDLI calls for bands 1680 and 1754 nm. Using bands ' + str(wave[idx_1680]) +', '+ str(wave[idx_1754]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -828,15 +872,18 @@ def ndni_vi(imgData, wave, mask=0, bands=[-1,-1]):
         raise Exception('Data does not have Shortwave Infrared Bands and NDNI cannot be calculated.')
     
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_1510 = (np.abs(wave - 1510)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_1510 = (np.abs(wave - 1510)).argmin()
+        else:
+            idx_1510 = bands[0]
+        if bands[1] == -1:
+            idx_1680 = (np.abs(wave - 1680)).argmin()
+        else:
+            idx_1680 = bands[1]
+        print('NDNI calls for bands 1510 and 1680 nm. Using bands ' + str(wave[idx_1510]) +', '+ str(wave[idx_1680]))
     else:
-        idx_1510 = bands[0]
-    if bands[1] == -1:
-        idx_1680 = (np.abs(wave - 1680)).argmin()
-    else:
-        idx_1680 = bands[1]
-    print('NDNI calls for bands 1510 and 1680 nm. Using bands ' + str(wave[idx_1510]) +', '+ str(wave[idx_1680]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -877,15 +924,18 @@ def ndre_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_720 = (np.abs(wave - 720)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_720 = (np.abs(wave - 720)).argmin()
+        else:
+            idx_720 = bands[0]
+        if bands[1] == -1:
+            idx_790 = (np.abs(wave - 790)).argmin()
+        else:
+            idx_790 = bands[1]
+        print('NDRE calls for bands 720 and 790 nm. Using bands ' + str(wave[idx_720]) +', '+ str(wave[idx_790]))
     else:
-        idx_720 = bands[0]
-    if bands[1] == -1:
-        idx_790 = (np.abs(wave - 790)).argmin()
-    else:
-        idx_790 = bands[1]
-    print('NDRE calls for bands 720 and 790 nm. Using bands ' + str(wave[idx_720]) +', '+ str(wave[idx_790]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -928,15 +978,18 @@ def ndvi_vi(imgData, wave, mask=0, bands=[-1,-1]):
     02/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_red = (np.abs(wave - 670)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_red = (np.abs(wave - 670)).argmin()
+        else:
+            idx_red = bands[0]
+        if bands[1] == -1:
+            idx_nir = (np.abs(wave - 860)).argmin()
+        else:
+            idx_nir = bands[1]
+        print('NDVI calls for red and near infrared bands. Using bands ' + str(wave[idx_red]) +', '+ str(wave[idx_nir]))
     else:
-        idx_red = bands[0]
-    if bands[1] == -1:
-        idx_nir = (np.abs(wave - 860)).argmin()
-    else:
-        idx_nir = bands[1]
-    print('NDVI calls for red and near infrared bands. Using bands ' + str(wave[idx_red]) +', '+ str(wave[idx_nir]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -981,15 +1034,18 @@ def ndwi_vi(imgData, wave, mask=0, bands=[-1,-1]):
         raise Exception('Data does not have Shortwave Infrared Bands and CAI cannot be calculated.')
     
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_860 = (np.abs(wave - 860)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_860 = (np.abs(wave - 860)).argmin()
+        else:
+            idx_860 = bands[0]
+        if bands[1] == -1:
+            idx_1240 = (np.abs(wave - 1240)).argmin()
+        else:
+            idx_1240 = bands[1]
+        print('NDWI calls for bands 860 and 1240 nm. Using bands ' + str(wave[idx_860]) +', '+ str(wave[idx_1240]))
     else:
-        idx_860 = bands[0]
-    if bands[1] == -1:
-        idx_1240 = (np.abs(wave - 1240)).argmin()
-    else:
-        idx_1240 = bands[1]
-    print('NDWI calls for bands 860 and 1240 nm. Using bands ' + str(wave[idx_860]) +', '+ str(wave[idx_1240]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1030,15 +1086,18 @@ def pri_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_531 = (np.abs(wave - 531)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_531 = (np.abs(wave - 531)).argmin()
+        else:
+            idx_531 = bands[0]
+        if bands[1] == -1:
+            idx_570 = (np.abs(wave - 570)).argmin()
+        else:
+            idx_570 = bands[1]
+        print('PRI calls for bands 531 and 570 nm. Using bands ' + str(wave[idx_531]) +', '+ str(wave[idx_570]))
     else:
-        idx_531 = bands[0]
-    if bands[1] == -1:
-        idx_570 = (np.abs(wave - 570)).argmin()
-    else:
-        idx_570 = bands[1]
-    print('PRI calls for bands 531 and 570 nm. Using bands ' + str(wave[idx_531]) +', '+ str(wave[idx_570]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1079,15 +1138,18 @@ def psnd_chlA_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_675 = (np.abs(wave - 675)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_675 = (np.abs(wave - 675)).argmin()
+        else:
+            idx_675 = bands[0]
+        if bands[1] == -1:
+            idx_800 = (np.abs(wave - 800)).argmin()
+        else:
+            idx_800 = bands[1]
+        print('PSND Chl A calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675]) +', '+ str(wave[idx_800]))
     else:
-        idx_675 = bands[0]
-    if bands[1] == -1:
-        idx_800 = (np.abs(wave - 800)).argmin()
-    else:
-        idx_800 = bands[1]
-    print('PSND Chl A calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675]) +', '+ str(wave[idx_800]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1128,15 +1190,18 @@ def psnd_chlB_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_650 = (np.abs(wave - 650)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_650 = (np.abs(wave - 650)).argmin()
+        else:
+            idx_650 = bands[0]
+        if bands[1] == -1:
+            idx_800 = (np.abs(wave - 800)).argmin()
+        else:
+            idx_800 = bands[1]
+        print('PSND CHl B calls for bands 650 and 800 nm. Using bands ' + str(wave[idx_650]) +', '+ str(wave[idx_800]))
     else:
-        idx_650 = bands[0]
-    if bands[1] == -1:
-        idx_800 = (np.abs(wave - 800)).argmin()
-    else:
-        idx_800 = bands[1]
-    print('PSND CHl B calls for bands 650 and 800 nm. Using bands ' + str(wave[idx_650]) +', '+ str(wave[idx_800]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1177,15 +1242,18 @@ def psnd_car_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_500 = (np.abs(wave - 500)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_500 = (np.abs(wave - 500)).argmin()
+        else:
+            idx_500 = bands[0]
+        if bands[1] == -1:
+            idx_800 = (np.abs(wave - 800)).argmin()
+        else:
+            idx_800 = bands[1]
+        print('PSND Car calls for bands 500 and 800 nm. Using bands ' + str(wave[idx_500]) +', '+ str(wave[idx_800]))
     else:
-        idx_500 = bands[0]
-    if bands[1] == -1:
-        idx_800 = (np.abs(wave - 800)).argmin()
-    else:
-        idx_800 = bands[1]
-    print('PSND Car calls for bands 500 and 800 nm. Using bands ' + str(wave[idx_500]) +', '+ str(wave[idx_800]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1226,19 +1294,22 @@ def psri_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_500 = (np.abs(wave - 500)).argmin()
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_500 = (np.abs(wave - 500)).argmin()
+        else:
+            idx_500 = bands[0]
+        if bands[1] == -1:
+            idx_678 = (np.abs(wave - 678)).argmin() 
+        else:
+            idx_678 = bands[1]
+        if bands[2] == -1:
+            idx_750 = (np.abs(wave - 750)).argmin()
+        else:
+            idx_750 = bands[2]
+        print('PSRI calls for bands 500, 678, and 750 nm. Using bands ' + str(wave[idx_500])+', '+ str(wave[idx_678]) +', '+ str(wave[idx_750]))
     else:
-        idx_500 = bands[0]
-    if bands[1] == -1:
-        idx_678 = (np.abs(wave - 678)).argmin() 
-    else:
-        idx_678 = bands[1]
-    if bands[2] == -1:
-        idx_750 = (np.abs(wave - 750)).argmin()
-    else:
-        idx_750 = bands[2]
-    print('PSRI calls for bands 500, 678, and 750 nm. Using bands ' + str(wave[idx_500])+', '+ str(wave[idx_678]) +', '+ str(wave[idx_750]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1281,15 +1352,18 @@ def pssr1_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_675 = (np.abs(wave - 675)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_675 = (np.abs(wave - 675)).argmin()
+        else:
+            idx_675 = bands[0]
+        if bands[1] == -1:
+            idx_800 = (np.abs(wave - 800)).argmin()
+        else:
+            idx_800 = bands[1]    
+        print('PSSR1 calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675])+', '+ str(wave[idx_800]))
     else:
-        idx_675 = bands[0]
-    if bands[1] == -1:
-        idx_800 = (np.abs(wave - 800)).argmin()
-    else:
-        idx_800 = bands[1]    
-    print('PSSR1 calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675])+', '+ str(wave[idx_800]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1330,15 +1404,18 @@ def pssr2_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_650 = (np.abs(wave - 650)).argmin() 
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_650 = (np.abs(wave - 650)).argmin() 
+        else:
+            idx_650 = bands[0]
+        if bands[1] == -1:
+            idx_800 = (np.abs(wave - 800)).argmin()
+        else:
+            idx_800 = bands[1] 
+        print('PSSR 2 calls for bands 650 and 800 nm. Using bands ' + str(wave[idx_650])+', '+ str(wave[idx_800]))
     else:
-        idx_650 = bands[0]
-    if bands[1] == -1:
-        idx_800 = (np.abs(wave - 800)).argmin()
-    else:
-        idx_800 = bands[1] 
-    print('PSSR 2 calls for bands 650 and 800 nm. Using bands ' + str(wave[idx_650])+', '+ str(wave[idx_800]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1379,15 +1456,18 @@ def pssr3_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_500 = (np.abs(wave - 500)).argmin()  
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_500 = (np.abs(wave - 500)).argmin()  
+        else:
+            idx_500 = bands[0]
+        if bands[1] == -1:
+            idx_800 = (np.abs(wave - 800)).argmin()
+        else:
+            idx_800 = bands[1]     
+        print('PSSR3 calls for bands 500 and 800 nm. Using bands ' + str(wave[idx_500])+', '+ str(wave[idx_800]))
     else:
-        idx_500 = bands[0]
-    if bands[1] == -1:
-        idx_800 = (np.abs(wave - 800)).argmin()
-    else:
-        idx_800 = bands[1]     
-    print('PSSR3 calls for bands 500 and 800 nm. Using bands ' + str(wave[idx_500])+', '+ str(wave[idx_800]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1428,17 +1508,20 @@ def rep_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_680 = (np.abs(wave - 680)).argmin()  
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_680 = (np.abs(wave - 680)).argmin()  
+        else:
+            idx_680 = bands[0]
+        if bands[1] == -1:
+            idx_750 = (np.abs(wave - 750)).argmin()
+        else:
+            idx_750 = bands[1]    
+        idx_range = np.arange(idx_680,idx_750)
+        count = len(wave[idx_range])
+        print('REP calls for bands between 680 to 750 nm. Using ' + str(count) +' bands between ' + str(wave[idx_680])+' and '+ str(wave[idx_750]))
     else:
-        idx_680 = bands[0]
-    if bands[1] == -1:
-        idx_750 = (np.abs(wave - 750)).argmin()
-    else:
-        idx_750 = bands[1]    
-    idx_range = np.arange(idx_680,idx_750)
-    count = len(wave[idx_range])
-    print('REP calls for bands between 680 to 750 nm. Using ' + str(count) +' bands between ' + str(wave[idx_680])+' and '+ str(wave[idx_750]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1481,15 +1564,18 @@ def rgri_vi(imgData, wave, mask=0,bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_510 = (np.abs(wave - 510)).argmin()  
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_510 = (np.abs(wave - 510)).argmin()  
+        else:
+            idx_510 = bands[0]
+        if bands[1] == -1:
+            idx_683 = (np.abs(wave - 683)).argmin() 
+        else:
+            idx_683 = bands[1]                             
+        print('RGRI calls for red and green bands. Using bands ' + str(wave[idx_510])+', '+ str(wave[idx_683]))
     else:
-        idx_510 = bands[0]
-    if bands[1] == -1:
-        idx_683 = (np.abs(wave - 683)).argmin() 
-    else:
-        idx_683 = bands[1]                             
-    print('RGRI calls for red and green bands. Using bands ' + str(wave[idx_510])+', '+ str(wave[idx_683]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1530,19 +1616,22 @@ def rvsi_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_714 = (np.abs(wave - 714)).argmin()  
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_714 = (np.abs(wave - 714)).argmin()  
+        else:
+            idx_714 = bands[0]
+        if bands[1] == -1:
+            idx_733 = (np.abs(wave - 733)).argmin()
+        else:
+            idx_733 = bands[1]
+        if bands[2] == -1:
+            idx_752 = (np.abs(wave - 752)).argmin()
+        else:
+            idx_752 = bands[2]                      
+        print('RVSI calls for bands 714, 733, and 752 nm. Using bands ' + str(wave[idx_714])+', '+ str(wave[idx_733])+', '+ str(wave[idx_752]))
     else:
-        idx_714 = bands[0]
-    if bands[1] == -1:
-        idx_733 = (np.abs(wave - 733)).argmin()
-    else:
-        idx_733 = bands[1]
-    if bands[2] == -1:
-        idx_752 = (np.abs(wave - 752)).argmin()
-    else:
-        idx_752 = bands[2]                      
-    print('RVSI calls for bands 714, 733, and 752 nm. Using bands ' + str(wave[idx_714])+', '+ str(wave[idx_733])+', '+ str(wave[idx_752]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1588,15 +1677,18 @@ def savi_vi(imgData, wave, mask=0, bands=[-1,-1], L=0.5):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_670 = (np.abs(wave - 670)).argmin() 
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_670 = (np.abs(wave - 670)).argmin() 
+        else:
+            idx_670 = bands[0]
+        if bands[1] == -1:
+            idx_860 = (np.abs(wave - 860)).argmin()
+        else:
+            idx_860 = bands[1]                      
+        print('SAVI calls for red edge and near infrared bands. Using bands ' + str(wave[idx_670])+', '+ str(wave[idx_860]))
     else:
-        idx_670 = bands[0]
-    if bands[1] == -1:
-        idx_860 = (np.abs(wave - 860)).argmin()
-    else:
-        idx_860 = bands[1]                      
-    print('SAVI calls for red edge and near infrared bands. Using bands ' + str(wave[idx_670])+', '+ str(wave[idx_860]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1637,19 +1729,22 @@ def sipi_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_445 = (np.abs(wave - 445)).argmin() 
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_445 = (np.abs(wave - 445)).argmin() 
+        else:
+            idx_445 = bands[0]
+        if bands[1] == -1:
+            idx_680 = (np.abs(wave - 680)).argmin()
+        else:
+            idx_680 = bands[1]
+        if bands[2] == -1:
+            idx_800 = (np.abs(wave - 800)).argmin()
+        else:
+            idx_800 = bands[2]                                
+        print('SIPI calls for bands 445, 680, and 800 nm. Using bands ' + str(wave[idx_445])+', '+ str(wave[idx_680])+', '+ str(wave[idx_800]))
     else:
-        idx_445 = bands[0]
-    if bands[1] == -1:
-        idx_680 = (np.abs(wave - 680)).argmin()
-    else:
-        idx_680 = bands[1]
-    if bands[2] == -1:
-        idx_800 = (np.abs(wave - 800)).argmin()
-    else:
-        idx_800 = bands[2]                                
-    print('SIPI calls for bands 445, 680, and 800 nm. Using bands ' + str(wave[idx_445])+', '+ str(wave[idx_680])+', '+ str(wave[idx_800]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1692,15 +1787,18 @@ def sr_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_675 = (np.abs(wave - 675)).argmin() 
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_675 = (np.abs(wave - 675)).argmin() 
+        else:
+            idx_675 = bands[0]
+        if bands[1] == -1:
+            idx_800 = (np.abs(wave - 800)).argmin()
+        else:
+            idx_800 = bands[1]                     
+        print('SR calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675])+', '+ str(wave[idx_800]))
     else:
-        idx_675 = bands[0]
-    if bands[1] == -1:
-        idx_800 = (np.abs(wave - 800)).argmin()
-    else:
-        idx_800 = bands[1]                     
-    print('SR calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675])+', '+ str(wave[idx_800]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1741,19 +1839,22 @@ def vari_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     04/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_blue = (np.abs(wave - 490)).argmin() 
+    if len(bands) == 3:
+        if bands[0] == -1:
+            idx_blue = (np.abs(wave - 490)).argmin() 
+        else:
+            idx_blue = bands[0]
+        if bands[1] == -1:
+            idx_green = (np.abs(wave - 550)).argmin()
+        else:
+            idx_green = bands[1]
+        if bands[2] == -1:
+            idx_red = (np.abs(wave - 670)).argmin() 
+        else:
+            idx_red = bands[2]
+        print('VARI calls a blue, red and green band. Using bands ' + str(wave[idx_blue])+', '+ str(wave[idx_green])+', '+ str(wave[idx_red]))
     else:
-        idx_blue = bands[0]
-    if bands[1] == -1:
-        idx_green = (np.abs(wave - 550)).argmin()
-    else:
-        idx_green = bands[1]
-    if bands[2] == -1:
-        idx_red = (np.abs(wave - 670)).argmin() 
-    else:
-        idx_red = bands[2]
-    print('VARI calls a blue, red and green band. Using bands ' + str(wave[idx_blue])+', '+ str(wave[idx_green])+', '+ str(wave[idx_red]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1796,15 +1897,18 @@ def vigreen_vi(imgData, wave, mask=0, bands=[-1,-1]):
     04/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_green = (np.abs(wave - 550)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_green = (np.abs(wave - 550)).argmin()
+        else:
+            idx_green = bands[0]
+        if bands[1] == -1:
+            idx_red = (np.abs(wave - 670)).argmin() 
+        else:
+            idx_red = bands[1]    
+        print('VIgreen calls a red and green band. Using bands ' + str(wave[idx_green])+', '+ str(wave[idx_red]))
     else:
-        idx_green = bands[0]
-    if bands[1] == -1:
-        idx_red = (np.abs(wave - 670)).argmin() 
-    else:
-        idx_red = bands[1]    
-    print('VIgreen calls a red and green band. Using bands ' + str(wave[idx_green])+', '+ str(wave[idx_red]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:                   
@@ -1847,15 +1951,18 @@ def wdvi_vi(imgData, wave, mask=0, bands=[-1,-1], a=0.5):
     04/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_red = (np.abs(wave - 670)).argmin()
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_red = (np.abs(wave - 670)).argmin()
+        else:
+            idx_red = bands[0]
+        if bands[1] == -1:
+            idx_nir = (np.abs(wave - 870)).argmin()
+        else:
+            idx_nir = bands[1]                        
+        print('WDVI calls for bands in the red and near infrared region. Using bands ' + str(wave[idx_red])+', '+ str(wave[idx_nir]))
     else:
-        idx_red = bands[0]
-    if bands[1] == -1:
-        idx_nir = (np.abs(wave - 870)).argmin()
-    else:
-        idx_nir = bands[1]                        
-    print('WDVI calls for bands in the red and near infrared region. Using bands ' + str(wave[idx_red])+', '+ str(wave[idx_nir]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1896,15 +2003,18 @@ def wbi_vi(imgData, wave, mask=0, bands=[-1,-1]):
     03/2020 - Susan Meerdink
     """
     # Determine the bands used in function
-    if bands[0] == -1:
-        idx_900 = (np.abs(wave - 900)).argmin() 
+    if len(bands) == 2:
+        if bands[0] == -1:
+            idx_900 = (np.abs(wave - 900)).argmin() 
+        else:
+            idx_900 = bands[0]
+        if bands[1] == -1:
+            idx_970 = (np.abs(wave - 970)).argmin()
+        else:
+            idx_970 = bands[1]      
+        print('WBI calls for bands 900 and 970 nm. Using bands ' + str(wave[idx_900])+', '+ str(wave[idx_970]))
     else:
-        idx_900 = bands[0]
-    if bands[1] == -1:
-        idx_970 = (np.abs(wave - 970)).argmin()
-    else:
-        idx_970 = bands[1]      
-    print('WBI calls for bands 900 and 970 nm. Using bands ' + str(wave[idx_900])+', '+ str(wave[idx_970]))
+        raise Exception('Not enough band indexes are provided by user.')
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
