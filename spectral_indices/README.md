@@ -10,6 +10,9 @@ Roberts, D.A., Roth, K.L, Wetherley, E.B., Meerdink, S.K., & Perroy, R.L. (2019)
 ## Inputs:
 Each function takes similar inputs starting with hyperspectral image, wavelengths (in nanometers or nm), an optional mask (if you want to exclude pixels from analysis), and an optional band index. All functions will calculate the index based on literature suggested bands, but IF the user wants to input their own bands that is possible by specifying which band index should be used with the optional band variable. 
 
+## Demo:
+This repo contains a demo to run all spectral indices that are available. The demo hyperspectral image used is from the AVIRIS sensor (https://aviris.jpl.nasa.gov/) collected on April 16, 2014 over the Santa Barbara area. Specifically the image contains the La Cumbre Country Club and features a golf course with lake and residental areas surrounding. This should provide a mix of vegetation - trees and irrigated grasses.The demo will calculate all the indices, display them together for the user, and will save individual png files of each index with the RGB image in the Results folder. Keep in mind, the result images are generated uses the default value range and may need to be adjust to emphasize the range of values for vegetation. 
+
 ## Current suite of VIs:
   * aci_vi: calculates the Anthocyanin Content Index **
   * ari_vi: calculates the Anthocyanin Reflectance Index
