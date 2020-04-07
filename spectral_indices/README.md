@@ -7,6 +7,9 @@ This code base contains common spectral indices for vegetation analysis. Also, r
 More information about VIs can be found in this book chapter: 
 Roberts, D.A., Roth, K.L, Wetherley, E.B., Meerdink, S.K., & Perroy, R.L. (2019). Chapter 1: Hyperspectral Vegetation Indices, in: Hyperspectral Remote Sensing of Vegetation (second edition), CRC Press, New York.
 
+## Inputs:
+Each function takes similar inputs starting with hyperspectral image, wavelengths (in nanometers or nm), an optional mask (if you want to exclude pixels from analysis), and an optional band index. All functions will calculate the index based on literature suggested bands, but IF the user wants to input their own bands that is possible by specifying which band index should be used with the optional band variable. 
+
 ## Current suite of VIs:
   * aci_vi: calculates the Anthocyanin Content Index **
   * ari_vi: calculates the Anthocyanin Reflectance Index

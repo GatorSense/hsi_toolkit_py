@@ -1,6 +1,6 @@
 import numpy as np
 
-def aci_vi(imgData, wave, mask=0):
+def aci_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Anthocyanin Content Index. 
     This functions uses green and NIR band. This was developed for multi-spectral data, so no specific wavelengths were provided.
@@ -11,14 +11,21 @@ def aci_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [green, near infrared]. 
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_530 = (np.abs(wave - 530)).argmin()
-    idx_940 = (np.abs(wave - 940)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_530 = (np.abs(wave - 530)).argmin()
+    else:
+        idx_530 = bands[0]
+    if bands[1] == -1:
+        idx_940 = (np.abs(wave - 940)).argmin()
+    else:
+        idx_940 = bands[1]
     print('ACI calls for green and near infrared bands. Using bands ' + str(wave[idx_530]) +', '+ str(wave[idx_940]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -44,7 +51,7 @@ def aci_vi(imgData, wave, mask=0):
         
     return index
 
-def ari_vi(imgData, wave, mask=0):
+def ari_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Anthocyanin Reflectance Index. 
     This functions uses red band 550 nm and Near Infrared Band 700 nm. The closest bands to these values will be used.
@@ -53,14 +60,21 @@ def ari_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [550 nm, 700 nm]. 
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_550 = (np.abs(wave - 550)).argmin()
-    idx_700 = (np.abs(wave - 700)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_550 = (np.abs(wave - 550)).argmin()
+    else:
+        idx_550 = bands[0]
+    if bands[1] == -1:
+        idx_700 = (np.abs(wave - 700)).argmin()
+    else:
+        idx_700 = bands[1]  
     print('ARI calls for bands 550 and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_700]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -86,7 +100,7 @@ def ari_vi(imgData, wave, mask=0):
         
     return index
 
-def arvi_vi(imgData, wave, mask=0, weight=2):
+def arvi_vi(imgData, wave, mask=0, bands=[-1,-1,-1], weight=2):
     """
     Function that calculates the Atmospherically Resistant Vegetation Index. 
     This functions uses the blue, red, and near infrared bands because it was designed for a multi-spectral sensor.
@@ -98,16 +112,26 @@ def arvi_vi(imgData, wave, mask=0, weight=2):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
-    4) weight: OPTIONAL - a weighting factor to compensate for enhanced atmospheric scattering in red wavelegths. If not specified, a value of 2 will be used (taken from Galvão et al., 2009).
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [467 nm, 671 nm, 864 nm]. 
+    5) weight: OPTIONAL - a weighting factor to compensate for enhanced atmospheric scattering in red wavelegths. If not specified, a value of 2 will be used (taken from Galvão et al., 2009).
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_467 = (np.abs(wave - 467)).argmin()
-    idx_671 = (np.abs(wave - 671)).argmin()
-    idx_864 = (np.abs(wave - 864)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_467 = (np.abs(wave - 467)).argmin()
+    else:
+        idx_467 = bands[0]
+    if bands[1] == -1:
+        idx_671 = (np.abs(wave - 671)).argmin()
+    else:
+        idx_671 = bands[1]
+    if bands[2] == -1:
+        idx_864 = (np.abs(wave - 864)).argmin()
+    else:
+        idx_864 = bands[2]
     print('ARVI calls for blue, red, and near infrared bands. Using bands ' + str(wave[idx_467]) +', '+ str(wave[idx_671])+', '+ str(wave[idx_864]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -135,7 +159,7 @@ def arvi_vi(imgData, wave, mask=0, weight=2):
         
     return index
 
-def cai_vi(imgData, wave, mask=0):
+def cai_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Cellulose Absorption Index. 
     This functions uses the shortwave infrared (SWIR) bands 2019, 2206, and 2109 nm. The closest bands to these values will be used.
@@ -144,6 +168,7 @@ def cai_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [2019 nm, 2206 nm, 2109 nm]. 
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
@@ -152,11 +177,20 @@ def cai_vi(imgData, wave, mask=0):
     # Check that data has shortwave infrared data
     if wave[-1] < 2200:
         raise Exception('Data does not have Shortwave Infrared Bands and CAI cannot be calculated.')
-    
-    # Find band indexes
-    idx_2019 = (np.abs(wave - 2019)).argmin()
-    idx_2206 = (np.abs(wave - 2206)).argmin()
-    idx_2109 = (np.abs(wave - 2109)).argmin()
+
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_2019 = (np.abs(wave - 2019)).argmin()
+    else:
+        idx_2019 = bands[0]
+    if bands[1] == -1:
+        idx_2206 = (np.abs(wave - 2206)).argmin()
+    else:
+        idx_2206 = bands[1]
+    if bands[2] == -1:
+        idx_2109 = (np.abs(wave - 2109)).argmin()
+    else:
+        idx_2109 = bands[2]
     print('CAI calls for bands 2019, 2206, and 2109 nm. Using bands ' + str(wave[idx_2019]) +', '+ str(wave[idx_2206])+', '+ str(wave[idx_2109]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -184,7 +218,7 @@ def cai_vi(imgData, wave, mask=0):
         
     return index
 
-def cari_vi(imgData, wave, mask=0):
+def cari_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Chlorophyll Absorption in Reflectance Index. 
     This functions uses bands 550, 670, and 700 nm. The closest bands to these values will be used.
@@ -193,15 +227,25 @@ def cari_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [550 nm, 670 nm, 700 nm]. 
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_550 = (np.abs(wave - 550)).argmin()
-    idx_670 = (np.abs(wave - 670)).argmin()
-    idx_700 = (np.abs(wave - 700)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_550 = (np.abs(wave - 550)).argmin()
+    else:
+        idx_550 = bands[0]
+    if bands[1] == -1:
+        idx_670 = (np.abs(wave - 670)).argmin()
+    else:
+        idx_670 = bands[1]
+    if bands[2] == -1:
+        idx_700 = (np.abs(wave - 700)).argmin()
+    else:
+        idx_700 = bands[2]
     print('CARI calls for bands 550, 670, and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_670])+', '+ str(wave[idx_700]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -229,7 +273,7 @@ def cari_vi(imgData, wave, mask=0):
         
     return index
 
-def cirededge_vi(imgData, wave, mask=0):
+def cirededge_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Chlorophyll Index Red Edge. 
     This functions uses bands from the red edge and near infrared because it was designed for multi-spectral sensors.
@@ -240,15 +284,22 @@ def cirededge_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [710 nm, 780 nm]. 
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_710 = (np.abs(wave - 710)).argmin()
-    idx_780 = (np.abs(wave - 780)).argmin()
-    print('CIred edge calls for red edge and near infrared bands. Using bands ' + str(wave[idx_710]) +', '+ str(wave[idx_780]))
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_710 = (np.abs(wave - 710)).argmin()
+    else:
+        idx_710 = bands[0]
+    if bands[1] == -1:
+        idx_780 = (np.abs(wave - 780)).argmin()
+    else:
+        idx_780 = bands[1]
+    print('CI red edge calls for red edge and near infrared bands. Using bands ' + str(wave[idx_710]) +', '+ str(wave[idx_780]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -273,7 +324,7 @@ def cirededge_vi(imgData, wave, mask=0):
         
     return index
 
-def cri1_vi(imgData, wave, mask=0):
+def cri1_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Carotenoid Reflectance Index 1. There is a Carotenoid Reflectance Index 2.  
     This functions uses bands 510 and 550 nm. The closest bands to these values will be used.
@@ -282,14 +333,21 @@ def cri1_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [510 nm, 550 nm]. 
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_550 = (np.abs(wave - 550)).argmin()
-    idx_510 = (np.abs(wave - 510)).argmin()
+   # Determine the bands used in function
+    if bands[0] == -1:
+        idx_510 = (np.abs(wave - 510)).argmin()
+    else:
+        idx_510 = bands[0]
+    if bands[1] == -1:
+        idx_550 = (np.abs(wave - 550)).argmin()
+    else:
+        idx_550 = bands[1]
     print('CRI1 calls for bands 510 and 550 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_510]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -315,7 +373,7 @@ def cri1_vi(imgData, wave, mask=0):
         
     return index
 
-def cri2_vi(imgData, wave, mask=0):
+def cri2_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Carotenoid Reflectance Index 2. There is a Carotenoid Reflectance Index 1.  
     This functions uses bands 700 and 700 nm. The closest bands to these values will be used.
@@ -324,15 +382,22 @@ def cri2_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [510 nm, 700 nm]. 
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_510 = (np.abs(wave - 510)).argmin()
-    idx_700 = (np.abs(wave - 700)).argmin()
-    print('CRI2 calls for bands 700 and 700 nm. Using bands ' + str(wave[idx_510]) +', '+ str(wave[idx_700]))
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_510 = (np.abs(wave - 510)).argmin()
+    else:
+        idx_510 = bands[0]
+    if bands[1] == -1:
+        idx_700 = (np.abs(wave - 700)).argmin()
+    else:
+        idx_700 = bands[1]
+    print('CRI2 calls for bands 510 and 700 nm. Using bands ' + str(wave[idx_510]) +', '+ str(wave[idx_700]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -357,7 +422,7 @@ def cri2_vi(imgData, wave, mask=0):
         
     return index
 
-def evi_vi(imgData, wave, mask=0):
+def evi_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Enhanced Vegetation Index. 
     This functions uses blue, red, and near infrared bands because it was designed for multi-spectral sensors.
@@ -368,31 +433,41 @@ def evi_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [470 nm, 650 nm, 860 nm]. 
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     02/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_1 = (np.abs(wave - 470)).argmin()
-    idx_2 = (np.abs(wave - 650)).argmin()
-    idx_3 = (np.abs(wave - 860)).argmin()
-    print('EVI calls for bands blue, red, and near infrared bands. Using bands ' + str(wave[idx_1]) +', '+ str(wave[idx_2])+', '+str(wave[idx_3]))
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_blue = (np.abs(wave - 470)).argmin()
+    else:
+        idx_blue = bands[0]
+    if bands[1] == -1:
+        idx_red = (np.abs(wave - 650)).argmin()
+    else:
+        idx_red = bands[1]
+    if bands[2] == -1:
+        idx_nir = (np.abs(wave - 860)).argmin()
+    else:
+        idx_nir = bands[2]
+    print('EVI calls for bands blue, red, and near infrared bands. Using bands ' + str(wave[idx_blue]) +', '+ str(wave[idx_red])+', '+str(wave[idx_nir]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
-        data_1 = np.reshape(imgData[:,:,idx_1],[-1,1])
-        data_2 = np.reshape(imgData[:,:,idx_2],[-1,1])
-        data_3 = np.reshape(imgData[:,:,idx_3],[-1,1])
+        data_blue = np.reshape(imgData[:,:,idx_blue],[-1,1])
+        data_red = np.reshape(imgData[:,:,idx_red],[-1,1])
+        data_nir = np.reshape(imgData[:,:,idx_nir],[-1,1])
     
     # 2D data, flattened hyperspectral data, [n_row x n_band]
     else:
-        data_1 = imgData[:,idx_1]
-        data_2 = imgData[:,idx_2]
-        data_3 = imgData[:,idx_3]
+        data_blue = imgData[:,idx_blue]
+        data_red = imgData[:,idx_red]
+        data_nir = imgData[:,idx_nir]
     
     # Calculate EVI
-    index = 2.5* ((data_3 - data_2)/(data_3 + 6*data_2 - 7.5*data_1 + 1))
+    index = 2.5* ((data_nir - data_red)/(data_nir + 6*data_red - 7.5*data_blue + 1))
     
     # If data was 3D, reshape the index value back into 3D shape
     if imgData.ndim > 2:
@@ -404,7 +479,7 @@ def evi_vi(imgData, wave, mask=0):
         
     return index
 
-def mari_vi(imgData, wave, mask=0):
+def mari_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Modified Anthocyanin Reflectance Index. 
     This functions uses 550nm, 700 nm, and near infrared bands. The closest bands to these values will be used.
@@ -413,15 +488,25 @@ def mari_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [550 nm, 700 nm, 860 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     02/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_550 = (np.abs(wave - 550)).argmin()
-    idx_700 = (np.abs(wave - 700)).argmin()
-    idx_860 = (np.abs(wave - 860)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_550 = (np.abs(wave - 550)).argmin()
+    else:
+        idx_550 = bands[0]
+    if bands[1] == -1:
+        idx_700 = (np.abs(wave - 700)).argmin()
+    else:
+        idx_700 = bands[1]
+    if bands[2] == -1:
+        idx_860 = (np.abs(wave - 860)).argmin()
+    else:
+        idx_860 = bands[2]
     print('MARI calls for bands blue, red, and near infrared bands. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_700])+', '+str(wave[idx_860]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -449,7 +534,7 @@ def mari_vi(imgData, wave, mask=0):
         
     return index
 
-def mcari_vi(imgData, wave, mask=0):
+def mcari_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Modified Anthocyanin Reflectance Index.  
     This functions uses bands 550, 670, and 700 nm. The closest bands to these values will be used.
@@ -458,15 +543,25 @@ def mcari_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [550 nm, 670 nm, 700 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_550 = (np.abs(wave - 550)).argmin()
-    idx_670 = (np.abs(wave - 670)).argmin()
-    idx_700 = (np.abs(wave - 700)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_550 = (np.abs(wave - 550)).argmin()
+    else:
+        idx_550 = bands[0]
+    if bands[1] == -1:
+        idx_670 = (np.abs(wave - 670)).argmin()
+    else:
+        idx_670 = bands[1]
+    if bands[2] == -1:
+        idx_700 = (np.abs(wave - 700)).argmin()
+    else:
+        idx_700 = bands[2]
     print('MCARI calls for bands 550, 670, and 700 nm. Using bands ' + str(wave[idx_550]) +', '+ str(wave[idx_670])+', '+ str(wave[idx_700]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -494,7 +589,7 @@ def mcari_vi(imgData, wave, mask=0):
         
     return index
 
-def msi_vi(imgData, wave, mask=0):
+def msi_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Moisture Stress Index.  
     This functions uses bands near infrared and shortwave infrared because it was developed for multi-spectral sensors.
@@ -505,6 +600,7 @@ def msi_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [820 nm, 1600 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
@@ -514,9 +610,15 @@ def msi_vi(imgData, wave, mask=0):
     if wave[-1] < 1650:
         raise Exception('Data does not have Shortwave Infrared Bands and MSI cannot be calculated.')
     
-    # Find band indexes
-    idx_860 = (np.abs(wave - 860)).argmin()
-    idx_1600 = (np.abs(wave - 1600)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_860 = (np.abs(wave - 860)).argmin()
+    else:
+        idx_860 = bands[0]
+    if bands[1] == -1:
+        idx_1600 = (np.abs(wave - 1600)).argmin()
+    else:
+        idx_1600 = bands[1]
     print('MSI calls for bands in near infrared and shortwave infrared. Using bands ' + str(wave[idx_860])+', '+ str(wave[idx_1600]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -542,7 +644,7 @@ def msi_vi(imgData, wave, mask=0):
         
     return index
 
-def mtci_vi(imgData, wave, mask=0):
+def mtci_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the MERIS Terrestrial Chlorophyll Index. 
     This functions uses wavelengths 753.75, 708.75, and 681.25 nm. The closest bands to these values will be used.
@@ -551,16 +653,27 @@ def mtci_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [681.25, 708.75, 753.75 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     02/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_753 = (np.abs(wave - 753.75)).argmin()
-    idx_708 = (np.abs(wave - 708.75)).argmin()
-    idx_681 = (np.abs(wave - 681.25)).argmin()
-    print('MTCI calls for bands 753.75, 708.75, and 681.25 nm. Using bands ' + str(wave[idx_753]) +', '+ str(wave[idx_708])+', '+ str(wave[idx_681]))
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_681 = (np.abs(wave - 681.25)).argmin()
+    else:
+        idx_681 = bands[0]
+    if bands[1] == -1:
+        idx_708 = (np.abs(wave - 708.75)).argmin()
+    else:
+        idx_708 = bands[1]
+    if bands[2] == -1:
+        idx_753 = (np.abs(wave - 753.75)).argmin()
+    else:
+        idx_753 = bands[2]
+    
+    print('MTCI calls for bands 681.25, 708.75, and 753.75 nm. Using bands ' + str(wave[idx_681]) +', '+ str(wave[idx_708])+', '+ str(wave[idx_753]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -587,7 +700,7 @@ def mtci_vi(imgData, wave, mask=0):
         
     return index
 
-def ndii_vi(imgData, wave, mask=0):
+def ndii_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Normalized Difference Infrared Index. 
     This functions uses near infrared and Shortwave Infrared wavelengths and was designed for multi-spectral sensor.
@@ -598,6 +711,7 @@ def ndii_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [819 nm, 1649 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
@@ -607,9 +721,15 @@ def ndii_vi(imgData, wave, mask=0):
     if wave[-1] < 1700:
         raise Exception('Data does not have Shortwave Infrared Bands and NDII cannot be calculated.')
     
-    # Find band indexes
-    idx_819 = (np.abs(wave - 819)).argmin()
-    idx_1649 = (np.abs(wave - 1649)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_819 = (np.abs(wave - 819)).argmin()
+    else:
+        idx_819 = bands[0]
+    if bands[1] == -1:
+        idx_1649 = (np.abs(wave - 1649)).argmin()
+    else:
+        idx_1649 = bands[1]
     print('NDII calls for near infrared and shortwave infrared bands. Using bands ' + str(wave[idx_819]) +', '+ str(wave[idx_1649]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -635,7 +755,7 @@ def ndii_vi(imgData, wave, mask=0):
         
     return index
 
-def ndli_vi(imgData, wave, mask=0):
+def ndli_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Normalized Difference Lignin Index. 
     This functions uses Shortwave Infrared wavelengths 1754 and 1680 nm. The closest bands to these values will be used.
@@ -644,6 +764,7 @@ def ndli_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [1680 nm, 1754 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
@@ -653,10 +774,16 @@ def ndli_vi(imgData, wave, mask=0):
     if wave[-1] < 1800:
         raise Exception('Data does not have Shortwave Infrared Bands and NDLI cannot be calculated.')
     
-    # Find band indexes
-    idx_1754 = (np.abs(wave - 1754)).argmin()
-    idx_1680 = (np.abs(wave - 1680)).argmin()
-    print('NDLI calls for bands 1754 and 1680 nm. Using bands ' + str(wave[idx_1754]) +', '+ str(wave[idx_1680]))
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_1680 = (np.abs(wave - 1680)).argmin()
+    else:
+        idx_1680 = bands[0]
+    if bands[1] == -1:
+        idx_1754 = (np.abs(wave - 1754)).argmin()
+    else:
+        idx_1754 = bands[1]
+    print('NDLI calls for bands 1680 and 1754 nm. Using bands ' + str(wave[idx_1680]) +', '+ str(wave[idx_1754]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -681,7 +808,7 @@ def ndli_vi(imgData, wave, mask=0):
         
     return index
 
-def ndni_vi(imgData, wave, mask=0):
+def ndni_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Normalized Difference Nitrogen Index. 
     This functions uses Shortwave Infrared wavelengths 1510 and 1680 nm. The closest bands to these values will be used.
@@ -690,6 +817,7 @@ def ndni_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [1510 nm, 1680 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
@@ -699,9 +827,15 @@ def ndni_vi(imgData, wave, mask=0):
     if wave[-1] < 1700:
         raise Exception('Data does not have Shortwave Infrared Bands and NDNI cannot be calculated.')
     
-    # Find band indexes
-    idx_1510 = (np.abs(wave - 1510)).argmin()
-    idx_1680 = (np.abs(wave - 1680)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_1510 = (np.abs(wave - 1510)).argmin()
+    else:
+        idx_1510 = bands[0]
+    if bands[1] == -1:
+        idx_1680 = (np.abs(wave - 1680)).argmin()
+    else:
+        idx_1680 = bands[1]
     print('NDNI calls for bands 1510 and 1680 nm. Using bands ' + str(wave[idx_1510]) +', '+ str(wave[idx_1680]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -727,7 +861,7 @@ def ndni_vi(imgData, wave, mask=0):
         
     return index
 
-def ndre_vi(imgData, wave, mask=0):
+def ndre_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Normalized Difference Red Edge. 
     This functions uses wavelengths 720 and 790 nm. The closest bands to these values will be used.
@@ -736,15 +870,21 @@ def ndre_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [720 nm, 790 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_720 = (np.abs(wave - 720)).argmin()
-    idx_790 = (np.abs(wave - 790)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_720 = (np.abs(wave - 720)).argmin()
+    else:
+        idx_720 = bands[0]
+    if bands[1] == -1:
+        idx_790 = (np.abs(wave - 790)).argmin()
+    else:
+        idx_790 = bands[1]
     print('NDRE calls for bands 720 and 790 nm. Using bands ' + str(wave[idx_720]) +', '+ str(wave[idx_790]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -770,7 +910,7 @@ def ndre_vi(imgData, wave, mask=0):
         
     return index
 
-def ndvi_vi(imgData, wave, mask=0):
+def ndvi_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Normalized Difference Vegetation Index. 
     This functions uses a red and near infrared band because it was designed for multi-spectral sensors.
@@ -781,14 +921,21 @@ def ndvi_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [670 nm, 860 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     02/2020 - Susan Meerdink
     """
-    # Find band indexes
-    idx_red = (np.abs(wave - 670)).argmin()
-    idx_nir = (np.abs(wave - 860)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_red = (np.abs(wave - 670)).argmin()
+    else:
+        idx_red = bands[0]
+    if bands[1] == -1:
+        idx_nir = (np.abs(wave - 860)).argmin()
+    else:
+        idx_nir = bands[1]
     print('NDVI calls for red and near infrared bands. Using bands ' + str(wave[idx_red]) +', '+ str(wave[idx_nir]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -814,7 +961,7 @@ def ndvi_vi(imgData, wave, mask=0):
         
     return index
 
-def ndwi_vi(imgData, wave, mask=0):
+def ndwi_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Normalized Difference Water Index. 
     This functions uses shortwave infrared bands - 860 and 1240 nm. The closest bands to these values will be used.
@@ -823,6 +970,7 @@ def ndwi_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [860 nm, 1240 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
@@ -832,9 +980,15 @@ def ndwi_vi(imgData, wave, mask=0):
     if wave[-1] < 1300:
         raise Exception('Data does not have Shortwave Infrared Bands and CAI cannot be calculated.')
     
-    # Find band indexes
-    idx_860 = (np.abs(wave - 860)).argmin()
-    idx_1240 = (np.abs(wave - 1240)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_860 = (np.abs(wave - 860)).argmin()
+    else:
+        idx_860 = bands[0]
+    if bands[1] == -1:
+        idx_1240 = (np.abs(wave - 1240)).argmin()
+    else:
+        idx_1240 = bands[1]
     print('NDWI calls for bands 860 and 1240 nm. Using bands ' + str(wave[idx_860]) +', '+ str(wave[idx_1240]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -860,7 +1014,7 @@ def ndwi_vi(imgData, wave, mask=0):
         
     return index
 
-def pri_vi(imgData, wave, mask=0):
+def pri_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Photochemical Reflectance Index. 
     This functions uses bands 531 and 570 nm. The closest bands to these values will be used.
@@ -869,15 +1023,21 @@ def pri_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [531 nm, 570 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_531 = (np.abs(wave - 531)).argmin()
-    idx_570 = (np.abs(wave - 570)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_531 = (np.abs(wave - 531)).argmin()
+    else:
+        idx_531 = bands[0]
+    if bands[1] == -1:
+        idx_570 = (np.abs(wave - 570)).argmin()
+    else:
+        idx_570 = bands[1]
     print('PRI calls for bands 531 and 570 nm. Using bands ' + str(wave[idx_531]) +', '+ str(wave[idx_570]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -903,7 +1063,7 @@ def pri_vi(imgData, wave, mask=0):
         
     return index
 
-def psnd_chlA_vi(imgData, wave, mask=0):
+def psnd_chlA_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Pigment Sensitive Normalized Difference for Chlorophyll A. 
     This functions uses bands 675 and 800 nm. The closest bands to these values will be used.
@@ -912,15 +1072,21 @@ def psnd_chlA_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [675 nm, 800 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_675 = (np.abs(wave - 675)).argmin()
-    idx_800 = (np.abs(wave - 800)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_675 = (np.abs(wave - 675)).argmin()
+    else:
+        idx_675 = bands[0]
+    if bands[1] == -1:
+        idx_800 = (np.abs(wave - 800)).argmin()
+    else:
+        idx_800 = bands[1]
     print('PSND Chl A calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675]) +', '+ str(wave[idx_800]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -946,7 +1112,7 @@ def psnd_chlA_vi(imgData, wave, mask=0):
         
     return index
 
-def psnd_chlB_vi(imgData, wave, mask=0):
+def psnd_chlB_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Pigment Sensitive Normalized Difference for Chlorophyll B. 
     This functions uses bands 650 and 800 nm. The closest bands to these values will be used.
@@ -955,15 +1121,21 @@ def psnd_chlB_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [650 nm, 800 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_650 = (np.abs(wave - 650)).argmin()
-    idx_800 = (np.abs(wave - 800)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_650 = (np.abs(wave - 650)).argmin()
+    else:
+        idx_650 = bands[0]
+    if bands[1] == -1:
+        idx_800 = (np.abs(wave - 800)).argmin()
+    else:
+        idx_800 = bands[1]
     print('PSND CHl B calls for bands 650 and 800 nm. Using bands ' + str(wave[idx_650]) +', '+ str(wave[idx_800]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -989,7 +1161,7 @@ def psnd_chlB_vi(imgData, wave, mask=0):
         
     return index                              
 
-def psnd_car_vi(imgData, wave, mask=0):
+def psnd_car_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Pigment Sensitive Normalized Difference for Carotenoids 
     This functions uses bands 500 and 800 nm. The closest bands to these values will be used.
@@ -998,15 +1170,21 @@ def psnd_car_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [500 nm, 800 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_500 = (np.abs(wave - 500)).argmin()
-    idx_800 = (np.abs(wave - 800)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_500 = (np.abs(wave - 500)).argmin()
+    else:
+        idx_500 = bands[0]
+    if bands[1] == -1:
+        idx_800 = (np.abs(wave - 800)).argmin()
+    else:
+        idx_800 = bands[1]
     print('PSND Car calls for bands 500 and 800 nm. Using bands ' + str(wave[idx_500]) +', '+ str(wave[idx_800]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1032,7 +1210,7 @@ def psnd_car_vi(imgData, wave, mask=0):
         
     return index  
 
-def psri_vi(imgData, wave, mask=0):
+def psri_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Plant Senescence Reflectance Index.
     This functions uses bands 500, 678, and 750 nm. The closest bands to these values will be used.
@@ -1041,16 +1219,25 @@ def psri_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [500 nm, 678 nm, 750 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_500 = (np.abs(wave - 500)).argmin()
-    idx_678 = (np.abs(wave - 678)).argmin()                          
-    idx_750 = (np.abs(wave - 750)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_500 = (np.abs(wave - 500)).argmin()
+    else:
+        idx_500 = bands[0]
+    if bands[1] == -1:
+        idx_678 = (np.abs(wave - 678)).argmin() 
+    else:
+        idx_678 = bands[1]
+    if bands[2] == -1:
+        idx_750 = (np.abs(wave - 750)).argmin()
+    else:
+        idx_750 = bands[2]
     print('PSRI calls for bands 500, 678, and 750 nm. Using bands ' + str(wave[idx_500])+', '+ str(wave[idx_678]) +', '+ str(wave[idx_750]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1078,7 +1265,7 @@ def psri_vi(imgData, wave, mask=0):
         
     return index
 
-def pssr1_vi(imgData, wave, mask=0):
+def pssr1_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Pigment-Specific Spectral Ratio 1. There is PSSR 1, 2, and 3. 
     This functions uses bands 675 and 800 nm. The closest bands to these values will be used.
@@ -1087,15 +1274,21 @@ def pssr1_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [675 nm, 800 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_675 = (np.abs(wave - 675)).argmin()                          
-    idx_800 = (np.abs(wave - 800)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_675 = (np.abs(wave - 675)).argmin()
+    else:
+        idx_675 = bands[0]
+    if bands[1] == -1:
+        idx_800 = (np.abs(wave - 800)).argmin()
+    else:
+        idx_800 = bands[1]    
     print('PSSR1 calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675])+', '+ str(wave[idx_800]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1121,7 +1314,7 @@ def pssr1_vi(imgData, wave, mask=0):
         
     return index
 
-def pssr2_vi(imgData, wave, mask=0):
+def pssr2_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Pigment-Specific Spectral Ratio 2. There is PSSR 1, 2, and 3. 
     This functions uses bands 650 and 800 nm. The closest bands to these values will be used.
@@ -1130,15 +1323,21 @@ def pssr2_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [650 nm, 800 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_650 = (np.abs(wave - 650)).argmin()                          
-    idx_800 = (np.abs(wave - 800)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_650 = (np.abs(wave - 650)).argmin() 
+    else:
+        idx_650 = bands[0]
+    if bands[1] == -1:
+        idx_800 = (np.abs(wave - 800)).argmin()
+    else:
+        idx_800 = bands[1] 
     print('PSSR 2 calls for bands 650 and 800 nm. Using bands ' + str(wave[idx_650])+', '+ str(wave[idx_800]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1164,7 +1363,7 @@ def pssr2_vi(imgData, wave, mask=0):
         
     return index                              
 
-def pssr3_vi(imgData, wave, mask=0):
+def pssr3_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Pigment-Specific Spectral Ratio 3. There is PSSR 1, 2, and 3. 
     This functions uses bands 500 and 800 nm. The closest bands to these values will be used.
@@ -1173,15 +1372,21 @@ def pssr3_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [500 nm, 800 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_500 = (np.abs(wave - 500)).argmin()                          
-    idx_800 = (np.abs(wave - 800)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_500 = (np.abs(wave - 500)).argmin()  
+    else:
+        idx_500 = bands[0]
+    if bands[1] == -1:
+        idx_800 = (np.abs(wave - 800)).argmin()
+    else:
+        idx_800 = bands[1]     
     print('PSSR3 calls for bands 500 and 800 nm. Using bands ' + str(wave[idx_500])+', '+ str(wave[idx_800]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1207,7 +1412,7 @@ def pssr3_vi(imgData, wave, mask=0):
         
     return index  
 
-def rep_vi(imgData, wave, mask=0):
+def rep_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Red-edge Position 
     This functions uses bands from 680 to 750 nm. The closest bands to these values will be used.
@@ -1216,15 +1421,21 @@ def rep_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index range (not in nm) [680 nm, 750 nm].
     OUTPUTS:
     1) vi: the calculated wavelength (nm) for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_680 = (np.abs(wave - 680)).argmin()                          
-    idx_750 = (np.abs(wave - 750)).argmin()
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_680 = (np.abs(wave - 680)).argmin()  
+    else:
+        idx_680 = bands[0]
+    if bands[1] == -1:
+        idx_750 = (np.abs(wave - 750)).argmin()
+    else:
+        idx_750 = bands[1]    
     idx_range = np.arange(idx_680,idx_750)
     count = len(wave[idx_range])
     print('REP calls for bands between 680 to 750 nm. Using ' + str(count) +' bands between ' + str(wave[idx_680])+' and '+ str(wave[idx_750]))
@@ -1252,7 +1463,7 @@ def rep_vi(imgData, wave, mask=0):
         
     return index_wave
 
-def rgri_vi(imgData, wave, mask=0):
+def rgri_vi(imgData, wave, mask=0,bands=[-1,-1]):
     """
     Function that calculates the Red/Green Ratio Index. 
     This functions uses red and green bands because it was designed for multi-spectral sensors.
@@ -1263,15 +1474,21 @@ def rgri_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [510 nm, 683 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_510 = (np.abs(wave - 510)).argmin()                          
-    idx_683 = (np.abs(wave - 683)).argmin()                        
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_510 = (np.abs(wave - 510)).argmin()  
+    else:
+        idx_510 = bands[0]
+    if bands[1] == -1:
+        idx_683 = (np.abs(wave - 683)).argmin() 
+    else:
+        idx_683 = bands[1]                             
     print('RGRI calls for red and green bands. Using bands ' + str(wave[idx_510])+', '+ str(wave[idx_683]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1297,7 +1514,7 @@ def rgri_vi(imgData, wave, mask=0):
         
     return index
 
-def rvsi_vi(imgData, wave, mask=0):
+def rvsi_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Red-edge Vegetation Stress Index. 
     This functions uses bands 714, 733, and 752 nm. The closest bands to these values will be used.
@@ -1306,16 +1523,25 @@ def rvsi_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [714 nm, 733 nm, 752 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_714 = (np.abs(wave - 714)).argmin()                          
-    idx_733 = (np.abs(wave - 733)).argmin()
-    idx_752 = (np.abs(wave - 752)).argmin()                          
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_714 = (np.abs(wave - 714)).argmin()  
+    else:
+        idx_714 = bands[0]
+    if bands[1] == -1:
+        idx_733 = (np.abs(wave - 733)).argmin()
+    else:
+        idx_733 = bands[1]
+    if bands[2] == -1:
+        idx_752 = (np.abs(wave - 752)).argmin()
+    else:
+        idx_752 = bands[2]                      
     print('RVSI calls for bands 714, 733, and 752 nm. Using bands ' + str(wave[idx_714])+', '+ str(wave[idx_733])+', '+ str(wave[idx_752]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1343,7 +1569,7 @@ def rvsi_vi(imgData, wave, mask=0):
         
     return index
 
-def savi_vi(imgData, wave, mask=0, L=0.5):
+def savi_vi(imgData, wave, mask=0, bands=[-1,-1], L=0.5):
     """
     Function that calculates the Soil Adjusted Vegetation Index. 
     This functions uses red and near infrared bands with constant because it was designed for multi-spectral sensors.
@@ -1354,16 +1580,22 @@ def savi_vi(imgData, wave, mask=0, L=0.5):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
-    4) L: OPTIONAL - a constant for adjusting the index for soil contribution. If not provided a value of 0.5 will be used.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [670 nm, 860 nm].
+    5) L: OPTIONAL - a constant for adjusting the index for soil contribution. If not provided a value of 0.5 will be used.
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_670 = (np.abs(wave - 670)).argmin()                          
-    idx_860 = (np.abs(wave - 860)).argmin()                        
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_670 = (np.abs(wave - 670)).argmin() 
+    else:
+        idx_670 = bands[0]
+    if bands[1] == -1:
+        idx_860 = (np.abs(wave - 860)).argmin()
+    else:
+        idx_860 = bands[1]                      
     print('SAVI calls for red edge and near infrared bands. Using bands ' + str(wave[idx_670])+', '+ str(wave[idx_860]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1389,7 +1621,7 @@ def savi_vi(imgData, wave, mask=0, L=0.5):
         
     return index
 
-def sipi_vi(imgData, wave, mask=0):
+def sipi_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Structure Insensitive Pigment Index. 
     This functions uses bands 445, 680, and 800 nm. The closest bands to these values will be used.
@@ -1398,16 +1630,25 @@ def sipi_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [445 nm, 680 nm, 800 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_445 = (np.abs(wave - 445)).argmin()                          
-    idx_680 = (np.abs(wave - 680)).argmin()
-    idx_800 = (np.abs(wave - 800)).argmin()                          
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_445 = (np.abs(wave - 445)).argmin() 
+    else:
+        idx_445 = bands[0]
+    if bands[1] == -1:
+        idx_680 = (np.abs(wave - 680)).argmin()
+    else:
+        idx_680 = bands[1]
+    if bands[2] == -1:
+        idx_800 = (np.abs(wave - 800)).argmin()
+    else:
+        idx_800 = bands[2]                                
     print('SIPI calls for bands 445, 680, and 800 nm. Using bands ' + str(wave[idx_445])+', '+ str(wave[idx_680])+', '+ str(wave[idx_800]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1422,7 +1663,7 @@ def sipi_vi(imgData, wave, mask=0):
         data_680 = imgData[:,idx_680]                      
         data_800 = imgData[:,idx_800]
           
-    # Calculate RVSI
+    # Calculate SIPI
     index = (data_800 + data_445)/(data_800 - data_680)
     
     # If data was 3D, reshape the index value back into 3D shape
@@ -1435,7 +1676,7 @@ def sipi_vi(imgData, wave, mask=0):
         
     return index 
 
-def sr_vi(imgData, wave, mask=0):
+def sr_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Simple Ratio. 
     This functions uses bands 675 and 800 nm. The closest bands to these values will be used.
@@ -1444,15 +1685,21 @@ def sr_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [675 nm, 800 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_675 = (np.abs(wave - 675)).argmin()                          
-    idx_800 = (np.abs(wave - 800)).argmin()                          
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_675 = (np.abs(wave - 675)).argmin() 
+    else:
+        idx_675 = bands[0]
+    if bands[1] == -1:
+        idx_800 = (np.abs(wave - 800)).argmin()
+    else:
+        idx_800 = bands[1]                     
     print('SR calls for bands 675 and 800 nm. Using bands ' + str(wave[idx_675])+', '+ str(wave[idx_800]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1465,7 +1712,7 @@ def sr_vi(imgData, wave, mask=0):
         data_675 = imgData[:,idx_675]                      
         data_800 = imgData[:,idx_800]
           
-    # Calculate RVSI
+    # Calculate SR
     index = (data_800/data_675)
     
     # If data was 3D, reshape the index value back into 3D shape
@@ -1478,7 +1725,7 @@ def sr_vi(imgData, wave, mask=0):
         
     return index 
 
-def vari_vi(imgData, wave, mask=0):
+def vari_vi(imgData, wave, mask=0, bands=[-1,-1,-1]):
     """
     Function that calculates the Visible Atmospherically Resistant Index. 
     This functions uses a blue, red and green band and was designed for multi-spectral sensors, but the paper does suggest bands based on their data.
@@ -1487,16 +1734,25 @@ def vari_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [490 nm, 550 nm, 670 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     04/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_blue = (np.abs(wave - 490)).argmin()                          
-    idx_green = (np.abs(wave - 550)).argmin()
-    idx_red = (np.abs(wave - 670)).argmin()   
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_blue = (np.abs(wave - 490)).argmin() 
+    else:
+        idx_blue = bands[0]
+    if bands[1] == -1:
+        idx_green = (np.abs(wave - 550)).argmin()
+    else:
+        idx_green = bands[1]
+    if bands[2] == -1:
+        idx_red = (np.abs(wave - 670)).argmin() 
+    else:
+        idx_red = bands[2]
     print('VARI calls a blue, red and green band. Using bands ' + str(wave[idx_blue])+', '+ str(wave[idx_green])+', '+ str(wave[idx_red]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1524,7 +1780,7 @@ def vari_vi(imgData, wave, mask=0):
         
     return index
 
-def vigreen_vi(imgData, wave, mask=0):
+def vigreen_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Vegetation Index using green band. 
     This functions uses a red and green band and was designed for multi-spectral sensors, but the paper does suggest bands based on their data.
@@ -1533,15 +1789,21 @@ def vigreen_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [550 nm, 670 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     04/2020 - Susan Meerdink
     """
-    
-    # Find band indexes                         
-    idx_green = (np.abs(wave - 550)).argmin()
-    idx_red = (np.abs(wave - 670)).argmin()   
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_green = (np.abs(wave - 550)).argmin()
+    else:
+        idx_green = bands[0]
+    if bands[1] == -1:
+        idx_red = (np.abs(wave - 670)).argmin() 
+    else:
+        idx_red = bands[1]    
     print('VIgreen calls a red and green band. Using bands ' + str(wave[idx_green])+', '+ str(wave[idx_red]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
@@ -1567,7 +1829,7 @@ def vigreen_vi(imgData, wave, mask=0):
         
     return index
 
-def wdvi_vi(imgData, wave, mask=0, a=0.5):
+def wdvi_vi(imgData, wave, mask=0, bands=[-1,-1], a=0.5):
     """
     Function that calculates the Weighted Difference Vegetation Index. 
     This functions uses bands in the NIR and Red, because it was designed for multi-spectral sensors.
@@ -1577,17 +1839,23 @@ def wdvi_vi(imgData, wave, mask=0, a=0.5):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
-    4) a: OPTIONAL - multiplicative value that has to be estimated empirically from a training set, but has a physical nature
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [670 nm, 870 nm].
+    5) a: OPTIONAL - multiplicative value that has to be estimated empirically from a training set, but has a physical nature. If not provided a value of 0.5 will be used.
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     04/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_red = (np.abs(wave - 670)).argmin()                          
-    idx_nir = (np.abs(wave - 870)).argmin()                          
-    print('WDVI calls for bands in the near infrared and red region. Using bands ' + str(wave[idx_red])+', '+ str(wave[idx_nir]))
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_red = (np.abs(wave - 670)).argmin()
+    else:
+        idx_red = bands[0]
+    if bands[1] == -1:
+        idx_nir = (np.abs(wave - 870)).argmin()
+    else:
+        idx_nir = bands[1]                        
+    print('WDVI calls for bands in the red and near infrared region. Using bands ' + str(wave[idx_red])+', '+ str(wave[idx_nir]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
     if imgData.ndim > 2:
@@ -1612,7 +1880,7 @@ def wdvi_vi(imgData, wave, mask=0, a=0.5):
         
     return index
 
-def wbi_vi(imgData, wave, mask=0):
+def wbi_vi(imgData, wave, mask=0, bands=[-1,-1]):
     """
     Function that calculates the Water Band Index. 
     This functions uses bands 900 and 970 nm. The closest bands to these values will be used.
@@ -1621,15 +1889,21 @@ def wbi_vi(imgData, wave, mask=0):
     1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
     2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
     3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) bands: OPTIONAL - if the user wants to define the bands used in the function provide the band index (not in nm) for each wavelength in this order [900 nm, 970 nm].
     OUTPUTS:
     1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
 
     03/2020 - Susan Meerdink
     """
-    
-    # Find band indexes
-    idx_900 = (np.abs(wave - 900)).argmin()                          
-    idx_970 = (np.abs(wave - 970)).argmin()                          
+    # Determine the bands used in function
+    if bands[0] == -1:
+        idx_900 = (np.abs(wave - 900)).argmin() 
+    else:
+        idx_900 = bands[0]
+    if bands[1] == -1:
+        idx_970 = (np.abs(wave - 970)).argmin()
+    else:
+        idx_970 = bands[1]      
     print('WBI calls for bands 900 and 970 nm. Using bands ' + str(wave[idx_900])+', '+ str(wave[idx_970]))
     
     # 3D data, hyperspectral image, [n_row x n_col x n_band]
