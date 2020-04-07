@@ -41,9 +41,9 @@ Roberts, D.A., Roth, K.L, Wetherley, E.B., Meerdink, S.K., & Perroy, R.L. (2019)
   * savi_vi: calculates the Soil Adjusted Vegetation Index
   * sipi_vi: calculates the Structure Insensitive Pigment Index
   * sr_vi: calculates the Simple Ratio
-  * vari_vi:
-  * vigreen_vi:
-  * wdvi_vi:
+  * vari_vi: calculates the Visible Atmospherically Resistant Index **
+  * vigreen_vi: calculates the Vegetation Index using green band **
+  * wdvi_vi: calculates the Weighted Difference Vegetation Index **
   * wbi_vi: calculates the Water Band Index
 
 ** Spectral index original designed for multi-spectral data. We have selected narrow bands to calculate index based on hyperspectral literature. The citations with used hyperspectral bands are noted in each function description.

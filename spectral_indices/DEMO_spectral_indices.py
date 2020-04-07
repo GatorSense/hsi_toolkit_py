@@ -61,6 +61,9 @@ det_out['REP'] = rep_vi(hsi_sub, wavelengths)
 det_out['RVSI'] = rvsi_vi(hsi_sub, wavelengths)
 det_out['SIPI'] = sipi_vi(hsi_sub, wavelengths)
 det_out['SR'] = sr_vi(hsi_sub, wavelengths)
+det_out['VARI'] = vari_vi(hsi_sub, wavelengths)
+det_out['VIgreen'] = vigreen_vi(hsi_sub, wavelengths)
+det_out['WDVI'] = wdvi_vi(hsi_sub, wavelengths)
 det_out['WBI'] = wbi_vi(hsi_sub, wavelengths)
 
 # Visualization with ALL indices

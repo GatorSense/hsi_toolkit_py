@@ -1478,55 +1478,139 @@ def sr_vi(imgData, wave, mask=0):
         
     return index 
 
-##def vari_vi(imgData, wave, mask=0, a=, b=):
-##    """
-##    Function that calculates the Visible Atmospherically Resistant Index. 
-##    This functions uses a blue, red and green band and was designed for multi-spectral sensors.
-##    This function will use X and X nm based on citation: 
-##    The closest bands to these values will be used.
-##    Citation: Gitelson A.A., Kaufman Y.J., Stark R. and Rundquist, D. 2002a. Novel algorithms for remote estimation of vegetation fraction, Remote Sensing of Environment, 80, 76–87.
-##    INPUTS:
-##    1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
-##    2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
-##    3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
-##    4) a: OPTIONAL - soil line slope value. If not provided, a value of XX will be used.
-##    5) b: OPTIONAL - soil line intercept value. If not provided, a value of XX will be used.
-##    OUTPUTS:
-##    1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
-##
-##    03/2020 - Susan Meerdink
-##    """
-##    
-##    # Find band indexes
-##    idx_680 = (np.abs(wave - 680)).argmin()                          
-##    idx_845 = (np.abs(wave - 845)).argmin()
-##    idx_845 = (np.abs(wave - 845)).argmin()   
-##    print('VARI calls a blue, red and green band. Using bands ' + str(wave[idx_680])+', '+ str(wave[idx_845])+', '+ str(wave[idx_845]))
-##    
-##    # 3D data, hyperspectral image, [n_row x n_col x n_band]
-##    if imgData.ndim > 2:
-##        data_680 = np.reshape(imgData[:,:,idx_680],[-1,1])                     
-##        data_845 = np.reshape(imgData[:,:,idx_845],[-1,1])
-##        data_845 = np.reshape(imgData[:,:,idx_845],[-1,1])
-##          
-##    # 2D data, flattened hyperspectral data, [n_row x n_band]
-##    else:
-##        data_680 = imgData[:,idx_680]                      
-##        data_845 = imgData[:,idx_845]
-##        data_845 = imgData[:,idx_845]
-##          
-##    # Calculate VARI
-##    index = 
-##    
-##    # If data was 3D, reshape the index value back into 3D shape
-##    if imgData.ndim > 2:
-##        index = np.reshape(index,[imgData.shape[0],imgData.shape[1]])
-##    
-##    if isinstance(mask, int) is False:
-##        idx_x, idx_y = np.where(mask==0)
-##        index[idx_x,idx_y] = 0
-##        
-##    return index
+def vari_vi(imgData, wave, mask=0):
+    """
+    Function that calculates the Visible Atmospherically Resistant Index. 
+    This functions uses a blue, red and green band and was designed for multi-spectral sensors, but the paper does suggest bands based on their data.
+    Citation: Gitelson A.A., Kaufman Y.J., Stark R. and Rundquist, D. 2002. Novel algorithms for remote estimation of vegetation fraction, Remote Sensing of Environment, 80, 76–87.
+    INPUTS:
+    1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
+    2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
+    3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    OUTPUTS:
+    1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
+
+    04/2020 - Susan Meerdink
+    """
+    
+    # Find band indexes
+    idx_blue = (np.abs(wave - 490)).argmin()                          
+    idx_green = (np.abs(wave - 550)).argmin()
+    idx_red = (np.abs(wave - 670)).argmin()   
+    print('VARI calls a blue, red and green band. Using bands ' + str(wave[idx_blue])+', '+ str(wave[idx_green])+', '+ str(wave[idx_red]))
+    
+    # 3D data, hyperspectral image, [n_row x n_col x n_band]
+    if imgData.ndim > 2:
+        data_blue = np.reshape(imgData[:,:,idx_blue],[-1,1])                     
+        data_green = np.reshape(imgData[:,:,idx_green],[-1,1])
+        data_red = np.reshape(imgData[:,:,idx_red],[-1,1])
+          
+    # 2D data, flattened hyperspectral data, [n_row x n_band]
+    else:
+        data_blue = imgData[:,idx_blue]                      
+        data_green = imgData[:,idx_green]
+        data_red = imgData[:,idx_red]
+          
+    # Calculate VARI
+    index = (data_green - data_red)/ (data_green + data_red  - data_blue)
+    
+    # If data was 3D, reshape the index value back into 3D shape
+    if imgData.ndim > 2:
+        index = np.reshape(index,[imgData.shape[0],imgData.shape[1]])
+    
+    if isinstance(mask, int) is False:
+        idx_x, idx_y = np.where(mask==0)
+        index[idx_x,idx_y] = 0
+        
+    return index
+
+def vigreen_vi(imgData, wave, mask=0):
+    """
+    Function that calculates the Vegetation Index using green band. 
+    This functions uses a red and green band and was designed for multi-spectral sensors, but the paper does suggest bands based on their data.
+    Citation: Gitelson A.A., Kaufman Y.J., Stark R. and Rundquist, D. 2002. Novel algorithms for remote estimation of vegetation fraction, Remote Sensing of Environment, 80, 76–87.
+    INPUTS:
+    1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
+    2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
+    3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    OUTPUTS:
+    1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
+
+    04/2020 - Susan Meerdink
+    """
+    
+    # Find band indexes                         
+    idx_green = (np.abs(wave - 550)).argmin()
+    idx_red = (np.abs(wave - 670)).argmin()   
+    print('VIgreen calls a red and green band. Using bands ' + str(wave[idx_green])+', '+ str(wave[idx_red]))
+    
+    # 3D data, hyperspectral image, [n_row x n_col x n_band]
+    if imgData.ndim > 2:                   
+        data_green = np.reshape(imgData[:,:,idx_green],[-1,1])
+        data_red = np.reshape(imgData[:,:,idx_red],[-1,1])
+          
+    # 2D data, flattened hyperspectral data, [n_row x n_band]
+    else:                     
+        data_green = imgData[:,idx_green]
+        data_red = imgData[:,idx_red]
+          
+    # Calculate VIgreen
+    index = (data_green - data_red)/ (data_green + data_red)
+    
+    # If data was 3D, reshape the index value back into 3D shape
+    if imgData.ndim > 2:
+        index = np.reshape(index,[imgData.shape[0],imgData.shape[1]])
+    
+    if isinstance(mask, int) is False:
+        idx_x, idx_y = np.where(mask==0)
+        index[idx_x,idx_y] = 0
+        
+    return index
+
+def wdvi_vi(imgData, wave, mask=0, a=0.5):
+    """
+    Function that calculates the Weighted Difference Vegetation Index. 
+    This functions uses bands in the NIR and Red, because it was designed for multi-spectral sensors.
+    The algorithm will use 670 and 870 nm bands based on this citation: Clevers, J. G. P. W., Van Der Heijden, G. W. A. M., Verzakov, S., & Schaepman, M. E. (2007). Estimating grassland biomass using SVM band shaving of hyperspectral data. Photogrammetric Engineering and Remote Sensing, 73(10), 1141–1148. https://doi.org/10.14358/PERS.73.10.1141
+    Citation: Clevers, J. G. P. W. (1991). Application of the WDVI in estimating LAI at the generative stage of barley. ISPRS Journal of Photogrammetry and Remote Sensing, 46(1), 37–47. https://doi.org/10.1016/0924-2716(91)90005-G 
+    INPUTS:
+    1) imgData: an array of hyperspectral data either as 3D [n_row x n_col x n_band] or 2D [n_row x n_band]
+    2) wave: an array of wavelengths in nanometers that correspond to the n_bands in imgData
+    3) mask: OPTIONAL - a binary array (same size as imgData) that designates which pixels should be included in analysis. Pixels with 1 are used, while pixels with 0 are not.
+    4) a: OPTIONAL - multiplicative value that has to be estimated empirically from a training set, but has a physical nature
+    OUTPUTS:
+    1) vi: the calculated spectral index value for each pixel either returned as [n_row x n_col x 1] or [n_row x 1]
+
+    04/2020 - Susan Meerdink
+    """
+    
+    # Find band indexes
+    idx_red = (np.abs(wave - 670)).argmin()                          
+    idx_nir = (np.abs(wave - 870)).argmin()                          
+    print('WDVI calls for bands in the near infrared and red region. Using bands ' + str(wave[idx_red])+', '+ str(wave[idx_nir]))
+    
+    # 3D data, hyperspectral image, [n_row x n_col x n_band]
+    if imgData.ndim > 2:
+        data_red = np.reshape(imgData[:,:,idx_red],[-1,1])                     
+        data_nir = np.reshape(imgData[:,:,idx_nir],[-1,1])
+          
+    # 2D data, flattened hyperspectral data, [n_row x n_band]
+    else:
+        data_red = imgData[:,idx_red]                      
+        data_nir = imgData[:,idx_nir]
+          
+    # Calculate WDVI
+    index = data_nir - a*data_red
+    
+    # If data was 3D, reshape the index value back into 3D shape
+    if imgData.ndim > 2:
+        index = np.reshape(index,[imgData.shape[0],imgData.shape[1]])
+    
+    if isinstance(mask, int) is False:
+        idx_x, idx_y = np.where(mask==0)
+        index[idx_x,idx_y] = 0
+        
+    return index
 
 def wbi_vi(imgData, wave, mask=0):
     """
@@ -1558,7 +1642,7 @@ def wbi_vi(imgData, wave, mask=0):
         data_900 = imgData[:,idx_900]                      
         data_970 = imgData[:,idx_970]
           
-    # Calculate RVSI
+    # Calculate WBI
     index = (data_900/data_970)
     
     # If data was 3D, reshape the index value back into 3D shape
