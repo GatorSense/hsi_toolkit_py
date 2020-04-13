@@ -6,8 +6,8 @@ Current suite of signature detectors:
 - ace_detector: Squared Adaptive Cosine/Coherence Estimator (Squared ACE), cosine of vector angle between target and pixel spectra after whitening based on background statistics, squared
 - ace_local_detector: Adaptive Cosine/Coherence Estimator where background statistics are estimated from local window
 - ace_ss_detector: Squared Adaptive Cosine/Coherence Estimator Subspace Formulation
-- acert_detector: Adaptive Cosine/Coherence Estimator (ACE), cosine of vector angle between target and pixel spectra after whitening based on background statistics
-- acert_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
+- ace_rt_detector: Adaptive Cosine/Coherence Estimator (ACE), cosine of vector angle between target and pixel spectra after whitening based on background statistics
+- ace_rt_max_detector: ACE given multiple target signatures. Confidence value for each pixel is max ACE score over all target signatures.
 - amsd_detector: Adaptive Matched Subspace Detector
 - ccmf_detector: Class Conditional Matched Filter, Segment data using a Gaussian Mixture Model and then apply SMF to each component
 - cem_detector: Constrained Energy Minimization Detector
