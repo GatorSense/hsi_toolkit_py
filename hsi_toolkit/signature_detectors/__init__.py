@@ -9,7 +9,6 @@ from hsi_toolkit.signature_detectors.cem_detector import *
 from hsi_toolkit.signature_detectors.ccmf_detector import *
 from hsi_toolkit.signature_detectors.ctmf_detector import *
 from hsi_toolkit.signature_detectors.fam_statistic import *
-from hsi_toolkit.signature_detectors.ftmf_detector import *
 from hsi_toolkit.signature_detectors.ha_detector import *
 from hsi_toolkit.signature_detectors.hua_detector import *
 from hsi_toolkit.signature_detectors.hsd_detector import *
