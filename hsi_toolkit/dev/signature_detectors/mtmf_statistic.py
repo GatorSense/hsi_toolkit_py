@@ -1,5 +1,5 @@
 from hsi_toolkit.util.img_det import img_det
-from hsi_toolkit.dim_reduction.mnf import mnf
+from hsi_toolkit.dev.dim_reduction.mnf import mnf
 import numpy as np
 
 def mtmf_statistic(hsi_img,tgt_sig, mask = None):
