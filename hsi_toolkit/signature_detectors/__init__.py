@@ -9,17 +9,13 @@ from hsi_toolkit.signature_detectors.cem_detector import *
 from hsi_toolkit.signature_detectors.ccmf_detector import *
 from hsi_toolkit.signature_detectors.ctmf_detector import *
 from hsi_toolkit.signature_detectors.fam_statistic import *
-from hsi_toolkit.signature_detectors.ftmf_detector import *
 from hsi_toolkit.signature_detectors.ha_detector import *
 from hsi_toolkit.signature_detectors.hua_detector import *
 from hsi_toolkit.signature_detectors.hsd_detector import *
 from hsi_toolkit.signature_detectors.hsd_local_detector import *
-from hsi_toolkit.signature_detectors.mtmf_statistic import *
 from hsi_toolkit.signature_detectors.osp_detector import *
-from hsi_toolkit.signature_detectors.qmf_detector import *
 from hsi_toolkit.signature_detectors.sam_detector import *
 from hsi_toolkit.signature_detectors.smf_detector import *
 from hsi_toolkit.signature_detectors.smf_local_detector import *
 from hsi_toolkit.signature_detectors.smf_max_detector import *
-from hsi_toolkit.signature_detectors.spsmf_detector import *
 from hsi_toolkit.signature_detectors.palm_detector import *
