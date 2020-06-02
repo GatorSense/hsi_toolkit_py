@@ -1,6 +1,6 @@
 import scipy.io as sio
 import numpy as np
-from batchplotspectra import PlotSpectraDistribution
+from hsi_toolkit.util.BatchPlotSpectra.batchplotspectra import PlotSpectraDistribution
 
 an_hsi_image_sub_for_demo = sio.loadmat('an_hsi_image_sub_for_demo.mat')
 hsi_img_sub = an_hsi_image_sub_for_demo['hsi_img_sub']
