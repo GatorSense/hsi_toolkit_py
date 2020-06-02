@@ -44,3 +44,5 @@ Review and references for many of these signature detectors can be found in the 
 Glenn, Taylor C. Context-dependent detection in hyperspectral imagery. Diss. University of Florida, 2013.
 
 Contact: Alina Zare, azare@ufl.edu
+
+
