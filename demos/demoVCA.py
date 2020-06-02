@@ -19,7 +19,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from VCA import VCA
+from hsi_toolkit.endmember_extraction.VCA import VCA
 import scipy.io as sio
 
 an_hsi_image_sub_for_demo = sio.loadmat('an_hsi_image_sub_for_demo.mat')
