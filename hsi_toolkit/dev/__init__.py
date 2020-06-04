@@ -1,3 +1,3 @@
-from anomaly_detectors import *
-from dim_reduction import *
-from signature_detectors import *
+from hsi_toolkit.dev import anomaly_detectors
+from hsi_toolkit.dev import dim_reduction
+from hsi_toolkit.dev import signature_detectors

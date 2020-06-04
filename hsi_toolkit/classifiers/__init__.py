@@ -1,3 +1,3 @@
-from fuzzy_knn_classifier import *
-from knn_classifier import *
-from poss_knn_classifier import *
+from hsi_toolkit.classifiers.fuzzy_knn_classifier import *
+from hsi_toolkit.classifiers.knn_classifier import *
+from hsi_toolkit.classifiers.poss_knn_classifier import *
