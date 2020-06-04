@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b59163-487e-41e6-8957-a36f4c4216d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/demos/BatchPlotSpectra/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/an_hsi_image_sub_for_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/demos/BatchPlotSpectra/an_hsi_image_sub_for_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/demo_dim_reduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/demo_dim_reduction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/hdr.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/hdr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dim_reduction/mnf.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dim_reduction/mnf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/BatchPlotSpectra/an_hsi_image_sub_for_demo.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/BatchPlotSpectra/batchplotspectra.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/BatchPlotSpectra/batchplotspectra.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/BatchPlotSpectra/batchplotspectra_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/BatchPlotSpectra/batchplotspectra_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/get_RGB.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/get_RGB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/get_hsi_bands.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/get_hsi_bands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/img_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/img_det.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/img_seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/img_seg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/pca.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/rx_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/rx_det.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/unmix.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/util/unmix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hsi_toolkit/dev/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/beta_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors/beta_anomaly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/fcbad_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors/fcbad_anomaly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/gmrx_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors/gmrx_anomaly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/ssrx_anomaly.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors/ssrx_anomaly.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,21 +22,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="75">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/dev/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,6 +120,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/dev/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py" />
+        <option value="$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors/__init__.py" />
       </list>
     </option>
   </component>
@@ -133,6 +150,25 @@
               <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
               <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
+              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
+              <item name="anomaly_detectors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
+              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
+              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="anomaly_detectors" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -141,6 +177,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors" />
       <recent name="$PROJECT_DIR$/hsi_toolkit" />
       <recent name="$PROJECT_DIR$/demos" />
     </key>
@@ -194,15 +231,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/cbad_anomaly.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -243,6 +271,36 @@
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/dev/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/anomaly_detectors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
