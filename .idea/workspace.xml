@@ -2,12 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b59163-487e-41e6-8957-a36f4c4216d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/endmember_extraction/VCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/endmember_extraction/VCA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/endmember_extraction/an_hsi_image_sub_for_demo.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/endmember_extraction/demoVCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/demoVCA.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hsi_toolkit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/abd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/abd_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_local_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_rt_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_rt_max_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_max_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_ss_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_ss_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/amsd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/amsd_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/an_hsi_img_for_tgt_det_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/demos/an_hsi_img_for_tgt_det_demo.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ccmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ccmf_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/cem_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/cem_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ctmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ctmf_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/demo_signature_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/demo_signature_det.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/fam_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/fam_statistic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ftmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ftmf_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/ha_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ha_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/hsd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/hsd_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_local_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/hua_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hua_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/mtmf_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/mtmf_statistic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/osp_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/osp_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/palm_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/palm_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/qmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/qmf_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/sam_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/sam_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_local_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_max_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_max_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signature_detectors/spsmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/spsmf_detector.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -44,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="692">
-              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+              <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -53,15 +77,16 @@
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/signature_detectors/__init__.py">
+        <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="375">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -122,6 +147,7 @@
             <path>
               <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
               <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
+              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
               <item name="signature_detectors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -204,33 +230,34 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="692">
-          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/VCA.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/signature_detectors/__init__.py">
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hsi_toolkit/endmember_extraction/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
