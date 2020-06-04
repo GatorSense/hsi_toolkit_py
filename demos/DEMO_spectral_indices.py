@@ -4,7 +4,7 @@ import sys
 sys.path.append('../')
 sys.path.append('../util/')
 from get_RGB import get_RGB
-from utilities_VI import *
+from spectral_indices.utilities_VI import *
 import os
 
 """

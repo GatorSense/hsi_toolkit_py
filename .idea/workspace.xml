@@ -2,36 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b59163-487e-41e6-8957-a36f4c4216d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/hsi_toolkit/spectral_indices/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hsi_toolkit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/abd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/abd_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_local_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_rt_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_rt_max_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_rt_max_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ace_ss_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ace_ss_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/amsd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/amsd_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/an_hsi_img_for_tgt_det_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/demos/an_hsi_img_for_tgt_det_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ccmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ccmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/cem_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/cem_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ctmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ctmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/demo_signature_det.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/demo_signature_det.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/fam_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/fam_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ftmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ftmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/ha_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/ha_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/hsd_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/hsd_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hsd_local_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/hua_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/hua_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/mtmf_statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/mtmf_statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/osp_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/osp_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/palm_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/palm_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/qmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/qmf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/sam_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/sam_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_local_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_local_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/smf_max_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/smf_max_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signature_detectors/spsmf_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/signature_detectors/spsmf_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/DEMO_spectral_indices.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/DEMO_spectral_indices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/spectral_indices/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/ACI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/ACI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/ARI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/ARI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/ARVI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/ARVI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/CAI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/CAI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/CARI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/CARI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/CIrededge.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/CIrededge.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/CRI1.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/CRI1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/CRI2.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/CRI2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/EVI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/EVI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/MARI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/MARI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/MCARI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/MCARI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/MTCI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/MTCI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/NDII.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/NDII.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/NDLI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/NDLI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/NDNI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/NDNI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/NDRE.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/NDRE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/NDVI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/NDVI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/NDWI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/NDWI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/PRI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/PRI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/PSND Car.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/PSND Car.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/PSND ChlA.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/PSND ChlA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/PSND ChlB.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/PSND ChlB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/PSRI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/PSRI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/PSSR1.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/PSSR1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/PSSR2.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/PSSR2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/PSSR3.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/PSSR3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/REP.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/REP.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/RVSI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/RVSI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/SIPI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/SIPI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/SR.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/SR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/VARI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/VARI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/VIgreen.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/VIgreen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/WBI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/WBI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/Results/WDVI.png" beforeDir="false" afterPath="$PROJECT_DIR$/demos/spectral_indicies_demo_results/WDVI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/a_hsi_img_for_VI_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/demos/a_hsi_img_for_VI_demo.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spectral_indices/utilities_VI.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/spectral_indices/utilities_VI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="60">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -86,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -143,12 +153,6 @@
               <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
               <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
               <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hsi_toolkit_py" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hsi_toolkit_py" type="462c0819:PsiDirectoryNode" />
-              <item name="hsi_toolkit" type="462c0819:PsiDirectoryNode" />
-              <item name="signature_detectors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -247,7 +251,7 @@
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -256,8 +260,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hsi_toolkit/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
