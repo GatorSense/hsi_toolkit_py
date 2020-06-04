@@ -61,7 +61,7 @@ setuptools.setup(
     platforms=['Any'],
 
     # Version number
-    version=1.1,
+    version=1.2,
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
