@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b59163-487e-41e6-8957-a36f4c4216d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/an_hsi_img_for_class_demo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/demos/an_hsi_img_for_class_demo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/demo_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/demos/demo_classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/fuzzy_knn_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/fuzzy_knn_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/knn_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/knn_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classifiers/poss_knn_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/classifiers/poss_knn_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hsi_toolkit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hsi_toolkit/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,13 +38,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hsi_toolkit/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1770">
+              <caret line="118" column="20" lean-forward="true" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
+              <folding>
+                <element signature="e#141#151#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,6 +104,9 @@
         <option value="$PROJECT_DIR$/hsi_toolkit/dev/signature_detectors/__init__.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/signature_detectors/__init__.py" />
         <option value="$PROJECT_DIR$/hsi_toolkit/__init__.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/setup.cfg" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -114,11 +142,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/demos" />
       <recent name="$PROJECT_DIR$/hsi_toolkit" />
       <recent name="$PROJECT_DIR$/hsi_toolkit/dev/signature_detectors" />
       <recent name="$PROJECT_DIR$/hsi_toolkit/dev/dim_reduction" />
-      <recent name="$PROJECT_DIR$/hsi_toolkit/dev/anomaly_detectors" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -269,6 +297,30 @@
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="118" column="20" lean-forward="true" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
+          <folding>
+            <element signature="e#141#151#0" expanded="true" />
           </folding>
         </state>
       </provider>
