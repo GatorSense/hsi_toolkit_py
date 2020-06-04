@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 sys.path.append('../')
 sys.path.append('../util/')
 from hsi_toolkit.classifiers import *
-from get_RGB import get_RGB
+from hsi_toolkit.util.get_RGB import get_RGB
 """
 Demo script that runs all classifiers in hsi_toolkit_py
 

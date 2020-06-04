@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import sys
 sys.path.append('../')
 sys.path.append('../util/')
-from get_RGB import get_RGB
-from spectral_indices.utilities_VI import *
+from hsi_toolkit.util.get_RGB import get_RGB
+from hsi_toolkit.spectral_indices.utilities_VI import *
 import os
 
 """

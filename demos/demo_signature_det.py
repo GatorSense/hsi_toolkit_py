@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 sys.path.append('../')
 sys.path.append('../util/')
 from hsi_toolkit.signature_detectors import *
-from get_RGB import get_RGB
+from hsi_toolkit.util.get_RGB import get_RGB
 
 """
 Demo script that runs all signature detectors in hsi_toolkit_py
@@ -59,8 +59,8 @@ cem_out, w = cem_detector(hsi_sub, tgt_spectra)
 det_out['CEM'] = cem_out
 ctmf_out, _ = ctmf_detector(hsi_sub, tgt_spectra, n_cluster = 2)
 det_out['CTMF'] = ctmf_out
-ftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1)
-det_out['FTMF'] = ftmf_out
+#vftmf_out = ftmf_detector(hsi_sub, tgt_spectra, gamma = 1) <--- moved into dev
+# det_out['FTMF'] = ftmf_out
 ha_out = ha_detector(hsi_sub, tgt_spectra, ems, n_comp = 2)
 det_out['HA'] = ha_out
 hsd_out, _ = hsd_detector(hsi_sub, tgt_spectra, ems)
@@ -69,8 +69,8 @@ hsd_local_out = hsd_local_detector(hsi_sub, tgt_spectra, ems, guard_win = guard_
 det_out['HSD Local'] = hsd_local_out
 hua_out = hua_detector(hsi_sub, tgt_spectra, ems, n_comp = 2)
 det_out['HUA'] = hua_out
-mtmf_out,_ = mtmf_statistic(hsi_sub, tgt_spectra)
-det_out['MTMF'] = mtmf_out
+# mtmf_out,_ = mtmf_statistic(hsi_sub, tgt_spectra) <--- moved into dev
+# det_out['MTMF'] = mtmf_out
 smf_out, _, _ = smf_detector(hsi_sub, tgt_spectra)
 det_out['SMF'] = smf_out
 smf_local_out = smf_local_detector(hsi_sub, tgt_spectra, guard_win = guard_win, bg_win = bg_win)
@@ -81,12 +81,12 @@ fam_statistic_out = fam_statistic(hsi_sub, tgt_spectra)
 det_out['FAM Statistic'] = fam_statistic_out
 osp_out = osp_detector(hsi_sub, tgt_spectra, n_dim_ss = 10)
 det_out['OSP'] = osp_out
-qmf_out = qmf_detector(hsi_sub, tgt_spectra, 0.1 * np.eye(hsi_sub.shape[2]))
-det_out['QMF'] = qmf_out
+# qmf_out = qmf_detector(hsi_sub, tgt_spectra, 0.1 * np.eye(hsi_sub.shape[2])) <--- moved into dev
+# det_out['QMF'] = qmf_out
 sam_out = sam_detector(hsi_sub, tgt_spectra)
 det_out['SAM'] = sam_out
-spsmf_out = spsmf_detector(hsi_sub, tgt_spectra)
-det_out['SPSMF'] = spsmf_out
+# spsmf_out = spsmf_detector(hsi_sub, tgt_spectra) <--- moved into dev
+# det_out['SPSMF'] = spsmf_out
 palm_out = palm_detector(hsi_sub, tgt_spectra, n_comp = 5)
 det_out['PALM'] = palm_out
 
