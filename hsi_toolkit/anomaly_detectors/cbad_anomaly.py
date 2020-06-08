@@ -1,6 +1,4 @@
-import sys
-sys.path.append('../util/')
-from img_det import img_det
+from hsi_toolkit.util import img_det
 import numpy as np
 from sklearn.cluster import KMeans
 

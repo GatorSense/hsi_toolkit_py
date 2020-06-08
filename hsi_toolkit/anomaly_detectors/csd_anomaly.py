@@ -1,6 +1,4 @@
-import sys
-sys.path.append('../util/')
-from pca import pca
+from hsi_toolkit.util import pca
 import numpy as np
 
 def csd_anomaly(hsi_img, n_dim_bg, n_dim_tgt, tgt_orth):
