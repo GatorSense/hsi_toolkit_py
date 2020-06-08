@@ -1,8 +1,5 @@
-import sys
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
-sys.path.append('../')
-sys.path.append('../util/')
 from hsi_toolkit.signature_detectors import *
 from hsi_toolkit.util.get_RGB import get_RGB
 
@@ -35,7 +32,7 @@ det_out['RGB'] = get_RGB(hsi_sub, wavelengths)
 det_out['Ground Truth'] = gt_img_sub
 
 # init detector args
-guard_win = 1; bg_win = 3; beta = 0.001; n_dim_ss = 10;
+guard_win = 1; bg_win = 3; beta = 0.001; n_dim_ss = 10
 ems = hsi_sub[:3,1,:].T # need to provide background endmembers (can get them using SPICE unmixing)
 
 # call detectors

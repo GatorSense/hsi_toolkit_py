@@ -55,7 +55,7 @@ n_row = 4; n_col = 3
 
 i = 1
 for key, value in det_out.items():
-	plt.subplot(n_row, n_col, i);
+	plt.subplot(n_row, n_col, i)
 	plt.imshow(value); plt.title(key)
 	i += 1
 # plt.imshow(gmrx_out)

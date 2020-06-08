@@ -1,8 +1,5 @@
-import sys
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
-sys.path.append('../')
-sys.path.append('../util/')
 from hsi_toolkit.classifiers import *
 from hsi_toolkit.util.get_RGB import get_RGB
 """
