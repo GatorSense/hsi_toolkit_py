@@ -1,7 +1,5 @@
-import sys
-sys.path.append('../util/')
-from rx_det import rx_det
-from unmix import unmix
+from hsi_toolkit.util import rx_det
+from hsi_toolkit.util import unmix
 import numpy as np
 
 def hsd_local_detector(hsi_img, tgt_sig, ems, mask = None, guard_win = 2, bg_win = 4, beta = 0):

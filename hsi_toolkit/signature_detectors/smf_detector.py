@@ -1,6 +1,4 @@
-import sys
-sys.path.append('../util/')
-from img_det import img_det
+from hsi_toolkit.util import img_det
 import numpy as np
 
 def smf_detector(hsi_img, tgt_sig, mask = None, mu = None, sig_inv = None):

@@ -1,8 +1,5 @@
-import sys
-sys.path.append('../util/')
-from img_det import img_det
+from hsi_toolkit.util import img_det
 import numpy as np
-from sklearn.cluster import KMeans
 import skfuzzy as fuzz
 
 def fcbad_anomaly(hsi_img, n_cluster, mask = None):

@@ -1,7 +1,5 @@
-import sys
-sys.path.append('../util/')
-from img_det import img_det
-from unmix import unmix
+from hsi_toolkit.util import img_det
+from hsi_toolkit.util import unmix
 import numpy as np
 
 def hsd_detector(hsi_img, tgt_sig, ems, mask = None, sig_inv = None):

@@ -1,6 +1,4 @@
-import sys
-sys.path.append('../util/')
-from pca import pca
+from hsi_toolkit.util import pca
 import numpy as np
 
 def ssrx_anomaly(hsi_img, n_dim_ss, guard_win, bg_win):

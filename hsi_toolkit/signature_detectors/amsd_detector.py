@@ -1,7 +1,6 @@
-import sys
-sys.path.append('../util/')
-from img_det import img_det
+from hsi_toolkit.util import img_det
 import numpy as np
+
 def amsd_detector(hsi_img, tgt_sig, mask = None, n_dim_tgt = 1, n_dim_bg = 5):
 	"""
 	Adaptive Matched Subspace Detector
