@@ -1,7 +1,7 @@
 from scipy.io import loadmat
 from hsi_toolkit.dim_reduction import *
 from hsi_toolkit.dev.dim_reduction.mnf import *
-from hsi_toolkit.util.get_RGB import get_RGB
+from hsi_toolkit.util import get_RGB
 # Demo script that runs all dimensionality reduction methods in hsi_toolkit_py
 #
 # Inputs:

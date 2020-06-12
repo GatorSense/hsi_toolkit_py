@@ -17,7 +17,8 @@ Outputs:
 
 import numpy as np
 import matplotlib.pyplot as plt
-from hsi_toolkit.endmember_extraction.VCA import VCA
+from hsi_toolkit.endmember_extraction import VCA
+
 import scipy.io as sio
 
 an_hsi_image_sub_for_demo = sio.loadmat('an_hsi_image_sub_for_demo.mat')

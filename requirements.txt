@@ -1,6 +1,7 @@
 numpy
 scipy
 scikit-learn
+scikit-fuzzy
 cvxopt
 descartes
 SPICE-HSI

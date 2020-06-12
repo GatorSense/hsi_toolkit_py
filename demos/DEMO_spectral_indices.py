@@ -1,7 +1,7 @@
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
-from hsi_toolkit.util.get_RGB import get_RGB
-from hsi_toolkit.spectral_indices.utilities_VI import *
+from hsi_toolkit.util import get_RGB
+from hsi_toolkit.spectral_indices import *
 import os
 
 """
