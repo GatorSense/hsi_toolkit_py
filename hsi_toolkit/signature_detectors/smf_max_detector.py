@@ -1,5 +1,5 @@
 from hsi_toolkit.util import img_det
-from smf_detector import smf_det_array_helper
+from hsi_toolkit.signature_detectors import smf_det_array_helper
 import numpy as np
 
 def smf_max_detector(hsi_img, tgt_sig, mask = None, mu = None, sig_inv = None):

@@ -1,7 +1,7 @@
 from scipy.io import loadmat
 import matplotlib.pyplot as plt
 from hsi_toolkit.signature_detectors import *
-from hsi_toolkit.util.get_RGB import get_RGB
+from hsi_toolkit.util import get_RGB
 
 """
 Demo script that runs all signature detectors in hsi_toolkit_py
