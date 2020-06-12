@@ -1,8 +1,5 @@
-import sys
-sys.path.append('../util/')
-from img_det import img_det
-sys.path.append('../dim_reduction/')
-from mnf import mnf
+from hsi_toolkit.util import img_det
+from hsi_toolkit.dev.dim_reduction import mnf
 import numpy as np
 
 def mtmf_statistic(hsi_img,tgt_sig, mask = None):
