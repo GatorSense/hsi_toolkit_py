@@ -111,6 +111,9 @@ hscrollbar2 = ttk.Scrollbar(canvas1, orient=tk.HORIZONTAL, command=canvas3.xview
 hscrollbar2.grid(row=1, column=0, sticky="ew")
 canvas3.configure(xscrollcommand=hscrollbar2.set)
 
+# Configure canvas3 to scroll with canvas2 inside it
+canvas3.create_window((0, 0), window=canvas2, anchor="nw")
+
 # Configure scroll region for canvas2 and canvas3
 canvas2.update_idletasks()  # Update canvas2 to get correct bbox
 canvas3.config(scrollregion=canvas2.bbox(tk.ALL))
