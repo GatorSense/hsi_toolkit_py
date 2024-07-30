@@ -28,42 +28,23 @@ root.pack_propagate(False) # root will not resize itself
 canvas = tk.Canvas(root, bg="white")
 canvas.pack(fill=tk.BOTH, expand=True)
 
-# Configure the root window grid
-root.grid_rowconfigure(0, weight=1)
-root.grid_columnconfigure(0, weight=1)  # For the canvas
-root.grid_columnconfigure(1, weight=0)  # For the scrollbar
+# Divide the canvas into two parts
+canvas.columnconfigure(0, weight=1)
+canvas.columnconfigure(1, weight=3)
 
-# Create a vertical scrollbar linked to the canvas
-vscrollbar = ttk.Scrollbar(root, orient=tk.VERTICAL, command=canvas.yview)
-vscrollbar.grid(row=0, column=1, sticky="ns")
-
-# Create a frame and a canvas for the two parts
+# Sets the frames dimensions based on window screen
 frame1_width = (root.winfo_screenwidth() * 2) // 5
 frame1_height = root.winfo_screenheight()
 frame2_width = (root.winfo_screenwidth() * 3) // 5
 frame2_height = root.winfo_screenheight()
 
+# Create a frame and a canvas for the two parts
 canvas1 = tk.Canvas(canvas, bg="white", width=frame1_width, height=frame1_height)
 frame2 = tk.Frame(canvas, bg="lightgrey", width=frame2_width, height=frame2_height)
 
 # Place the frames in the divided parts
-canvas1.grid(row=0, column=0, sticky="nsew")
+canvas1.grid(row=0, column=0, sticky="nsew") #nsew means frame expands to all sides
 frame2.grid(row=0, column=1, sticky="nsew")
-
-# Add canvas1 to the main canvas
-canvas.create_window((0, 0), window=canvas1, anchor="nw")
-
-# Configure scrollbar to control the canvas
-canvas.config(yscrollcommand=vscrollbar.set)
-
-# Update scrollregion of the canvas to encompass the entire canvas1
-canvas.update_idletasks()
-canvas.config(scrollregion=canvas.bbox("all"))
-
-# Configure the canvas grid to allow expanding and scrolling
-canvas.grid_rowconfigure(0, weight=1)
-canvas.grid_columnconfigure(0, weight=1)
-canvas.grid_columnconfigure(1, weight=0)  # For the frame2
 
 '''
 USER NEEDS TO CHANGE: FILE PATH LOCATION, HOW THEY UPLOAD THEIR DATA, AND RGB VALUES BASED ON THEIR DATA 
