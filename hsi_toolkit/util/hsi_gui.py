@@ -1,6 +1,6 @@
 '''
 Use this GUI if you want to visualize either VNIR-E data or SWIR data
-You will need to edit the code from line 50 to line 68.
+You will need to edit the code from line 69 to line 87.
 Give it a minute once you finished selecting the files
 Click on the 'Help!' button and read the guide to understand the features
 '''
@@ -24,13 +24,27 @@ root.state('zoomed')
 root.title('Pixel Information')
 root.pack_propagate(False) # root will not resize itself
 
-# Create a canvas
-canvas = tk.Canvas(root, bg="white")
-canvas.pack(fill=tk.BOTH, expand=True)
+# Create a frame to contain the canvas and scrollbar
+main_frame = tk.Frame(root)
+main_frame.pack(fill=tk.BOTH, expand=True)
+
+# Create a canvas widget
+canvas = tk.Canvas(main_frame, bg="white")
+canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+# Create a vertical scrollbar linked to the canvas
+vsb = tk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
+vsb.pack(side=tk.RIGHT, fill=tk.Y)
+
+# Configure canvas to work with scrollbar
+canvas.configure(yscrollcommand=vsb.set)
+
+canvasFrame = tk.Frame(canvas, bg = 'white')
+canvas.create_window((0, 0), window=canvasFrame, anchor="nw")
 
 # Divide the canvas into two parts
-canvas.columnconfigure(0, weight=1)
-canvas.columnconfigure(1, weight=3)
+canvasFrame.columnconfigure(0, weight=1)
+canvasFrame.columnconfigure(1, weight=3)
 
 # Sets the frames dimensions based on window screen
 frame1_width = (root.winfo_screenwidth() * 2) // 5
@@ -38,13 +52,18 @@ frame1_height = root.winfo_screenheight()
 frame2_width = (root.winfo_screenwidth() * 3) // 5
 frame2_height = root.winfo_screenheight()
 
+
 # Create a frame and a canvas for the two parts
-canvas1 = tk.Canvas(canvas, bg="white", width=frame1_width, height=frame1_height)
-frame2 = tk.Frame(canvas, bg="lightgrey", width=frame2_width, height=frame2_height)
+canvas1 = tk.Canvas(canvasFrame, bg="white", width=frame1_width, height=frame1_height)
+frame2 = tk.Frame(canvasFrame, bg="lightgrey", width=frame2_width, height=frame2_height)
 
 # Place the frames in the divided parts
 canvas1.grid(row=0, column=0, sticky="nsew") #nsew means frame expands to all sides
 frame2.grid(row=0, column=1, sticky="nsew")
+
+
+canvasFrame.update_idletasks()  # Ensure the canvas dimensions are updated
+canvas.config(scrollregion=canvas.bbox("all"))
 
 '''
 USER NEEDS TO CHANGE: FILE PATH LOCATION AND HOW THEY UPLOAD THEIR DATA

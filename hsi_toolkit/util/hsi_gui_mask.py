@@ -1,6 +1,6 @@
 '''
 Use this GUI if you have a binary mask for your hyperspectral image and have aligned the VNIR-E and SWIR data. 
-You will need to edit the code from line 50 to line 95.
+You will need to edit the code from line 73 to line 118.
 Give it a minute once you finished selecting the files
 Click on the 'Help!' button and read the guide to understand the features
 '''
