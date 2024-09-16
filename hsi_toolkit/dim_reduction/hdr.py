@@ -83,7 +83,7 @@ def computeKLDivergencesBetweenBands(InputData, NumCenters):
     for i in range(DataList.shape[1]):
         for j in range(DataList.shape[1]):
             KLDivergences[i, j] = (hists[i, :] * np.log(hists[i, :] / hists[j, :])).sum() \
-                                  + (hists[j, :] * np.log(hists[j, :] / hists[j, :])).sum()
+                                  + (hists[j, :] * np.log(hists[j, :] / hists[i, :])).sum()
 
     temp = KLDivergences - np.diag(np.diag(KLDivergences))
     KLDivergencesList = pdist(temp)
