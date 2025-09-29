@@ -5,3 +5,4 @@ scikit-fuzzy
 cvxopt
 descartes
 SPICE-HSI
+spectral
